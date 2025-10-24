@@ -73,6 +73,4 @@
 - **NLTK Lookup Errors** Ensure corpora download successfully or set `NLTK_DATA` environment variable to a writable path.
 - **Excel Export Errors** Install `openpyxl` if `to_excel()` raises an engine error.
 
-## Contributions & License
-- **Contributions** Fork and submit pull requests with clear descriptions and reproducible examples.
-- **License** Not specified; update this section once a license is chosen for the project.
+
