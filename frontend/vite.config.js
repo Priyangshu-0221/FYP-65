@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  // This project uses Chakra UI. Remove undefined Tailwind plugin reference.
   plugins: [react()],
   server: {
     port: 5173,
