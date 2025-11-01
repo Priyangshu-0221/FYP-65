@@ -1,53 +1,172 @@
-# Resume Classification and Analysis System
+# AI-Powered Resume Analyzer and Job Recommendation System
 
-This project provides tools for processing, classifying, and analyzing resumes. It extracts key information such as skills, education, and experience from PDF resumes, and can classify them into different job categories.
+A comprehensive system for analyzing resumes and providing intelligent job recommendations based on skills, experience, and academic performance. The system processes PDF resumes, extracts key information, and uses machine learning to match candidates with relevant job opportunities.
 
-## Project Structure
+## 🚀 Key Features
+
+- **Resume Parsing**: Extract text, skills, education, and experience from PDF resumes
+- **Skill Matching**: Advanced skill-based matching between candidates and job requirements
+- **Academic Analysis**: Evaluate academic performance against job requirements
+- **Smart Recommendations**: Personalized internship/job recommendations based on multiple factors
+- **Web Interface**: User-friendly interface for uploading resumes and viewing matches
+- **Batch Processing**: Process multiple resumes in one go
+
+## 🏗️ Project Structure
 
 ```
 FYP-65/
-├── backend/                  # Backend Python code
+├── backend/                         # Backend Python code
 │   ├── __init__.py
-│   ├── fastapi_app.py       # Main FastAPI application
-│   ├── pdf_processor.py     # PDF text extraction and processing
-│   ├── process_resumes.py   # Batch resume processing script
-│   ├── resume_classifier.py # Resume classification model
-│   ├── run.py               # Script to run the FastAPI server
-│   ├── schemas.py           # Pydantic models
-│   ├── settings.py          # Application settings
-│   └── skill_extractor.py   # Skill extraction utilities
-├── DATA/                    # Resume data
-│   └── data/                # Categorized resume PDFs
-│       ├── ACCOUNTANT/
-│       ├── HR/
-│       ├── INFORMATION-TECHNOLOGY/
-│       ├── SALES/
-│       └── TEACHER/
-├── frontend/                # Frontend React application
+│   ├── fastapi_app.py              # Main FastAPI application
+│   ├── pdf_processor.py            # PDF text extraction and processing
+│   ├── recommendation_engine.py    # Recommendation system implementation
+│   ├── create_dummy_recommendations.py  # Script to generate sample job data
+│   ├── resume_classifier.py        # Resume classification model
+│   ├── run.py                      # Script to run the FastAPI server
+│   ├── schemas.py                  # Pydantic models
+│   ├── settings.py                 # Application settings
+│   └── skill_extractor.py          # Skill extraction utilities
+├── data/                           # Data directory
+│   └── dummy_internship_recommendations.json  # Sample job listings
+├── frontend/                       # Frontend React application
 │   ├── src/
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │   ├── index.html
 │   ├── package.json
 │   └── vite.config.js
-├── requirements.txt         # Python dependencies
+├── test_recommendation.py          # Test script for recommendation engine
+├── requirements.txt                # Python dependencies
 └── README.md
 ```
 
-## Features
+## 🛠️ Setup Instructions
 
-- Extract text from PDF resumes
-- Identify and count skills mentioned in resumes
-- Extract education information and academic marks
-- Classify resumes into job categories
-- Process multiple resumes in batch mode
-- Simple web interface for testing
+### Prerequisites
 
-## Setup
+- Python 3.10+
+- Node.js 18+ (for frontend)
+- pip (Python package manager)
+- Git (optional, for cloning the repository)
 
-1. **Prerequisites**
-   - Python 3.10+
-   - Node.js 18+ (for frontend)
+### Backend Setup
+
+1. **Clone the repository** (if you haven't already):
+   ```bash
+   git clone <repository-url>
+   cd FYP-65
+   ```
+
+2. **Create and activate a virtual environment** (recommended):
+   ```bash
+   # Windows
+   python -m venv venv
+   .\venv\Scripts\activate
+   
+   # Linux/MacOS
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Install Python dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Generate sample job data** (if needed):
+   ```bash
+   python backend/create_dummy_recommendations.py
+   ```
+
+5. **Start the FastAPI server**:
+   ```bash
+   cd backend
+   uvicorn fastapi_app:app --reload
+   ```
+   The API will be available at `http://localhost:8000`
+
+### Frontend Setup
+
+1. **Navigate to the frontend directory**:
+   ```bash
+   cd frontend
+   ```
+
+2. **Install Node.js dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+   The frontend will be available at `http://localhost:5173`
+
+## 🚀 Usage
+
+### API Endpoints
+
+- `POST /upload-resume` - Upload and process a resume
+- `POST /recommend` - Get job recommendations based on skills
+- `GET /internships` - List all available internships
+
+### Testing the Recommendation Engine
+
+You can test the recommendation system using the provided test script:
+
+```bash
+python test_recommendation.py
+```
+
+This will run several test cases with different skill sets and display the recommendations.
+
+### Example API Request
+
+```bash
+curl -X POST "http://localhost:8000/recommend" \
+     -H "Content-Type: application/json" \
+     -d '{"skills": ["Python", "Machine Learning", "Data Analysis"], "top_k": 3}'
+```
+
+## 🤖 Recommendation Algorithm
+
+The recommendation system uses a hybrid approach combining:
+
+1. **Skill Matching**: Exact and fuzzy matching of skills with position-based weighting
+2. **Content Similarity**: TF-IDF vectorization of job descriptions and requirements
+3. **Academic Performance**: Matching of CGPA and percentage requirements
+
+## 📊 Sample Output
+
+```json
+{
+  "recommendations": [
+    {
+      "id": "ds-ml-001",
+      "title": "Data Science Intern",
+      "company": "Insight Analytics",
+      "skills": ["python", "machine learning", "statistics", "sql"],
+      "relevance_score": 0.95,
+      "skill_match": 1.0,
+      "content_match": 0.9
+    },
+    ...
+  ]
+}
+```
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📧 Contact
+
+For any questions or feedback, please open an issue or contact the project maintainers.
    - pip (Python package manager)
 
 2. **Install Python Dependencies**
