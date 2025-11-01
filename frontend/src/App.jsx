@@ -28,6 +28,10 @@ const API_BASE = "/api";
 const buildFormData = (file) => {
   const formData = new FormData();
   formData.append("file", file);
+  // Explicitly set process_as_pdf for PDF files
+  if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
+    formData.append("process_as_pdf", "true");
+  }
   return formData;
 };
 
@@ -135,29 +139,39 @@ function App() {
 
     setIsUploading(true);
     try {
+      const formData = buildFormData(file);
+      console.log('Uploading file:', file.name, 'type:', file.type, 'size:', file.size);
+      
       const response = await fetch(`${API_BASE}/upload`, {
         method: "POST",
-        body: buildFormData(file),
+        // Don't set Content-Type header - let the browser set it with the correct boundary
+        body: formData,
       });
+
+      const responseData = await response.json();
+      console.log('Server response:', responseData);
+      
       if (!response.ok) {
-        throw new Error("Failed to upload resume");
+        throw new Error(responseData.detail || `Server responded with ${response.status}`);
       }
-      const data = await response.json();
-      setSkills(data.skills ?? []);
+
+      if (!responseData.skills) {
+        throw new Error("No skills found in the response");
+      }
+
+      setSkills(responseData.skills);
       toast({
-        title: "Resume processed",
-        description: data.skills?.length
-          ? "Skills extracted successfully."
-          : "No skills detected. You can still request recommendations manually.",
+        title: "Resume processed successfully",
+        description: `Found ${responseData.skills.length} skills`,
         status: "success",
-        duration: 4000,
+        duration: 5000,
         isClosable: true,
       });
     } catch (error) {
-      console.error(error);
+      console.error("Upload error:", error);
       toast({
         title: "Upload failed",
-        description: "We ran into an issue while processing the resume.",
+        description: error.message || "We ran into an issue while processing the resume.",
         status: "error",
         duration: 5000,
         isClosable: true,

@@ -1,103 +1,144 @@
-# FYP-65 Internship Recommender
+# Resume Classification and Analysis System
 
-This project transforms resumes into structured insights, trains a classifier on resume categories, and exposes a web-based internship recommender that matches extracted skills to curated opportunities.
+This project provides tools for processing, classifying, and analyzing resumes. It extracts key information such as skills, education, and experience from PDF resumes, and can classify them into different job categories.
 
----
+## Project Structure
 
-## Repository Structure
+```
+FYP-65/
+├── backend/                  # Backend Python code
+│   ├── __init__.py
+│   ├── fastapi_app.py       # Main FastAPI application
+│   ├── pdf_processor.py     # PDF text extraction and processing
+│   ├── process_resumes.py   # Batch resume processing script
+│   ├── resume_classifier.py # Resume classification model
+│   ├── run.py               # Script to run the FastAPI server
+│   ├── schemas.py           # Pydantic models
+│   ├── settings.py          # Application settings
+│   └── skill_extractor.py   # Skill extraction utilities
+├── DATA/                    # Resume data
+│   └── data/                # Categorized resume PDFs
+│       ├── ACCOUNTANT/
+│       ├── HR/
+│       ├── INFORMATION-TECHNOLOGY/
+│       ├── SALES/
+│       └── TEACHER/
+├── frontend/                # Frontend React application
+│   ├── src/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+├── requirements.txt         # Python dependencies
+└── README.md
+```
 
-| Path | Description |
-| --- | --- |
-| `resume_feature_engineering.py` | Enriches CSV resume datasets with derived features (skills, education, experience). |
-| `pdf_resume_feature_engineering.py` | Extracts features from PDF resumes and exports structured summaries. |
-| `resume_classifier.py` | Trains TF-IDF based classifier (Naive Bayes or Logistic Regression) on resume categories. |
-| `web_backendbackend | FastAPI service exposing resume upload and internship recommendation endpoints. |
-| `frontend/` | React + Vite application (Chakra UI) for uploading resumes and viewing recommendations. |
-| `setup_all_dependencies.py` | Automation script to install Python and Node dependencies in one step. |
-| `requirements.txt` | Python dependency lockfile. |
-| `DATA/` | Placeholder for resume datasets (CSV or folder of categorized PDFs). |
+## Features
 
----
+- Extract text from PDF resumes
+- Identify and count skills mentioned in resumes
+- Extract education information and academic marks
+- Classify resumes into job categories
+- Process multiple resumes in batch mode
+- Simple web interface for testing
 
-## Quick Start
+## Setup
 
-1. **Clone/Download** this repository and ensure Python 3.10+ and Node.js 18+ are available on your machine.
-2. **Place a resume dataset** at `DATA/resumes.csv` (columns: `Category`, `Resume`) or organise categorized PDFs under `DATA/`.
-3. **Install all dependencies** with a single command:
+1. **Prerequisites**
+   - Python 3.10+
+   - Node.js 18+ (for frontend)
+   - pip (Python package manager)
 
+2. **Install Python Dependencies**
    ```bash
-   python setup_all_dependencies.py
+   # Create and activate a virtual environment (recommended)
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   
+   # Install dependencies
+   pip install -r requirements.txt
    ```
 
-4. **Run the backend** (from project root):
-
-   ```bash
-   uvicorn backend.fastapi_app:app --reload
+3. **Set Up NLTK Data**
+   ```python
+   import nltk
+   nltk.download(['punkt', 'stopwords', 'wordnet'])
    ```
 
-5. **Run the frontend** (in a separate terminal):
+## Usage
 
-   ```bash
-   cd frontend
-   npm run dev
-   ```
+### 1. Process Resumes in Batch
 
-6. Open the presented Vite URL (default `http://localhost:5173`). Upload a resume and request recommendations.
-
----
-
-## Detailed Setup
-
-### 1. Python Environment
-
-*Ensure you are inside a virtual environment (recommended).*  
-Dependencies are defined in `requirements.txt` and installed automatically via the setup script. Manual installation:
+To process all resumes in the `DATA/data/` directory and generate a CSV with extracted features:
 
 ```bash
-pip install -r requirements.txt
+python -m backend.process_resumes
 ```
 
-The backend relies on NLTK corpora (`punkt`, `punkt_tab`, `stopwords`, `wordnet`, `omw-1.4`). These download automatically on first run, but you can prefetch them:
+This will create a `data/processed/resumes.csv` file with the extracted information.
 
-```python
-import nltk
-for resource in ["punkt", "punkt_tab", "stopwords", "wordnet", "omw-1.4"]:
-    nltk.download(resource)
+### 2. Run the Web Interface
+
+Start the FastAPI backend:
+
+```bash
+# From the project root
+python -m backend.run
 ```
 
-### 2. Node Environment
-
-The React UI lives in `frontend/`. After running `setup_all_dependencies.py`, node modules are installed. Manual installation:
+In a separate terminal, start the frontend:
 
 ```bash
 cd frontend
 npm install
+npm run dev
 ```
 
-Vite configuration (`vite.config.js`) proxies `/api` requests to the FastAPI backend at `http://127.0.0.1:8000`.
+Access the web interface at `http://localhost:5173`
 
----
+## API Endpoints
 
-## Running the Components
+### POST /api/classify
+Classify a resume and extract key information.
 
-### Backend (FastAPI)
+**Request Body**:
+- `file`: PDF file to process
 
-```bash
-uvicorn backend.fastapi_app:app --reload
+**Response**:
+```json
+{
+  "category": "SOFTWARE_ENGINEER",
+  "skills": ["Python", "Machine Learning", "Docker"],
+  "education": "B.Tech in Computer Science (8.5/10)",
+  "experience": "3 years"
+}
 ```
 
-Key endpoints:
+## Configuration
 
-| Endpoint | Method | Description |
-| --- | --- | --- |
-| `/upload` | POST | Accepts PDF/TXT resumes, extracts skills, and returns predicted category (if model trained). |
-| `/recommend` | POST | Returns ranked internships based on supplied skills. |
+Modify `backend/settings.py` to configure:
+- Data paths
+- Model parameters
+- Feature extraction settings
 
-Environment configuration is handled via `backend/backend.py`. Override defaults with environment variables (prefix `INTERNSHIP_APP_`), e.g.:
+## Data Format
 
-```bash
-set INTERNSHIP_APP_RESUME_DATASET_PATH=DATA/resumes.csv
-set INTERNSHIP_APP_INTERNSHIP_CATALOG_PATH=custom_catalog.json
+The processed resumes are saved in CSV format with the following columns:
+- `filepath`: Path to the original PDF
+- `filename`: Name of the PDF file
+- `category`: Job category (from directory name)
+- `text_length`: Length of extracted text
+- `total_skills`: Number of unique skills found
+- `skills_found`: Comma-separated list of all skills
+- `skills_frequency`: JSON string of skills with their counts
+- `top_skills`: Top 5 most frequent skills
+- `education_info`: Extracted education details
+- `cgpa`: Extracted CGPA if found
+- `percentage`: Extracted percentage if found
+- `num_education`: Number of education entries
+- `has_education`: 1 if education info found, else 0
+- `has_marks`: 1 if marks/CGPA found, else 0
 ```
 
 ### Frontend (React + Chakra UI)

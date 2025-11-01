@@ -8,8 +8,13 @@ from pydantic import BaseModel, Field
 
 
 class ResumeUploadResponse(BaseModel):
+    success: bool = Field(True, description="Indicates if the request was successful")
+    text: str = Field("", description="Extracted text from the resume (truncated if too long)")
     skills: List[str] = Field(default_factory=list, description="Extracted skills from resume")
-    categories: List[str] = Field(default_factory=list, description="Predicted categories from classifier")
+    category: str = Field("", description="Predicted category from classifier")
+    education: str = Field("", description="Extracted education information")
+    experience: str = Field("", description="Extracted experience information")
+    message: str = Field("", description="Status message about the processing")
 
 
 class RecommendationRequest(BaseModel):
