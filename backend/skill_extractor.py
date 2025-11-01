@@ -56,11 +56,51 @@ def preprocess_corpus(text_series: pd.Series) -> pd.Series:
 
 # Define these constants locally to avoid circular imports
 DEFAULT_SKILLS: Set[str] = {
-    'python', 'java', 'c++', 'javascript', 'sql', 'html', 'css',
-    'machine learning', 'data analysis', 'project management',
-    'team leadership', 'problem solving', 'communication', 'cloud computing',
-    'aws', 'azure', 'docker', 'kubernetes', 'react', 'node', 'statistics',
-    'excel', 'deep learning'
+    # Programming Languages
+    'python', 'java', 'c++', 'javascript', 'typescript', 'kotlin', 'swift', 'go', 'rust', 'php', 'ruby',
+    'r', 'c#', 'c', 'scala', 'dart', 'perl', 'groovy', 'haskell', 'lua', 'matlab', 'objective-c', 'r', 'sql',
+    
+    # Web Technologies
+    'html', 'css', 'sass', 'less', 'bootstrap', 'tailwind', 'material-ui', 'jquery', 'django', 'flask',
+    'fastapi', 'spring', 'laravel', 'ruby on rails', 'express', 'nest', 'next.js', 'nuxt.js', 'gatsby',
+    'graphql', 'rest', 'soap', 'grpc', 'webpack', 'babel', 'vite', 'rollup', 'parcel',
+    
+    # Mobile Development
+    'react native', 'flutter', 'ionic', 'xamarin', 'swiftui', 'jetpack compose',
+    
+    # Databases
+    'mysql', 'postgresql', 'mongodb', 'redis', 'oracle', 'sql server', 'sqlite', 'mariadb', 'cassandra',
+    'dynamodb', 'firestore', 'realm', 'couchbase', 'neo4j', 'elasticsearch', 'meilisearch',
+    
+    # ORMs and Query Builders
+    'prisma', 'sequelize', 'typeorm', 'hibernate', 'jpa', 'sqlalchemy', 'django orm', 'mongoose',
+    'prisma orm', 'knex', 'watermelon db', 'realm orm', 'room', 'gorm', 'ent', 'drizzle',
+    
+    # Cloud & DevOps
+    'aws', 'azure', 'google cloud', 'gcp', 'docker', 'kubernetes', 'terraform', 'ansible', 'jenkins',
+    'github actions', 'gitlab ci', 'circleci', 'travis ci', 'argo cd', 'helm', 'istio', 'linkerd',
+    'prometheus', 'grafana', 'datadog', 'new relic', 'sentry', 'firebase', 'firebase auth',
+    'firebase firestore', 'firebase storage', 'firebase functions', 'firebase hosting',
+    'firebase cloud messaging', 'firebase analytics', 'firebase crashlytics',
+    
+    # Version Control & Tools
+    'git', 'github', 'gitlab', 'bitbucket', 'svn', 'mercurial', 'perforce',
+    
+    # Operating Systems
+    'linux', 'ubuntu', 'debian', 'centos', 'fedora', 'arch linux', 'windows', 'macos', 'unix',
+    
+    # Other Technologies
+    'machine learning', 'deep learning', 'data analysis', 'data science', 'artificial intelligence',
+    'computer vision', 'natural language processing', 'nlp', 'reinforcement learning', 'neural networks',
+    'blockchain', 'ethereum', 'solidity', 'web3', 'smart contracts', 'cybersecurity', 'penetration testing',
+    'ethical hacking', 'devops', 'site reliability engineering', 'sre', 'microservices', 'serverless',
+    'internet of things', 'iot', 'augmented reality', 'virtual reality', 'ar', 'vr', 'quantum computing',
+    
+    # Soft Skills
+    'problem solving', 'communication', 'teamwork', 'leadership', 'project management', 'agile', 'scrum',
+    'kanban', 'lean', 'devops', 'ci/cd', 'test driven development', 'tdd', 'pair programming',
+    'code review', 'technical writing', 'documentation', 'mentoring', 'public speaking', 'presentation',
+    'time management', 'critical thinking', 'creativity', 'adaptability', 'collaboration', 'conflict resolution'
 }
 
 EDUCATION_KEYWORDS: Sequence[str] = (
