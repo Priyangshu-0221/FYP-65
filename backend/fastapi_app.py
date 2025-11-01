@@ -15,7 +15,7 @@ from pydantic import BaseModel
 
 from backend.internship_catalog import load_catalog
 from backend.pdf_processor import PDFProcessor, process_pdf_resume
-from backend.recommendation_engine import rank_internships
+from backend.recommendation_engine import InternshipRecommendationEngine
 from backend.resume_classifier import predict_resume_category, get_or_train_model
 from backend.schemas import InternshipSchema, RecommendationRequest, RecommendationResponse, ResumeUploadResponse
 from backend.settings import settings
@@ -273,9 +273,50 @@ async def retrain_model():
 
 @app.post("/recommend", response_model=RecommendationResponse)
 async def recommend_internships(payload: RecommendationRequest) -> RecommendationResponse:
+    """
+    Get internship recommendations based on the provided skills, marks, and skill count.
+    
+    The recommendation engine considers:
+    - Skill matches (weighted by position in the skills list)
+    - Academic marks (if provided)
+    - Total number of skills (if provided)
+    """
     if not payload.skills:
         raise HTTPException(status_code=400, detail="No skills provided for recommendation.")
 
-    ranked = rank_internships(payload.skills, CATALOG, top_k=payload.top_k)
-    recommendations = [InternshipSchema(**internship.to_dict()) for internship, _score in ranked]
-    return RecommendationResponse(recommendations=recommendations)
+    try:
+        # Initialize the recommendation engine with the catalog
+        from backend.recommendation_engine import InternshipRecommendationEngine
+        recommender = InternshipRecommendationEngine()
+        # Load the catalog into the recommender
+        recommender.internships = [internship.to_dict() for internship in CATALOG]
+        
+        # Get recommendations with marks and skill count if provided
+        recommendations = recommender.recommend_internships(
+            user_skills=payload.skills,
+            user_marks=payload.marks if hasattr(payload, 'marks') else None,
+            skill_count=len(payload.skills),
+            top_n=payload.top_k
+        )
+        
+        # Convert to the expected response model
+        return RecommendationResponse(recommendations=[
+            InternshipSchema(
+                id=item['id'],
+                title=item['title'],
+                company=item['company'],
+                location=item['location'],
+                category=item.get('domain', 'General'),
+                skills=[s['name'] if isinstance(s, dict) else s for s in item['skills_required']],
+                description=item.get('description', ''),
+                apply_link=item.get('apply_link', '#')
+            ) for item in recommendations
+        ])
+        
+    except Exception as e:
+        error_msg = f"Error generating recommendations: {str(e)}"
+        print(f"{error_msg}\n{traceback.format_exc()}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=error_msg
+        )
