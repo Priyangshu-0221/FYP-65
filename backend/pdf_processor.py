@@ -6,7 +6,7 @@ from typing import Dict, List, Optional, Union
 import pandas as pd
 from PyPDF2 import PdfReader
 
-from skill_extractor import (
+from backend.skill_extractor import (
     clean_text,
     extract_skills,
     extract_education_info,

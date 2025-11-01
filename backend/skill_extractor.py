@@ -30,19 +30,19 @@ def preprocess_text(text: str, stop_words: set[str], lemmatizer: WordNetLemmatiz
     
     return ' '.join(processed_tokens)
 
-def ensure_nltk_dependencies() -> None:
-    resources = {
-        "tokenizers/punkt": "punkt",
-        "tokenizers/punkt_tab/english": "punkt_tab",
-        "corpora/stopwords": "stopwords",
-        "corpora/wordnet": "wordnet",
-        "corpora/omw-1.4": "omw-1.4",
-    }
-    for resource_path, download_name in resources.items():
-        try:
-            nltk.data.find(resource_path)
-        except LookupError:
-            nltk.download(download_name)
+def ensure_nltk_dependencies():
+    """Ensure all required NLTK resources are downloaded."""
+    try:
+        nltk.data.find('tokenizers/punkt')
+        nltk.data.find('corpora/stopwords')
+        nltk.data.find('corpora/wordnet')
+        nltk.data.find('taggers/averaged_perceptron_tagger')
+    except LookupError:
+        import nltk
+        nltk.download('punkt')
+        nltk.download('stopwords')
+        nltk.download('wordnet')
+        nltk.download('averaged_perceptron_tagger')
 
 def preprocess_corpus(text_series: pd.Series) -> pd.Series:
     """Preprocess a series of text documents."""

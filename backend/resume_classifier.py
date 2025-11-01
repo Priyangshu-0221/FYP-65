@@ -1,18 +1,25 @@
 import argparse
+import json
 import re
 from pathlib import Path
-from typing import Union, Optional, Tuple
+from typing import Union, Optional, Tuple, Dict, Any
 
 import pandas as pd
 from PyPDF2 import PdfReader
+from sklearn.base import BaseEstimator
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 
-from skill_extractor import ensure_nltk_dependencies
+from backend.skill_extractor import ensure_nltk_dependencies
+from backend.model_utils import save_model, load_model, model_exists
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords, wordnet
 
+# Default model type
+DEFAULT_MODEL_TYPE = "logistic_regression"
 
 def extract_text_from_pdf(pdf_path: Path) -> str:
     try:
@@ -88,14 +95,28 @@ def clean_text(text: str) -> str:
 
 
 def preprocess_text(text: str, stop_words: set[str], lemmatizer: WordNetLemmatizer) -> str:
+    """
+    Preprocess text by cleaning, tokenizing, and lemmatizing.
+    
+    Args:
+        text: Input text to preprocess
+        stop_words: Set of stopwords to filter out
+        lemmatizer: NLTK lemmatizer instance
+        
+    Returns:
+        Preprocessed text string
+    """
+    if not isinstance(text, str):
+        return ""
+        
     cleaned = clean_text(text)
     tokens = word_tokenize(cleaned)
     processed_tokens = []
+    
     for token in tokens:
-        if token in stop_words or len(token) <= 2:
-            continue
-        lemma = lemmatizer.lemmatize(token)
-        processed_tokens.append(lemma)
+        if token not in stop_words and token.isalnum():
+            processed_tokens.append(lemmatizer.lemmatize(token))
+    
     return " ".join(processed_tokens)
 
 
@@ -140,32 +161,111 @@ def evaluate_model(model, X_test, y_test) -> dict:
 
 
 def predict_resume_category(model, vectorizer, resume_text: str) -> str:
-    processed_text = preprocess_corpus(pd.Series([resume_text]))[0]
-    features = vectorizer.transform([processed_text])
-    return model.predict(features)[0]
+    """
+    Predict the category of a resume.
+    
+    Args:
+        model: Trained model
+        vectorizer: Fitted TfidfVectorizer
+        resume_text: Text content of the resume
+        
+    Returns:
+        Predicted category as a string
+    """
+    if not model or not vectorizer:
+        raise ValueError("Model and vectorizer must be provided")
+        
+    try:
+        processed_text = preprocess_corpus(pd.Series([resume_text]))[0]
+        features = vectorizer.transform([processed_text])
+        return model.predict(features)[0]
+    except Exception as e:
+        print(f"Error predicting category: {e}")
+        return "unknown"
+
+
+def get_or_train_model(
+    data_path: Path,
+    model_type: str = DEFAULT_MODEL_TYPE,
+    force_retrain: bool = False,
+    **train_kwargs
+) -> Tuple[BaseEstimator, TfidfVectorizer]:
+    """
+    Get the trained model and vectorizer, loading from disk if available or training if not.
+    
+    Args:
+        data_path: Path to the training data
+        model_type: Type of model to use if training is needed
+        force_retrain: If True, force retraining even if a model exists
+        **train_kwargs: Additional arguments to pass to run_training_pipeline
+        
+    Returns:
+        Tuple of (model, vectorizer)
+    """
+    # Try to load existing model if not forcing retrain
+    if not force_retrain and model_exists():
+        print("Loading existing model from disk...")
+        model, vectorizer, _ = load_model()
+        if model is not None and vectorizer is not None:
+            return model, vectorizer
+    
+    # Train a new model if loading failed or forced
+    print("Training new model...")
+    results = run_training_pipeline(
+        data_path=data_path,
+        model_type=model_type,
+        **train_kwargs
+    )
+    
+    return results["model"], results["vectorizer"]
 
 
 def run_training_pipeline(
     data_path: Path,
-    model_type: str = "naive_bayes",
+    model_type: str = DEFAULT_MODEL_TYPE,
     test_size: float = 0.2,
     random_state: int = 42,
     max_features: int = 5000,
+    save_to_disk: bool = True,
 ) -> dict:
+    """
+    Run the training pipeline and optionally save the model to disk.
+    
+    Args:
+        data_path: Path to the resume dataset
+        model_type: Type of model to train ('naive_bayes' or 'logistic_regression')
+        test_size: Fraction of data to use for testing
+        random_state: Random seed for reproducibility
+        max_features: Maximum number of features for the TF-IDF vectorizer
+        save_to_disk: Whether to save the trained model to disk
+        
+    Returns:
+        Dictionary containing the trained model, vectorizer, and metrics
+    """
+    print(f"Loading dataset from {data_path}...")
     df = load_resume_dataset(data_path)
     processed_texts = preprocess_corpus(df["Resume"])
 
+    print("Splitting data into train/test sets...")
     X_train_texts, X_test_texts, y_train, y_test = train_test_split(
-        processed_texts, df["Category"], test_size=test_size, random_state=random_state, stratify=df["Category"]
+        processed_texts, df["Category"], 
+        test_size=test_size, 
+        random_state=random_state, 
+        stratify=df["Category"]
     )
 
+    print("Vectorizing text data...")
     vectorizer = build_vectorizer(max_features=max_features)
     vectorizer, X_train, X_test = vectorize_text(X_train_texts, X_test_texts, vectorizer)
 
+    print(f"Training {model_type} model...")
     model = train_model(X_train, y_train, model_type=model_type)
+    
+    print("Evaluating model...")
     metrics = evaluate_model(model, X_test, y_test)
-
-    return {
+    
+    # Prepare results
+    results = {
         "model": model,
         "vectorizer": vectorizer,
         "metrics": metrics,
@@ -174,6 +274,19 @@ def run_training_pipeline(
         "y_train": y_train,
         "y_test": y_test,
     }
+    
+    # Save model to disk if requested
+    if save_to_disk:
+        print("Saving model to disk...")
+        save_model(
+            model=model,
+            vectorizer=vectorizer,
+            metrics=metrics,
+            model_type=model_type,
+            data_path=data_path
+        )
+    
+    return results
 
 
 def main():

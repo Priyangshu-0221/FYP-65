@@ -13,13 +13,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-from internship_catalog import load_catalog
-from pdf_processor import PDFProcessor, process_pdf_resume
-from recommendation_engine import rank_internships
-from resume_classifier import predict_resume_category, run_training_pipeline
-from schemas import InternshipSchema, RecommendationRequest, RecommendationResponse, ResumeUploadResponse
-from settings import settings
-from skill_extractor import extract_skills_from_text, DEFAULT_SKILLS, EDUCATION_KEYWORDS, EXPERIENCE_KEYWORDS
+from backend.internship_catalog import load_catalog
+from backend.pdf_processor import PDFProcessor, process_pdf_resume
+from backend.recommendation_engine import rank_internships
+from backend.resume_classifier import predict_resume_category, get_or_train_model
+from backend.schemas import InternshipSchema, RecommendationRequest, RecommendationResponse, ResumeUploadResponse
+from backend.settings import settings
+from backend.skill_extractor import extract_skills_from_text, DEFAULT_SKILLS, EDUCATION_KEYWORDS, EXPERIENCE_KEYWORDS
 
 app = FastAPI(title="Internship Recommender", version="1.0.0")
 
@@ -33,11 +33,19 @@ app.add_middleware(
 
 CATALOG = load_catalog(settings.internship_catalog_path)
 
+# Load or train the model on startup
+print("Loading or training model...")
 try:
-    _training_results = run_training_pipeline(settings.resume_dataset_path, model_type="logistic_regression")
-    MODEL = _training_results["model"]
-    VECTORIZER = _training_results["vectorizer"]
-except Exception:
+    MODEL, VECTORIZER = get_or_train_model(
+        data_path=settings.resume_dataset_path,
+        model_type="logistic_regression",
+        test_size=0.2,
+        random_state=42,
+        max_features=5000
+    )
+    print("Model loaded successfully")
+except Exception as e:
+    print(f"Error loading/training model: {e}")
     MODEL = None
     VECTORIZER = None
 
@@ -215,6 +223,44 @@ async def upload_resume(
             
     except HTTPException:
         raise  # Re-raise HTTP exceptions as-is
+
+
+@app.post("/api/retrain-model")
+async def retrain_model():
+    """
+    Retrain the model with the latest data.
+    This is an admin endpoint that should be protected in production.
+    """
+    global MODEL, VECTORIZER
+    
+    try:
+        # Force retraining by setting force_retrain=True
+        MODEL, VECTORIZER = get_or_train_model(
+            data_path=settings.resume_dataset_path,
+            model_type="logistic_regression",
+            force_retrain=True,
+            test_size=0.2,
+            random_state=42,
+            max_features=5000
+        )
+        
+        if MODEL is None or VECTORIZER is None:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to retrain the model"
+            )
+            
+        return {
+            "success": True,
+            "message": "Model retrained successfully",
+            "model_type": MODEL.__class__.__name__
+        }
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error retraining model: {str(e)}"
+        )
         
     except Exception as e:
         error_msg = f"Unexpected error processing file: {str(e)}"
