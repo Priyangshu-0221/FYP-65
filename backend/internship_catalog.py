@@ -16,9 +16,25 @@ class Internship:
     company: str
     location: str
     category: str
-    skills: list[str]
+    skills: list
     description: str
-    apply_link: str
+    apply_link: str = "#"
+    domain: str = ""
+    skills_required: list = None
+    academic_requirements: dict = None
+
+    def __post_init__(self):
+        # For backward compatibility
+        if self.skills_required is None:
+            self.skills_required = [{"name": skill, "proficiency": "intermediate"} for skill in self.skills]
+        if not self.domain and self.category:
+            self.domain = self.category
+        if self.academic_requirements is None:
+            self.academic_requirements = {
+                "min_cgpa": 3.0,
+                "min_percentage": 65.0,
+                "preferred_majors": ["Computer Science", "Information Technology", "Related field"]
+            }
 
     def to_dict(self) -> dict:
         return {
@@ -27,9 +43,12 @@ class Internship:
             "company": self.company,
             "location": self.location,
             "category": self.category,
-            "skills": self.skills,
+            "domain": self.domain,
+            "skills": [s['name'] if isinstance(s, dict) else s for s in self.skills_required],
+            "skills_required": self.skills_required,
             "description": self.description,
             "apply_link": self.apply_link,
+            "academic_requirements": self.academic_requirements
         }
 
 
@@ -121,30 +140,49 @@ def _load_default_catalog() -> list[Internship]:
 
 def load_catalog(from_json: Path | None = None) -> list[Internship]:
     """Load internship catalog from a JSON file or fall back to defaults."""
-    if from_json is None:
-        return _load_default_catalog()
+    if from_json and from_json.exists():
+        try:
+            with open(from_json, encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, dict) and "internships" in data:
+                    data = data["internships"]
+                
+                internships = []
+                for item in data:
+                    try:
+                        # Handle both old and new format
+                        skills = item.get("skills_required", item.get("skills", []))
+                        
+                        internship = Internship(
+                            id=item.get("id", str(hash(json.dumps(item, sort_keys=True)))[:8]),
+                            title=item.get("title", ""),
+                            company=item.get("company", ""),
+                            location=item.get("location", ""),
+                            category=item.get("category", item.get("domain", "")),
+                            domain=item.get("domain", item.get("category", "")),
+                            skills=skills,  # This will be processed in __post_init__
+                            description=item.get("description", ""),
+                            apply_link=item.get("apply_link", "#"),
+                            skills_required=skills,
+                            academic_requirements=item.get("academic_requirements", {
+                                "min_cgpa": item.get("min_cgpa", 3.0),
+                                "min_percentage": item.get("min_percentage", 65.0),
+                                "preferred_majors": item.get("preferred_majors", ["Computer Science", "Related field"])
+                            })
+                        )
+                        internships.append(internship)
+                    except Exception as e:
+                        print(f"Error processing internship: {e}")
+                        continue
+                
+                return internships
+                
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"Error loading catalog from {from_json}: {e}")
+            print("Falling back to default catalog.")
 
-    if not from_json.exists():
-        raise FileNotFoundError(f"Internship catalog file not found: {from_json}")
-
-    with from_json.open("r", encoding="utf-8") as file:
-        data = json.load(file)
-
-    internships: list[Internship] = []
-    for item in data:
-        internships.append(
-            Internship(
-                id=item["id"],
-                title=item["title"],
-                company=item.get("company", ""),
-                location=item.get("location", ""),
-                category=item.get("category", ""),
-                skills=list(item.get("skills", [])),
-                description=item.get("description", ""),
-                apply_link=item.get("apply_link", ""),
-            )
-        )
-    return internships
+    # Fall back to default catalog if loading from JSON fails or no path provided
+    return _load_default_catalog()
 
 
 def to_serializable(internships: Iterable[Internship]) -> List[dict]:

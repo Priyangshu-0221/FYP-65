@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
-from pydantic import BaseSettings, Field
-
+from pydantic_settings import BaseSettings
+from pydantic import Field
 
 class Settings(BaseSettings):
     backend_host: str = Field("127.0.0.1", description="Host for the FastAPI backend")
