@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import UploadSection from "../features/UploadSection.jsx";
 import SkillsSection from "../features/SkillsSection.jsx";
 import RecommendationsSection from "../features/RecommendationsSection.jsx";
+import AcademicSection from "../features/AcademicSection.jsx";
 
 const Dashboard = ({
   file,
@@ -13,8 +14,18 @@ const Dashboard = ({
   onUpload,
   onRequestRecommendations,
 }) => {
+  const [marks, setMarks] = useState({ cgpa: "", percentage: "" });
+
+  const handleMarksChange = (field, value) => {
+    setMarks((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleRequestRecommendations = () => {
+    onRequestRecommendations(marks);
+  };
+
   return (
-    <main className="order-1 lg:order-2 flex flex-1 flex-col bg-linear-to-br from-slate-50 via-white to-slate-100 p-4 sm:p-6 text-slate-900">
+    <main className="order-1 lg:order-2 flex flex-1 flex-col bg-linear-to-br from-slate-50 via-white to-slate-100 p-4 sm:p-6 text-slate-900 overflow-y-auto">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
         <div className="space-y-1">
           <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-blue-600">
@@ -45,12 +56,16 @@ const Dashboard = ({
           onUpload={onUpload}
         />
 
+        {skills.length > 0 && (
+          <AcademicSection marks={marks} onMarksChange={handleMarksChange} />
+        )}
+
         <SkillsSection skills={skills} />
 
         <RecommendationsSection
           recommendations={recommendations}
           isRecommending={isRecommending}
-          onRequestRecommendations={onRequestRecommendations}
+          onRequestRecommendations={handleRequestRecommendations}
           skillsLength={skills.length}
         />
       </div>

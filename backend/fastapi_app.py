@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import io
+import json
 import tempfile
 import traceback
 from pathlib import Path
@@ -13,13 +14,38 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-from backend.internship_catalog import load_catalog
-from backend.pdf_processor import PDFProcessor, process_pdf_resume
-from backend.recommendation_engine import InternshipRecommendationEngine
-from backend.resume_classifier import predict_resume_category, get_or_train_model
-from backend.schemas import InternshipSchema, RecommendationRequest, RecommendationResponse, ResumeUploadResponse
-from backend.settings import settings
-from backend.skill_extractor import extract_skills_from_text, DEFAULT_SKILLS, EDUCATION_KEYWORDS, EXPERIENCE_KEYWORDS
+from .internship_catalog import load_catalog
+from .pdf_processor import PDFProcessor, process_pdf_resume
+from .recommendation_engine import InternshipRecommendationEngine
+# from .resume_classifier import predict_resume_category, get_or_train_model, run_training_pipeline
+from .schemas import InternshipSchema, RecommendationRequest, RecommendationResponse, ResumeUploadResponse
+from .settings import settings
+from .skill_extractor import extract_skills_from_text, DEFAULT_SKILLS, EDUCATION_KEYWORDS, EXPERIENCE_KEYWORDS, clean_text, tokenize_sentences
+import pandas as pd
+from datetime import datetime
+
+# Excel Logging Helper
+def log_to_excel(filename: str, data: dict):
+    """Append a row of data to an Excel file."""
+    file_path = Path("reports") / filename
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    df_new = pd.DataFrame([data])
+    
+    if file_path.exists():
+        # Append to existing file
+        with pd.ExcelWriter(file_path, mode='a', engine='openpyxl', if_sheet_exists='overlay') as writer:
+            # Load existing data to find the next row
+            try:
+                reader = pd.read_excel(file_path)
+                start_row = len(reader) + 1
+                df_new.to_excel(writer, index=False, header=False, startrow=start_row)
+            except ValueError:
+                # File might be empty or corrupted
+                df_new.to_excel(writer, index=False)
+    else:
+        # Create new file
+        df_new.to_excel(file_path, index=False)
 
 app = FastAPI(title="Internship Recommender", version="1.0.0")
 
@@ -34,20 +60,20 @@ app.add_middleware(
 CATALOG = load_catalog(settings.internship_catalog_path)
 
 # Load or train the model on startup
-print("Loading or training model...")
+# Load or train the model on startup - DEPRECATED
+print("Loading or training model - SKIPPED")
+MODEL = None
+VECTORIZER = None
+
+# Initialize recommendation engine
+print("Initializing recommendation engine...")
 try:
-    MODEL, VECTORIZER = get_or_train_model(
-        data_path=settings.resume_dataset_path,
-        model_type="logistic_regression",
-        test_size=0.2,
-        random_state=42,
-        max_features=5000
-    )
-    print("Model loaded successfully")
+    # Use the same catalog path as the app
+    RECOMMENDER = InternshipRecommendationEngine(data_path=settings.internship_catalog_path)
+    print("Recommendation engine initialized successfully")
 except Exception as e:
-    print(f"Error loading/training model: {e}")
-    MODEL = None
-    VECTORIZER = None
+    print(f"Error initializing recommendation engine: {e}")
+    RECOMMENDER = None
 
 
 def _extract_text_from_upload(content_type: str, raw_bytes: bytes) -> str:
@@ -147,31 +173,50 @@ async def upload_resume(
                     experience_keywords=EXPERIENCE_KEYWORDS
                 )
                 
-                # Try to get a category if possible, otherwise use a default
+                # Use the global model to predict category
                 category = "General"
-                try:
-                    # Try to load the model if the data is available
-                    data_dir = Path(__file__).parent.parent / "DATA" / "data"
-                    if data_dir.exists() and data_dir.is_dir():
-                        try:
-                            print(f"Loading resume data from: {data_dir}")
-                            model, vectorizer = run_training_pipeline(data_dir)
-                            category = predict_resume_category(model, vectorizer, result.get('raw_text', ''))
-                            print(f"Predicted category: {category}")
-                        except Exception as e:
-                            print(f"Warning: Could not train model: {str(e)}\n{traceback.format_exc()}")
-                            category = "General"
-                    else:
-                        print(f"Warning: Resume dataset directory not found at {data_dir}. Using default category.")
-                        category = "General"
-                except Exception as model_error:
-                    print(f"Warning: Could not predict category: {str(model_error)}")
+                # Classifier removed in favor of semantic matching
+                # if MODEL and VECTORIZER:
+                #     try:
+                #         category = predict_resume_category(MODEL, VECTORIZER, result.get('raw_text', ''))
+                #         print(f"Predicted category: {category}")
+                #     except Exception as model_error:
+                #         print(f"Warning: Could not predict category: {str(model_error)}")
+
                 
+                # Log to Excel
+                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                raw_text = result.get('raw_text', '')
+                cleaned = result.get('cleaned_text', '') or clean_text(raw_text)
+                
+                # 1. Raw Data
+                log_to_excel("raw_data.xlsx", {
+                    "Timestamp": timestamp,
+                    "Filename": file.filename,
+                    "Raw_Content": raw_text
+                })
+                
+                # 2. Cleaned Data
+                log_to_excel("cleaned_data.xlsx", {
+                    "Timestamp": timestamp,
+                    "Filename": file.filename,
+                    "Cleaned_Content": cleaned
+                })
+                
+                # 3. Tokenized Data
+                # Simple whitespace tokenization for the report
+                tokens = cleaned.split()
+                log_to_excel("tokenized_data.xlsx", {
+                    "Timestamp": timestamp,
+                    "Filename": file.filename,
+                    "Tokens": str(tokens)
+                })
+
                 return JSONResponse(
                     status_code=status.HTTP_200_OK,
                     content={
                         "success": True,
-                        "text": result.get('raw_text', '')[:1000] + '...' if len(result.get('raw_text', '')) > 1000 else result.get('raw_text', ''),
+                        "text": raw_text[:1000] + '...' if len(raw_text) > 1000 else raw_text,
                         "skills": result.get('skills', []),
                         "category": category,
                         "education": result.get('education', ''),
@@ -217,51 +262,12 @@ async def upload_resume(
                 success=True,
                 text=resume_text[:500] + '...' if len(resume_text) > 500 else resume_text,
                 skills=skills,
-                category=predict_resume_category(resume_text),
+                category="General", # Classifier removed
                 message="Text resume processed successfully"
             )
             
     except HTTPException:
         raise  # Re-raise HTTP exceptions as-is
-
-
-@app.post("/api/retrain-model")
-async def retrain_model():
-    """
-    Retrain the model with the latest data.
-    This is an admin endpoint that should be protected in production.
-    """
-    global MODEL, VECTORIZER
-    
-    try:
-        # Force retraining by setting force_retrain=True
-        MODEL, VECTORIZER = get_or_train_model(
-            data_path=settings.resume_dataset_path,
-            model_type="logistic_regression",
-            force_retrain=True,
-            test_size=0.2,
-            random_state=42,
-            max_features=5000
-        )
-        
-        if MODEL is None or VECTORIZER is None:
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail="Failed to retrain the model"
-            )
-            
-        return {
-            "success": True,
-            "message": "Model retrained successfully",
-            "model_type": MODEL.__class__.__name__
-        }
-        
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error retraining model: {str(e)}"
-        )
-        
     except Exception as e:
         error_msg = f"Unexpected error processing file: {str(e)}"
         print(error_msg, exc_info=True)
@@ -269,6 +275,9 @@ async def retrain_model():
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=error_msg
         )
+
+
+# Endpoint removed as classifier is deprecated
 
 
 @app.post("/recommend", response_model=RecommendationResponse)
@@ -285,14 +294,11 @@ async def recommend_internships(payload: RecommendationRequest) -> Recommendatio
         raise HTTPException(status_code=400, detail="No skills provided for recommendation.")
 
     try:
-        # Initialize the recommendation engine with the catalog
-        from backend.recommendation_engine import InternshipRecommendationEngine
-        recommender = InternshipRecommendationEngine()
-        # Load the catalog into the recommender
-        recommender.internships = [internship.to_dict() for internship in CATALOG]
+        if not RECOMMENDER:
+            raise HTTPException(status_code=500, detail="Recommendation engine not initialized")
         
         # Get recommendations with marks and skill count if provided
-        recommendations = recommender.recommend_internships(
+        recommendations = RECOMMENDER.recommend_internships(
             user_skills=payload.skills,
             user_marks=payload.marks if hasattr(payload, 'marks') else None,
             skill_count=len(payload.skills),

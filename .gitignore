@@ -113,7 +113,10 @@ npm-debug.log*
 coverage/
 
 # Project specific
-data/
+# Project specific
+backend/reports/
+data/*
+!data/dummy_internship_recommendations.json
 *.pdf
 *.docx
 *.doc
@@ -122,6 +125,8 @@ data/
 *.pkl
 *.model
 *.joblib
+*.sqlite
+*.db
 
 # System Files
 .DS_Store

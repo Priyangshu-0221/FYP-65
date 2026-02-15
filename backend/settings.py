@@ -11,12 +11,12 @@ class Settings(BaseSettings):
     backend_host: str = Field("127.0.0.1", description="Host for the FastAPI backend")
     backend_port: int = Field(8000, description="Port for the FastAPI backend")
     resume_dataset_path: Path = Field(
-        Path("DATA/resumes.csv"),
+        Path("DATA/data"),
         description="Path to CSV or directory used to train the resume classifier.",
     )
-    internship_catalog_path: Path | None = Field(
-        default=None,
-        description="Optional path to JSON file containing internship catalog overrides.",
+    internship_catalog_path: Path = Field(
+        default=Path("DATA/dummy_internship_recommendations.json"),
+        description="Path to JSON file containing internship catalog.",
     )
 
     class Config:

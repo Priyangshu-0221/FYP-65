@@ -1,0 +1,350 @@
+{
+  "internships": [
+    {
+      "id": "SWE-FE-001",
+      "title": "React Frontend Developer Intern",
+      "company": "PixelPerfect Solutions",
+      "location": "Bangalore, India",
+      "domain": "Web Development",
+      "description": "Join our dynamic frontend team to build high-performance web applications. You will work closely with designers to implement pixel-perfect UIs using React.js and Tailwind CSS. Experience with state management (Redux/Context API) is a plus.",
+      "requirements": [
+        "Strong proficiency in JavaScript (ES6+) and React.js",
+        "Experience with responsive web design using CSS/Tailwind",
+        "Understanding of RESTful APIs integration",
+        "Knowledge of version control (Git)"
+      ],
+      "skills_required": [
+        "React.js",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Redux",
+        "Git"
+      ],
+      "apply_link": "https://pixelperfect.example.com/careers/fe-intern"
+    },
+    {
+      "id": "SWE-BE-002",
+      "title": "Backend Engineering Intern (Python/Django)",
+      "company": "Scalable Systems Inc.",
+      "location": "Remote",
+      "domain": "Software Engineering",
+      "description": "We are looking for a backend enthusiast to help us scale our microservices architecture. You will write robust APIs using Django/FastAPI and optimize database queries for performance.",
+      "requirements": [
+        "Solid understanding of Python and Django or FastAPI",
+        "Experience with relational databases (PostgreSQL/MySQL)",
+        "Knowledge of Docker and containerization",
+        "Familiarity with cloud concepts (AWS/Azure) is a bonus"
+      ],
+      "skills_required": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "SQL",
+        "PostgreSQL",
+        "Docker",
+        "REST API"
+      ],
+      "apply_link": "https://scalable.example.com/jobs/backend-intern"
+    },
+    {
+      "id": "DS-003",
+      "title": "Data Science Intern",
+      "company": "Insight AI Labs",
+      "location": "Hyderabad, India",
+      "domain": "Data Science",
+      "description": "Work on real-world datasets to extract actionable insights. You will clean data, perform exploratory data analysis (EDA), and build predictive models using Scikit-Learn and TensorFlow.",
+      "requirements": [
+        "Proficiency in Python and data libraries (Pandas, NumPy)",
+        "Understanding of Machine Learning algorithms (Regression, Classification)",
+        "Experience with data visualization tools (Matplotlib, Seaborn)",
+        "Strong mathematical foundation (Statistics, Linear Algebra)"
+      ],
+      "skills_required": [
+        "Python",
+        "Machine Learning",
+        "Data Analysis",
+        "Pandas",
+        "NumPy",
+        "Scikit-Learn",
+        "S"
+      ],
+      "apply_link": "https://insightai.example.com/careers/ds-intern"
+    },
+    {
+      "id": "ML-004",
+      "title": "Machine Learning Engineer Intern",
+      "company": "NeuralNet Corp",
+      "location": "Pune, India",
+      "domain": "Artificial Intelligence",
+      "description": "Assist in developing and deploying deep learning models for Computer Vision and NLP tasks. Experience with PyTorch or TensorFlow is essential.",
+      "requirements": [
+        "Experience with Deep Learning frameworks (PyTorch/TensorFlow)",
+        "Knowledge of Neural Networks (CNNs, RNNs, Transformers)",
+        "Familiarity with model deployment (Flask/Streamlit)",
+        "Research mindset and ability to read academic papers"
+      ],
+      "skills_required": [
+        "Deep Learning",
+        "PyTorch",
+        "TensorFlow",
+        "Computer Vision",
+        "NLP",
+        "Python"
+      ],
+      "apply_link": "https://neuralnet.example.com/internships/ml"
+    },
+    {
+      "id": "JAVA-005",
+      "title": "Java Developer Intern",
+      "company": "Enterprise Tech Solutions",
+      "location": "Chennai, India",
+      "domain": "Software Development",
+      "description": "Contribute to enterprise-grade applications using Java and Spring Boot. You will learn about microservices, dependency injection, and secure coding practices.",
+      "requirements": [
+        "Strong core Java knowledge (OOP, Collections, Multithreading)",
+        "Familiarity with Spring Boot framework",
+        "Understanding of SQL and Hibernate/JPA",
+        "Good problem-solving skills"
+      ],
+      "skills_required": [
+        "Java",
+        "Spring Boot",
+        "SQL",
+        "OOP",
+        "Hibernate",
+        "Microservices"
+      ],
+      "apply_link": "https://enterprisetech.example.com/careers/java"
+    },
+    {
+      "id": "DA-006",
+      "title": "Data Analyst Intern",
+      "company": "GrowthMetrics",
+      "location": "Mumbai, India",
+      "domain": "Data Analytics",
+      "description": "Analyze improved business performance through data-driven decisions. You will create dashboards in Power BI/Tableau and write complex SQL queries.",
+      "requirements": [
+        "Proficiency in SQL and Excel",
+        "Experience with visualization tools (Power BI, Tableau)",
+        "Strong analytical and communication skills",
+        "Basic knowledge of Python for scripting is a plus"
+      ],
+      "skills_required": [
+        "Data Analysis",
+        "SQL",
+        "Excel",
+        "Power BI",
+        "Tableau",
+        "Communication"
+      ],
+      "apply_link": "https://growthmetrics.example.com/join/analyst"
+    },
+    {
+      "id": "MERN-007",
+      "title": "Full Stack Developer (MERN) Intern",
+      "company": "Startup Hub",
+      "location": "Gurgaon, India",
+      "domain": "Web Development",
+      "description": "Work across the entire stack from MongoDB database to React frontend. Ideal for candidates who want to build complete web applications from scratch.",
+      "requirements": [
+        "Experience with MongoDB, Express.js, React.js, Node.js",
+        "Understanding of authentication (JWT, OAuth)",
+        "Ability to design RESTful APIs",
+        "Passion for building products"
+      ],
+      "skills_required": [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "JavaScript",
+        "Full Stack"
+      ],
+      "apply_link": "https://startuphub.example.com/interns"
+    },
+    {
+      "id": "DEVOPS-008",
+      "title": "Cloud & DevOps Intern",
+      "company": "CloudNative Systems",
+      "location": "Remote",
+      "domain": "DevOps",
+      "description": "Get hands-on experience with modern cloud infrastructure. You will work with AWS services, write Dockerfiles, and set up CI/CD pipelines.",
+      "requirements": [
+        "Basic knowledge of Linux and Shell Scripting",
+        "Familiarity with AWS services (EC2, S3)",
+        "Understanding of Docker and Containerization",
+        "Interest in automation and infrastructure as code"
+      ],
+      "skills_required": [
+        "AWS",
+        "Docker",
+        "Linux",
+        "DevOps",
+        "CI/CD",
+        "Bash",
+        "Cloud Computing"
+      ],
+      "apply_link": "https://cloudnative.example.com/careers/devops"
+    },
+    {
+      "id": "ANDROID-009",
+      "title": "Android App Developer Intern",
+      "company": "Appify Studios",
+      "location": "Noida, India",
+      "domain": "Mobile Development",
+      "description": "Develop native Android applications using Kotlin. You will work on intuitive mobile UIs and integrate with backend services.",
+      "requirements": [
+        "Proficiency in Kotlin and Java",
+        "Experience with Android Studio and Gradle",
+        "Knowledge of Android Architecture Componenets (ViewModel, LiveData)",
+        "Understanding of mobile UI principles"
+      ],
+      "skills_required": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Mobile Development",
+        "XML",
+        "Firebase"
+      ],
+      "apply_link": "https://appify.example.com/internships"
+    },
+    {
+      "id": "PHP-010",
+      "title": "PHP Web Developer Intern",
+      "company": "WebWizards",
+      "location": "Kolkata, India",
+      "domain": "Web Development",
+      "description": "Maintain and enhance legacy web applications using PHP and Laravel. Great opportunity to learn backend logic and database management.",
+      "requirements": [
+        "Knowledge of PHP and MySQL",
+        "Familiarity with Laravel or CodeIgniter frameworks",
+        "Understanding of HTML/CSS/JS basics",
+        "Ability to debug and fix issues"
+      ],
+      "skills_required": [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "Backend Development"
+      ],
+      "apply_link": "https://webwizards.example.com/careers"
+    },
+    {
+      "id": "CS-011",
+      "title": "Cyber Security Intern",
+      "company": "SecureNet Defense",
+      "location": "Delhi, India",
+      "domain": "Cyber Security",
+      "description": "Assist our security team in monitoring network traffic and identifying vulnerabilities. You will learn about penetration testing and ethical hacking tools.",
+      "requirements": [
+        "Basic understanding of Networking (TCP/IP, OSI Model)",
+        "Familiarity with Linux and command line",
+        "Knowledge of security tools (Nmap, Wireshark, Metasploit) is a plus",
+        "Passion for information security"
+      ],
+      "skills_required": [
+        "Cyber Security",
+        "Network Security",
+        "Ethical Hacking",
+        "Linux",
+        "Networking",
+        "Penetration Testing"
+      ],
+      "apply_link": "https://securenet.example.com/internships"
+    },
+    {
+      "id": "UIUX-012",
+      "title": "UI/UX Designer Intern",
+      "company": "Creative Minds Design",
+      "location": "Bangalore, India",
+      "domain": "Design",
+      "description": "Create intuitive and beautiful user interfaces for web and mobile apps. You will create wireframes, prototypes, and high-fidelity mockups using Figma.",
+      "requirements": [
+        "Proficiency in Figma or Adobe XD",
+        "Strong portfolio demonstrating design skills",
+        "Understanding of user-centered design principles",
+        "Basic knowledge of HTML/CSS is helpful"
+      ],
+      "skills_required": [
+        "UI/UX Design",
+        "Figma",
+        "Prototyping",
+        "Wireframing",
+        "User Research",
+        "Adobe XD"
+      ],
+      "apply_link": "https://creativeminds.example.com/design-intern"
+    },
+    {
+      "id": "HR-013",
+      "title": "Human Resources Intern",
+      "company": "PeopleFirst Inc.",
+      "location": "Mumbai, India",
+      "domain": "Human Resources",
+      "description": "Support the HR team in recruitment, employee onboarding, and engagement activities. Great starting point for a career in HR management.",
+      "requirements": [
+        "Pursuing MBA or degree in Human Resources",
+        "Excellent communication and interpersonal skills",
+        "Proficiency in MS Office (Word, Excel, PowerPoint)",
+        "Organized and detail-oriented"
+      ],
+      "skills_required": [
+        "Human Resources",
+        "Recruitment",
+        "Communication",
+        "MS Office",
+        "Management"
+      ],
+      "apply_link": "https://peoplefirst.example.com/careers/hr"
+    },
+    {
+      "id": "MKT-014",
+      "title": "Digital Marketing Intern",
+      "company": "BrandBoost Agency",
+      "location": "Remote",
+      "domain": "Marketing",
+      "description": "Assist in planning and executing digital marketing campaigns. You will work on social media management, content creation, and basic SEO tasks.",
+      "requirements": [
+        "Knowledge of Social Media platforms (LinkedIn, Twitter, Instagram)",
+        "Basic understanding of SEO and Content Marketing",
+        "Creative thinking and good writing skills",
+        "Familiarity with tools like Canva or Google Analytics"
+      ],
+      "skills_required": [
+        "Digital Marketing",
+        "Social Media Marketing",
+        "SEO",
+        "Content Writing",
+        "Google Analytics"
+      ],
+      "apply_link": "https://brandboost.example.com/internships"
+    },
+    {
+      "id": "BA-015",
+      "title": "Business Analyst Intern",
+      "company": "Global Corp",
+      "location": "Gurgaon, India",
+      "domain": "Business Analysis",
+      "description": "Analyze business processes and bridge the gap between IT and stakeholders. You will document requirements and help in process improvement.",
+      "requirements": [
+        "Strong analytical and problem-solving skills",
+        "Proficiency in SQL and Excel",
+        "Good documentation and communication skills",
+        "Understanding of software development lifecycle (SDLC)"
+      ],
+      "skills_required": [
+        "Business Analysis",
+        "SQL",
+        "Excel",
+        "Documentation",
+        "Communication",
+        "Requirements Gathering"
+      ],
+      "apply_link": "https://globalcorp.example.com/careers/ba"
+    }
+  ]
+}

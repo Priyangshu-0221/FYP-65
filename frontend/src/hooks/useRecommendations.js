@@ -6,7 +6,7 @@ export const useRecommendations = () => {
   const [recommendations, setRecommendations] = useState([]);
   const [isRecommending, setIsRecommending] = useState(false);
 
-  const requestRecommendations = async (skills) => {
+  const requestRecommendations = async (skills, marks) => {
     if (!skills.length) {
       toast({
         title: "No skills available",
@@ -20,7 +20,7 @@ export const useRecommendations = () => {
 
     setIsRecommending(true);
     try {
-      const data = await getRecommendationsApi(skills, 6);
+      const data = await getRecommendationsApi(skills, marks, 6);
       setRecommendations(data.recommendations ?? []);
     } catch (error) {
       console.error(error);

@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import { Sidebar, Dashboard } from "./components/index.js";
-import { useResumeUpload, useRecommendations } from "./hooks/index.js";
-
-function App() {
-  // Custom hooks for state management
-  const { file, skills, isUploading, handleFileChange, uploadResume } =
-    useResumeUpload();
-
-  const { recommendations, isRecommending, requestRecommendations } =
-    useRecommendations();
-
-  // Handle recommendations request
-  const handleRequestRecommendations = () => {
-    requestRecommendations(skills);
-=======
 import React, { useMemo, useState, useEffect } from "react";
 import {
   Box,
@@ -63,10 +46,7 @@ const buildFormData = (file) => {
 };
 
 function SkillsList({ skills, isLoading }) {
-  const bgGradient = useColorModeValue(
-    'linear(to-r, teal.100, blue.100)',
-    'linear(to-r, teal.900, blue.900)'
-  );
+
 
   if (isLoading) {
     return (
@@ -232,6 +212,7 @@ function App() {
   const [isUploading, setIsUploading] = useState(false);
   const [isRecommending, setIsRecommending] = useState(false);
   const [uploadComplete, setUploadComplete] = useState(false);
+  const [marks, setMarks] = useState({ cgpa: '', percentage: '' });
   
   const bgGradient = useColorModeValue(
     'linear(to-r, teal.500, blue.500)',
@@ -331,7 +312,12 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ skills, top_k: 6 }),
+        body: JSON.stringify({ 
+          skills, 
+          top_k: 6,
+          marks: marks,
+          skill_count: skills.length
+        }),
       });
       if (!response.ok) {
         throw new Error("Failed to fetch recommendations");
@@ -350,25 +336,290 @@ function App() {
     } finally {
       setIsRecommending(false);
     }
->>>>>>> f73cf335270dde7308969e9eb874efaee26f3928
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-900 via-gray-900 to-slate-800 text-white">
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col lg:flex-row">
-        <Sidebar />
-        <Dashboard
-          file={file}
-          skills={skills}
-          recommendations={recommendations}
-          isUploading={isUploading}
-          isRecommending={isRecommending}
-          onFileChange={handleFileChange}
-          onUpload={uploadResume}
-          onRequestRecommendations={handleRequestRecommendations}
+    <Container maxW="container.xl" py={12} position="relative" overflow="hidden" minH="100vh">
+        {/* Animated Gradient Background */}
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bottom="0"
+          zIndex={-2}
+          bgGradient="linear(to-br, gray.50, blue.50, teal.50)"
+          backgroundSize="400% 400%"
+          animation="gradientBG 15s ease infinite"
+          sx={{
+            "@keyframes gradientBG": {
+              "0%": { backgroundPosition: "0% 50%" },
+              "50%": { backgroundPosition: "100% 50%" },
+              "100%": { backgroundPosition: "0% 50%" },
+            },
+          }}
         />
-      </div>
-    </div>
+
+        {/* Floating Decorative Orbs */}
+        <Box
+          position="absolute"
+          top="-10%"
+          right="-5%"
+          width="400px"
+          height="400px"
+          bg="teal.200"
+          filter="blur(100px)"
+          opacity={0.3}
+          zIndex={-1}
+          animation="float 20s ease-in-out infinite"
+          sx={{
+            "@keyframes float": {
+              "0%": { transform: "translate(0, 0)" },
+              "50%": { transform: "translate(-30px, 50px)" },
+              "100%": { transform: "translate(0, 0)" },
+            },
+          }}
+        />
+        <Box
+          position="absolute"
+          top="40%"
+          left="-10%"
+          width="500px"
+          height="500px"
+          bg="purple.200"
+          filter="blur(120px)"
+          opacity={0.3}
+          zIndex={-1}
+          animation="floatReverse 25s ease-in-out infinite"
+           sx={{
+            "@keyframes floatReverse": {
+              "0%": { transform: "translate(0, 0)" },
+              "50%": { transform: "translate(50px, -30px)" },
+              "100%": { transform: "translate(0, 0)" },
+            },
+          }}
+        />
+        <Box
+          position="absolute"
+          bottom="-10%"
+          right="20%"
+          width="300px"
+          height="300px"
+          bg="blue.200"
+          filter="blur(80px)"
+          opacity={0.3}
+          zIndex={-1}
+           animation="float 18s ease-in-out infinite"
+        />
+
+      <VStack spacing={10} align="stretch">
+        {/* Header */}
+        <VStack spacing={4} textAlign="center" py={4}>
+          <Heading 
+            size="3xl" 
+            bgGradient={bgGradient}
+            bgClip="text"
+            letterSpacing="tight"
+            pb={2}
+          >
+            Internship Recommender
+          </Heading>
+          <Text fontSize="xl" color="gray.600" maxW="2xl">
+            Unlock your career potential with AI-powered internship matching tailored to your unique skills.
+          </Text>
+        </VStack>
+
+        {/* Upload Section */}
+        <ScaleFade in={true} initialScale={0.9}>
+          <Box 
+            bg={cardBg} 
+            p={{ base: 6, md: 10 }} 
+            borderRadius="2xl" 
+            borderWidth="1px" 
+            borderColor={borderColor}
+            boxShadow="xl"
+            maxW="4xl"
+            mx="auto"
+          >
+            <VStack spacing={8}>
+              <VStack spacing={2}>
+                 <Icon as={FiFileText} boxSize={10} color="teal.500" />
+                 <Heading size="lg" color="gray.700">Upload Your Resume</Heading>
+                 <Text color="gray.500">Supported formats: PDF, DOCX, TXT</Text>
+              </VStack>
+              
+              <Box 
+                w="100%" 
+                p={10} 
+                border="2px dashed" 
+                borderColor="teal.200"
+                borderRadius="xl"
+                bg={useColorModeValue('teal.50', 'gray.700')}
+                textAlign="center"
+                transition="all 0.2s"
+                _hover={{ borderColor: "teal.400", bg: useColorModeValue('teal.100', 'gray.600') }}
+              >
+                <Input
+                  type="file"
+                  accept=".pdf,.txt,.doc,.docx"
+                  onChange={handleFileChange}
+                  display="none"
+                  id="resume-upload"
+                />
+                <label htmlFor="resume-upload">
+                  <VStack spacing={3} cursor="pointer">
+                    <Icon as={FiUpload} boxSize={8} color="teal.600" />
+                    <Button
+                      as="span"
+                      colorScheme="teal"
+                      variant="solid"
+                      size="md"
+                      px={8}
+                    >
+                      Choose File
+                    </Button>
+                    <Text fontSize="sm" color="gray.500">or drag and drop here</Text>
+                  </VStack>
+                </label>
+                {fileName && (
+                  <Fade in={true}>
+                    <HStack justify="center" mt={4} spacing={2} bg="white" p={2} borderRadius="md" display="inline-flex">
+                       <Icon as={FiCheckCircle} color="green.500" />
+                       <Text fontSize="sm" fontWeight="medium" color="gray.700">{fileName}</Text>
+                    </HStack>
+                  </Fade>
+                )}
+              </Box>
+
+              <Button
+                onClick={uploadResume}
+                isLoading={isUploading}
+                loadingText="Analyzing Resume..."
+                colorScheme="blue"
+                size="lg"
+                width="full"
+                maxW="md"
+                disabled={!file}
+                borderRadius="xl"
+                fontSize="md"
+                boxShadow="lg"
+                _hover={{ transform: 'translateY(-2px)', boxShadow: 'xl' }}
+              >
+                Start Analysis
+              </Button>
+            </VStack>
+          </Box>
+        </ScaleFade>
+
+        {/* Skills & Academic Section */}
+        {uploadComplete && (
+          <SlideFade in={true} offsetY="20px">
+            <Box 
+              bg={cardBg} 
+              p={{ base: 6, md: 8 }} 
+              borderRadius="2xl" 
+              borderWidth="1px" 
+              borderColor={borderColor}
+              boxShadow="xl"
+              maxW="4xl"
+              mx="auto"
+            >
+              <VStack spacing={8} align="stretch">
+                <HStack justify="space-between" wrap="wrap" spacing={4}>
+                  <VStack align="start" spacing={1}>
+                    <Heading size="md" color="teal.600">
+                      <Icon as={FiCheckCircle} mr={2} />
+                      Analysis Complete
+                    </Heading>
+                    <Text fontSize="sm" color="gray.500">We extracted {skills.length} skills from your profile</Text>
+                  </VStack>
+                  <Button
+                    onClick={requestRecommendations}
+                    isLoading={isRecommending}
+                    loadingText="Finding Matches..."
+                    colorScheme="teal"
+                    size="lg"
+                    leftIcon={<FiSearch />}
+                    disabled={!skills.length}
+                    borderRadius="xl"
+                    px={8}
+                    boxShadow="md"
+                    _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
+                  >
+                    Get Recommendations
+                  </Button>
+                </HStack>
+                
+                <Box bg="gray.50" p={5} borderRadius="xl">
+                   <Text fontSize="xs" fontWeight="bold" color="gray.400" textTransform="uppercase" mb={3}>Extracted Skills</Text>
+                   <SkillsList skills={skills} isLoading={false} />
+                </Box>
+
+                <Divider borderColor="gray.200" />
+                
+                <Box>
+                   <HStack mb={4} align="center">
+                      <Icon as={FiAward} color="purple.500" />
+                      <Heading size="md" fontSize="lg">Academic Details</Heading>
+                      <Badge colorScheme="purple" variant="subtle">Optional</Badge>
+                   </HStack>
+                   <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+                      <Box>
+                          <Text mb={2} fontWeight="medium" fontSize="sm" color="gray.600">CGPA</Text>
+                          <Input 
+                              placeholder="e.g. 8.5" 
+                              name="cgpa"
+                              bg="white"
+                              height="48px"
+                              borderRadius="lg"
+                              focusBorderColor="purple.400"
+                              onChange={(e) => setMarks({...marks, cgpa: e.target.value})}
+                          />
+                      </Box>
+                      <Box>
+                          <Text mb={2} fontWeight="medium" fontSize="sm" color="gray.600">Percentage</Text>
+                          <Input 
+                              placeholder="e.g. 85" 
+                              name="percentage"
+                              bg="white"
+                              height="48px"
+                              borderRadius="lg"
+                              focusBorderColor="purple.400"
+                              onChange={(e) => setMarks({...marks, percentage: e.target.value})}
+                          />
+                      </Box>
+                   </SimpleGrid>
+                </Box>
+              </VStack>
+            </Box>
+          </SlideFade>
+        )}
+
+
+        {/* Recommendations Section */}
+        {(recommendations.length > 0 || isRecommending) && (
+          <SlideFade in={true} offsetY="30px">
+            <Box 
+              bg="transparent" 
+              pt={4}
+            >
+              <VStack spacing={6} align="stretch">
+                <HStack justify="center" mb={4}>
+                   <Heading size="xl" color="gray.800" textAlign="center">
+                    Top Career Matches
+                  </Heading>
+                </HStack>
+                
+                <RecommendationGrid 
+                  recommendations={recommendations} 
+                  isLoading={isRecommending} 
+                />
+              </VStack>
+            </Box>
+          </SlideFade>
+        )}
+      </VStack>
+    </Container>
   );
 }
 
