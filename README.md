@@ -1,92 +1,118 @@
-# AI-Powered Internship Recommendation System
+# 🧠 Smart CV Analyzer: AI-Powered Internship Matching
 
-A state-of-the-art system that uses **Artificial Intelligence** and **Semantic Search** to match students with internships. Unlike simple keyword matching, this system understands the *meaning* of skills (e.g., knowing "Machine Learning" implies a fit for "Data Science" roles).
+A cutting-edge platform that uses **Semantic Artificial Intelligence** to bridge the gap between students and their dream internships. Unlike traditional systems that rely on simple keyword matching, Smart CV Analyzer understands the *context* and *meaning* behind a student's skills to find the perfect career fit.
 
-## 🚀 Key Features
+---
 
-- **🧠 Semantic Search Engine**: Uses `Sentence-Transformers` (Deep Learning) to understand the context of resumes and job descriptions.
-- **📄 Smart Resume Parsing**: Extracts Skills, Education, and Experience from PDF/Text resumes.
-- **📊 Excel Reporting Pipeline**: Automatically generates detailed reports (`raw_data.xlsx`, `cleaned_data.xlsx`, `tokenized_data.xlsx`) for every upload to visualize the AI's processing.
-- **🎓 Academic Filtering**: Considers CGPA/Percentage as a secondary filter for eligibility.
-- **💻 Modern UI**: A beautiful, animated React frontend for a premium user experience.
+## 🌟 Why This Project?
 
-## 🏗️ Project Structure
+Finding the right internship is often a chaotic process:
+*   **Students** struggle to identify which roles fit their specific skill set.
+*   **Recruiters** are overwhelmed by resumes that don't match the job description.
+*   **Traditional Portals** use "exact match" keywords (e.g., searching for "programmer" misses "developer"), leading to missed opportunities.
 
-```
-FYP-65/
-├── backend/
-│   ├── data/
-│   │   └── dummy_internship_recommendations.json  # Internship Database
-│   ├── reports/                    # Excel logs generated here
-│   ├── fastapi_app.py              # Main API Server
-│   ├── recommendation_engine.py    # AI Semantic Search Logic
-│   ├── pdf_processor.py            # PDF Text Extraction
-│   ├── skill_extractor.py          # NLP Utilities
-│   ├── schemas.py                  # API Data Models
-│   ├── settings.py                 # Config
-│   └── requirements.txt            # Python Dependencies
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx                 # Main UI Logic
-│   │   └── main.jsx
-│   └── ...
-└── README.md
-```
+**Smart CV Analyzer solves this by thinking like a human recruiter.** It reads a resume, understands that "Python" and "Data Analysis" makes you a good fit for "Data Science" (even if the term "Data Science" isn't in your CV), and recommends the best opportunities.
 
-## 🛠️ Setup Instructions
+---
+
+## 🚀 How It Works (The AI Pipeline)
+
+The system follows a sophisticated 5-step pipeline to transform a raw PDF resume into actionable career advice:
+
+### 1. **Resume Processing (OCR & NLP)**
+*   **Input**: User uploads a PDF/DOCX resume.
+*   **Extraction**: The system uses `pdf_processor` to extract raw text.
+*   **Cleaning**: Text is cleaned (removing special characters, formatting) and tokenized.
+*   **Entity Extraction**: We use **Natural Language Processing (NLP)** to identify key entities:
+    *   **Skills** (e.g., Python, React, AWS)
+    *   **Education** (Degree, College)
+    *   **Experience** (Years, Roles)
+    *   **Academic Score** (CGPA/Percentage)
+
+### 2. **Semantic Understanding (The "Brain")**
+*   **Model**: We use `Sentence-Transformers` (specifically `all-MiniLM-L6-v2`), a deep learning model pre-trained on millions of data points.
+*   **Vector Embeddings**:
+    *   The model converts the student's *skills profile* into a **high-dimensional vector** (a list of 384 numbers).
+    *   It also converts every *internship description* in our database into similar vectors.
+*   **Contextual Match**: These vectors represent the *meaning* of the text. So, "Machine Learning" and "Artificial Intelligence" will have vectors that are numerically very close, allowing the system to match them even if the words are different.
+
+### 3. **The Recommendation Engine**
+*   **Cosine Similarity**: We calculate the mathematical similarity (angle) between the **Student Vector** and every **Internship Vector**.
+*   **Hybrid Scoring**: The final score is not just AI. It's a robust weighted average:
+    *   **Semantic Score (70%)**: How well does the *meaning* match?
+    *   **Keyword Match (20%)**: Do they have the specific required hard skills?
+    *   **Academic Fit (10%)**: Do they meet the CGPA criteria?
+
+### 4. **Transparency & Reporting**
+*   **Audit Trail**: To ensure trust, the system logs every step of the data processing into Excel reports (`backend/reports/`):
+    *   `raw_data.xlsx`: What we read.
+    *   `cleaned_data.xlsx`: How we cleaned it.
+    *   `tokenized_data.xlsx`: How the AI sees it.
+
+### 5. **User Interface**
+*   A modern, responsive React frontend provides a seamless experience:
+    *   **Real-time Analysis**: See extracted skills instantly.
+    *   **Interactive Recommendations**: View job cards with similarity scores.
+    *   **Direct Application**: Apply to matched internships with one click.
+
+---
+
+## 🏗️ Technical Architecture
+
+### **Backend (Python & FastAPI)**
+*   **FastAPI**: High-performance web framework for the API.
+*   **PyTorch & Sentence-Transformers**: The core AI/Deep Learning engine.
+*   **Scikit-Learn**: For additional data processing utilities.
+*   **Pandas & OpenPyXL**: For data manipulation and Excel reporting.
+
+### **Frontend (React)**
+*   **Vite**: Next-generation frontend tooling for speed.
+*   **Chakra UI**: Component library for accessible, professional design.
+*   **Framer Motion**: For smooth, engaging animations.
+
+---
+
+## 🛠️ Setup & Installation
+
+### Prerequisites
+*   Python 3.10+
+*   Node.js 16+
 
 ### 1. Backend Setup
-The backend uses Python and powerful AI models.
-
 ```bash
 cd backend
-
-# Create virtual environment (optional but recommended)
+# Create virtual environment (Recommended)
 python -m venv venv
-# Windows: venv\Scripts\activate
-# Mac/Linux: source venv/bin/activate
+# Activate: venv\Scripts\activate (Win) or source venv/bin/activate (Mac/Linux)
 
-# Install Dependencies
+# Install Dependencies (Note: This downloads PyTorch ~2GB)
 pip install -r requirements.txt
 
-# Start Server
+# Run the API
 python run.py
 ```
-*Note: The first run will download the `all-MiniLM-L6-v2` AI model (~100MB). This happens only once.*
+*The server will start at `http://localhost:8000`.*
 
 ### 2. Frontend Setup
-The frontend is built with React and Vite.
-
 ```bash
 cd frontend
-
-# Install Dependencies
 npm install
-
-# Start UI
 npm run dev
 ```
-Access the app at `http://localhost:5173` (or the port shown in terminal).
+*Access the UI at `http://localhost:5173`.*
 
-## 📝 How It Works
+---
 
-1.  **Upload**: User uploads a Resume (PDF).
-2.  **Process**:
-    *   Text is extracted and cleaned.
-    *   Data is logged to `backend/reports/` for audit.
-    *   Skills are extracted using NLP.
-3.  **Embed**: The Resume's skills and the Internship descriptions are converted into **Vector Embeddings** (numbers representing meaning).
-4.  **Match**: We calculate the **Cosine Similarity** between the resume vector and internship vectors.
-5.  **Rank**: Jobs are ranked by Semantic Score (70%) + Keyword Match (20%) + Academic Fit (10%).
+## 📊 Data & Logs
+*   **Internship Database**: `backend/data/dummy_internship_recommendations.json` (Editable JSON).
+*   **Processing Logs**: Check `backend/reports/` after uploading a resume.
 
-## 📊 Data Pipeline Reports
+---
 
-Check the `backend/reports/` folder after uploading a resume to see:
-*   `raw_data.xlsx`: Original text.
-*   `cleaned_data.xlsx`: Pre-processed text.
-*   `tokenized_data.xlsx`: Tokenized words used by the model.
+## 🔮 Future Roadmap
+*   **Cover Letter Generator**: Auto-generate cover letters based on the matched internship.
+*   **Mock Interviewer**: AI chatbot to practice interview questions for the specific role.
+*   **Resume Scorer**: Give a score (0-100) on resume quality.
 
-## 🔗 API Endpoints
-
-- `POST /upload`: Upload a resume file. Returns extracted skills.
-- `POST /recommend`: Get top internship matches based on skills and marks.
+---
+**Developed for Final Year Project (FYP-65)**

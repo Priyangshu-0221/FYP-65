@@ -339,18 +339,18 @@ function App() {
   };
 
   return (
-    <Container maxW="container.xl" py={12} position="relative" overflow="hidden" minH="100vh">
-        {/* Animated Gradient Background */}
+    <Box minH="100vh" w="100vw" position="relative" overflow="hidden" bg="gray.50">
+        {/* Animated Gradient Background - Full Screen */}
         <Box
           position="absolute"
           top="0"
           left="0"
           right="0"
           bottom="0"
-          zIndex={-2}
-          bgGradient="linear(to-br, gray.50, blue.50, teal.50)"
+          zIndex={0}
+          bgGradient="linear(to-br, cyan.50, blue.50, purple.50)"
           backgroundSize="400% 400%"
-          animation="gradientBG 15s ease infinite"
+          animation="gradientBG 20s ease infinite"
           sx={{
             "@keyframes gradientBG": {
               "0%": { backgroundPosition: "0% 50%" },
@@ -360,97 +360,101 @@ function App() {
           }}
         />
 
-        {/* Floating Decorative Orbs */}
-        <Box
-          position="absolute"
-          top="-10%"
-          right="-5%"
-          width="400px"
-          height="400px"
-          bg="teal.200"
-          filter="blur(100px)"
-          opacity={0.3}
-          zIndex={-1}
-          animation="float 20s ease-in-out infinite"
-          sx={{
-            "@keyframes float": {
-              "0%": { transform: "translate(0, 0)" },
-              "50%": { transform: "translate(-30px, 50px)" },
-              "100%": { transform: "translate(0, 0)" },
-            },
-          }}
-        />
-        <Box
-          position="absolute"
-          top="40%"
-          left="-10%"
-          width="500px"
-          height="500px"
-          bg="purple.200"
-          filter="blur(120px)"
-          opacity={0.3}
-          zIndex={-1}
-          animation="floatReverse 25s ease-in-out infinite"
-           sx={{
-            "@keyframes floatReverse": {
-              "0%": { transform: "translate(0, 0)" },
-              "50%": { transform: "translate(50px, -30px)" },
-              "100%": { transform: "translate(0, 0)" },
-            },
-          }}
-        />
-        <Box
-          position="absolute"
-          bottom="-10%"
-          right="20%"
-          width="300px"
-          height="300px"
-          bg="blue.200"
-          filter="blur(80px)"
-          opacity={0.3}
-          zIndex={-1}
-           animation="float 18s ease-in-out infinite"
-        />
+        {/* Floating Decorative Orbs - Hidden on mobile for performance */}
+        <Box display={{ base: "none", md: "block" }}>
+            <Box
+            position="absolute"
+            top="-10%"
+            right="-5%"
+            width="500px"
+            height="500px"
+            bg="cyan.200"
+            filter="blur(120px)"
+            opacity={0.4}
+            zIndex={0}
+            animation="float 25s ease-in-out infinite"
+            sx={{
+                "@keyframes float": {
+                "0%": { transform: "translate(0, 0)" },
+                "50%": { transform: "translate(-50px, 50px)" },
+                "100%": { transform: "translate(0, 0)" },
+                },
+            }}
+            />
+            <Box
+            position="absolute"
+            top="40%"
+            left="-10%"
+            width="600px"
+            height="600px"
+            bg="purple.200"
+            filter="blur(150px)"
+            opacity={0.4}
+            zIndex={0}
+            animation="floatReverse 30s ease-in-out infinite"
+            sx={{
+                "@keyframes floatReverse": {
+                "0%": { transform: "translate(0, 0)" },
+                "50%": { transform: "translate(50px, -50px)" },
+                "100%": { transform: "translate(0, 0)" },
+                },
+            }}
+            />
+            <Box
+            position="absolute"
+            bottom="-10%"
+            right="20%"
+            width="400px"
+            height="400px"
+            bg="blue.200"
+            filter="blur(100px)"
+            opacity={0.4}
+            zIndex={0}
+            animation="float 22s ease-in-out infinite"
+            />
+        </Box>
 
-      <VStack spacing={10} align="stretch">
-        {/* Header */}
-        <VStack spacing={4} textAlign="center" py={4}>
-          <Heading 
-            size="3xl" 
-            bgGradient={bgGradient}
-            bgClip="text"
-            letterSpacing="tight"
-            pb={2}
-          >
-            Internship Recommender
-          </Heading>
-          <Text fontSize="xl" color="gray.600" maxW="2xl">
-            Unlock your career potential with AI-powered internship matching tailored to your unique skills.
-          </Text>
-        </VStack>
+      <Container maxW="container.xl" py={{ base: 8, md: 12 }} position="relative" zIndex={1}>
+        <VStack spacing={{ base: 8, md: 12 }} align="stretch">
+          {/* Header */}
+          <VStack spacing={2} textAlign="center" py={{ base: 4, md: 8 }}>
+            <Heading 
+              as="h1"
+              size={{ base: "xl", md: "2xl" }}
+              color="gray.800"
+              letterSpacing="-0.02em"
+              fontWeight="bold"
+              lineHeight="shorter"
+            >
+              Smart CV <Text as="span" color="purple.500">Analyzer</Text>
+            </Heading>
+            <Text fontSize={{ base: "md", md: "lg" }} color="gray.600" maxW="lg" px={4} fontWeight="medium" letterSpacing="wide">
+              AI-POWERED INTERNSHIP MATCHING
+            </Text>
+          </VStack>
 
         {/* Upload Section */}
         <ScaleFade in={true} initialScale={0.9}>
           <Box 
             bg={cardBg} 
             p={{ base: 6, md: 10 }} 
-            borderRadius="2xl" 
+            borderRadius={{ base: "xl", md: "2xl" }}
             borderWidth="1px" 
             borderColor={borderColor}
             boxShadow="xl"
             maxW="4xl"
             mx="auto"
           >
-            <VStack spacing={8}>
+            <VStack spacing={{ base: 6, md: 8 }}>
               <VStack spacing={2}>
-                 <Icon as={FiFileText} boxSize={10} color="teal.500" />
-                 <Heading size="lg" color="gray.700">Upload Your Resume</Heading>
-                 <Text color="gray.500">Supported formats: PDF, DOCX, TXT</Text>
+                 <Icon as={FiFileText} boxSize={{ base: 8, md: 10 }} color="teal.500" />
+                 <Heading size={{ base: "md", md: "lg" }} color="gray.700">Upload Your Resume</Heading>
+                 <Text fontSize={{ base: "sm", md: "md" }} color="gray.500">Supported formats: PDF, DOCX, TXT</Text>
               </VStack>
               
               <Box 
                 w="100%" 
-                p={10} 
+                p={{ base: 6, md: 10 }}
                 border="2px dashed" 
                 borderColor="teal.200"
                 borderRadius="xl"
@@ -468,13 +472,14 @@ function App() {
                 />
                 <label htmlFor="resume-upload">
                   <VStack spacing={3} cursor="pointer">
-                    <Icon as={FiUpload} boxSize={8} color="teal.600" />
+                    <Icon as={FiUpload} boxSize={{ base: 6, md: 8 }} color="teal.600" />
                     <Button
                       as="span"
                       colorScheme="teal"
                       variant="solid"
-                      size="md"
-                      px={8}
+                      size={{ base: "md", md: "lg" }}
+                      px={{ base: 6, md: 8 }}
+                      w={{ base: "full", sm: "auto" }}
                     >
                       Choose File
                     </Button>
@@ -483,9 +488,9 @@ function App() {
                 </label>
                 {fileName && (
                   <Fade in={true}>
-                    <HStack justify="center" mt={4} spacing={2} bg="white" p={2} borderRadius="md" display="inline-flex">
-                       <Icon as={FiCheckCircle} color="green.500" />
-                       <Text fontSize="sm" fontWeight="medium" color="gray.700">{fileName}</Text>
+                    <HStack justify="center" mt={4} spacing={2} bg="white" p={2} borderRadius="md" display="inline-flex" maxW="100%">
+                       <Icon as={FiCheckCircle} color="green.500" flexShrink={0} />
+                       <Text fontSize="sm" fontWeight="medium" color="gray.700" noOfLines={1}>{fileName}</Text>
                     </HStack>
                   </Fade>
                 )}
@@ -494,7 +499,7 @@ function App() {
               <Button
                 onClick={uploadResume}
                 isLoading={isUploading}
-                loadingText="Analyzing Resume..."
+                loadingText="Analyzing..."
                 colorScheme="blue"
                 size="lg"
                 width="full"
@@ -516,7 +521,7 @@ function App() {
           <SlideFade in={true} offsetY="20px">
             <Box 
               bg={cardBg} 
-              p={{ base: 6, md: 8 }} 
+              p={{ base: 5, md: 8 }}
               borderRadius="2xl" 
               borderWidth="1px" 
               borderColor={borderColor}
@@ -524,8 +529,8 @@ function App() {
               maxW="4xl"
               mx="auto"
             >
-              <VStack spacing={8} align="stretch">
-                <HStack justify="space-between" wrap="wrap" spacing={4}>
+              <VStack spacing={{ base: 6, md: 8 }} align="stretch">
+                <Flex direction={{ base: "column", sm: "row" }} justify="space-between" align={{ base: "stretch", sm: "center" }} gap={4}>
                   <VStack align="start" spacing={1}>
                     <Heading size="md" color="teal.600">
                       <Icon as={FiCheckCircle} mr={2} />
@@ -536,7 +541,7 @@ function App() {
                   <Button
                     onClick={requestRecommendations}
                     isLoading={isRecommending}
-                    loadingText="Finding Matches..."
+                    loadingText="Matching..."
                     colorScheme="teal"
                     size="lg"
                     leftIcon={<FiSearch />}
@@ -544,13 +549,14 @@ function App() {
                     borderRadius="xl"
                     px={8}
                     boxShadow="md"
+                    w={{ base: "full", sm: "auto" }}
                     _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                   >
                     Get Recommendations
                   </Button>
-                </HStack>
+                </Flex>
                 
-                <Box bg="gray.50" p={5} borderRadius="xl">
+                <Box bg="gray.50" p={{ base: 4, md: 5 }} borderRadius="xl">
                    <Text fontSize="xs" fontWeight="bold" color="gray.400" textTransform="uppercase" mb={3}>Extracted Skills</Text>
                    <SkillsList skills={skills} isLoading={false} />
                 </Box>
@@ -563,7 +569,7 @@ function App() {
                       <Heading size="md" fontSize="lg">Academic Details</Heading>
                       <Badge colorScheme="purple" variant="subtle">Optional</Badge>
                    </HStack>
-                   <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+                   <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 4, md: 6 }}>
                       <Box>
                           <Text mb={2} fontWeight="medium" fontSize="sm" color="gray.600">CGPA</Text>
                           <Input 
@@ -605,7 +611,7 @@ function App() {
             >
               <VStack spacing={6} align="stretch">
                 <HStack justify="center" mb={4}>
-                   <Heading size="xl" color="gray.800" textAlign="center">
+                   <Heading size={{ base: "xl", md: "2xl" }} color="gray.800" textAlign="center">
                     Top Career Matches
                   </Heading>
                 </HStack>
@@ -620,6 +626,7 @@ function App() {
         )}
       </VStack>
     </Container>
+    </Box>
   );
 }
 
