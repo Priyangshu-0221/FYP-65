@@ -256,7 +256,15 @@ function App() {
         body: formData,
       });
 
-      const responseData = await response.json();
+      const text = await response.text();
+      let responseData;
+      try {
+        responseData = JSON.parse(text);
+      } catch (e) {
+        console.error("Non-JSON response:", text);
+        throw new Error(`Server returned invalid response: ${text.substring(0, 100)}...`);
+      }
+      
       console.log('Server response:', responseData);
       
       if (!response.ok) {

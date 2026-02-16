@@ -1,55 +1,52 @@
-# Core Dependencies
-python>=3.9,<3.13
+# ============================================
+# Smart CV Analyzer - Dependencies
+# ============================================
 
-# Web Framework
-fastapi>=0.111.0
-uvicorn[standard]>=0.30.0
+# Core Python
+python>=3.8,<3.13
+
+# ============================================
+# Backend - Web Framework
+# ============================================
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
 python-multipart>=0.0.6
 
-# Data Processing
-pandas>=2.2.0
-numpy>=1.24.0
-openpyxl>=3.1.2
-PyPDF2>=3.0.1
-python-magic>=0.4.27
-python-magic-bin>=0.4.14; sys_platform == 'win32'
+# ============================================
+# Backend - Data Processing
+# ============================================
+pandas>=2.0.0
+openpyxl>=3.1.0
+PyPDF2>=3.0.0
 
-# Machine Learning
-scikit-learn>=1.4.0
-nltk>=3.8.1
-joblib>=1.3.2
-imbalanced-learn>=0.10.1
-scipy>=1.10.0
-
-# Text Processing
-spacy>=3.7.2
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
-
-# Pydantic and Validation
-pydantic>=2.7.0
+# ============================================
+# Backend - Utilities
+# ============================================
+python-dotenv>=1.0.0
+pydantic>=2.0.0
 pydantic-settings>=2.0.0
 
-# Async and Performance
-anyio>=3.7.1
-httpx>=0.24.1
+# ============================================
+# Dataset Processing (Optional)
+# ============================================
+# Required only if using process_all_resumes.py
+tqdm>=4.65.0
 
-# Development Tools
-python-dotenv>=1.0.0
-black>=23.11.0
-isort>=5.12.0
-pytest>=7.4.0
-pytest-cov>=4.1.0
-mypy>=1.5.0
-types-PyPDF2>=3.0.0.0
+# ============================================
+# Development Tools (Optional)
+# ============================================
+# Uncomment if needed for development
+# pytest>=7.4.0
+# black>=23.0.0
+# isort>=5.12.0
+# mypy>=1.5.0
 
-# Documentation
-python-multipart>=0.0.6
-
-# Code Quality
-pre-commit>=3.3.3
-flake8>=6.0.0
-mypy>=1.5.0
-
-# Testing
-pytest-asyncio>=0.21.1
-pytest-mock>=3.11.1
+# ============================================
+# Notes:
+# ============================================
+# - This is a minimal set of dependencies
+# - All packages are required for the web app
+# - tqdm is only needed for batch processing
+# - Development tools are commented out
+# - No ML dependencies (recommendation engine uses simple matching)
+# - No NLP dependencies (skill extraction uses regex)
