@@ -46,7 +46,10 @@ const buildFormData = (file) => {
 };
 
 function SkillsList({ skills, isLoading }) {
-
+  const bgGradient = useColorModeValue(
+    'linear(to-r, teal.100, blue.100)',
+    'linear(to-r, teal.900, blue.900)'
+  );
 
   if (isLoading) {
     return (
@@ -212,7 +215,6 @@ function App() {
   const [isUploading, setIsUploading] = useState(false);
   const [isRecommending, setIsRecommending] = useState(false);
   const [uploadComplete, setUploadComplete] = useState(false);
-  const [marks, setMarks] = useState({ cgpa: '', percentage: '' });
   
   const bgGradient = useColorModeValue(
     'linear(to-r, teal.500, blue.500)',
@@ -320,12 +322,7 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
-          skills, 
-          top_k: 6,
-          marks: marks,
-          skill_count: skills.length
-        }),
+        body: JSON.stringify({ skills, top_k: 6 }),
       });
       if (!response.ok) {
         throw new Error("Failed to fetch recommendations");
@@ -524,7 +521,7 @@ function App() {
           </Box>
         </ScaleFade>
 
-        {/* Skills & Academic Section */}
+        {/* Skills Section */}
         {uploadComplete && (
           <SlideFade in={true} offsetY="20px">
             <Box 
@@ -567,42 +564,6 @@ function App() {
                 <Box bg="gray.50" p={{ base: 4, md: 5 }} borderRadius="xl">
                    <Text fontSize="xs" fontWeight="bold" color="gray.400" textTransform="uppercase" mb={3}>Extracted Skills</Text>
                    <SkillsList skills={skills} isLoading={false} />
-                </Box>
-
-                <Divider borderColor="gray.200" />
-                
-                <Box>
-                   <HStack mb={4} align="center">
-                      <Icon as={FiAward} color="purple.500" />
-                      <Heading size="md" fontSize="lg">Academic Details</Heading>
-                      <Badge colorScheme="purple" variant="subtle">Optional</Badge>
-                   </HStack>
-                   <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 4, md: 6 }}>
-                      <Box>
-                          <Text mb={2} fontWeight="medium" fontSize="sm" color="gray.600">CGPA</Text>
-                          <Input 
-                              placeholder="e.g. 8.5" 
-                              name="cgpa"
-                              bg="white"
-                              height="48px"
-                              borderRadius="lg"
-                              focusBorderColor="purple.400"
-                              onChange={(e) => setMarks({...marks, cgpa: e.target.value})}
-                          />
-                      </Box>
-                      <Box>
-                          <Text mb={2} fontWeight="medium" fontSize="sm" color="gray.600">Percentage</Text>
-                          <Input 
-                              placeholder="e.g. 85" 
-                              name="percentage"
-                              bg="white"
-                              height="48px"
-                              borderRadius="lg"
-                              focusBorderColor="purple.400"
-                              onChange={(e) => setMarks({...marks, percentage: e.target.value})}
-                          />
-                      </Box>
-                   </SimpleGrid>
                 </Box>
               </VStack>
             </Box>
