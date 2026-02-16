@@ -8,19 +8,42 @@ from pathlib import Path
 from typing import Dict, List, Set
 from PyPDF2 import PdfReader
 
-# Comprehensive skills list
+# Comprehensive skills list across various domains
 SKILLS = {
+    # --- Technical / Software ---
     'python', 'java', 'c++', 'javascript', 'typescript', 'react', 'angular', 'vue',
     'node', 'nodejs', 'express', 'django', 'flask', 'fastapi', 'spring', 'html', 'css',
     'sql', 'mysql', 'postgresql', 'mongodb', 'redis', 'docker', 'kubernetes', 'aws',
     'azure', 'gcp', 'git', 'github', 'linux', 'windows', 'machine learning', 'ml',
     'deep learning', 'data science', 'artificial intelligence', 'ai', 'nlp',
     'computer vision', 'tensorflow', 'pytorch', 'scikit-learn', 'pandas', 'numpy',
-    'matplotlib', 'seaborn', 'excel', 'powerpoint', 'word', 'communication',
-    'leadership', 'teamwork', 'problem solving', 'analytical', 'accounting',
-    'finance', 'tally', 'quickbooks', 'sap', 'oracle', 'taxation', 'audit',
+    'matplotlib', 'seaborn', 'statistics', 'r programming', 'matlab', 'selenium', 
+    'automation', 'testing', 'devops', 'backend', 'frontend', 'fullstack',
+
+    # --- Finance / Accounting ---
+    'accounting', 'finance', 'tally', 'quickbooks', 'sap', 'oracle', 'taxation', 'audit',
     'financial analysis', 'budgeting', 'forecasting', 'excel vba', 'power bi',
-    'tableau', 'data analysis', 'statistics', 'r programming', 'matlab'
+    'tableau', 'data analysis', 'economics', 'risk management', 'compliance',
+
+    # --- HR / Management / Sales ---
+    'recruitment', 'interviewing', 'talent', 'sourcing', 'training', 'presentation', 
+    'leadership', 'teamwork', 'problem solving', 'analytical', 'crm', 'negotiation',
+    'sales', 'marketing', 'business development', 'strategy', 'operations', 
+    'human resources', 'hr', 'management', 'communication', 'public relations',
+
+    # --- Marketing / Design ---
+    'digital marketing', 'social media', 'seo', 'sem', 'content writing', 'copywriting',
+    'advertising', 'branding', 'figma', 'sketch', 'adobe xd', 'photoshop', 'illustrator',
+    'graphic design', 'ui design', 'ux design', 'ui ux', 'prototyping',
+
+    # --- Healthcare / Science / Bio ---
+    'healthcare', 'patient care', 'hipaa', 'nursing', 'medical terminology', 'clinical',
+    'biology', 'chemistry', 'laboratory', 'experiments', 'research', 'public health',
+
+    # --- Engineering (Civil/Mechanical/Electrical) ---
+    'autocad', 'solidworks', 'cad', 'circuitry', 'manufacturing', 'structural design',
+    'civil engineering', 'mechanical engineering', 'electrical engineering', 
+    'blueprints', 'robotics', 'energy'
 }
 
 # Education keywords

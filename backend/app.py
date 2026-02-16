@@ -116,156 +116,102 @@ async def upload_resume(file: UploadFile = File(...)):
 @app.post("/recommend")
 async def recommend_internships(payload: dict):
     """
-    Get internship recommendations based on skills
+    Get internship recommendations based on skills with scoring for better relevance.
     """
-    skills = payload.get('skills', [])
+    user_skills = [s.lower() for s in payload.get('skills', [])]
     top_k = payload.get('top_k', 6)
     
-    if not skills:
+    if not user_skills:
         raise HTTPException(status_code=400, detail="No skills provided")
     
-    # Dummy internship database
+    # Expanded Dummy Internship Database
     all_internships = [
-        {
-            "id": "1",
-            "title": "Software Developer Intern",
-            "company": "Tech Innovations Inc",
-            "location": "Remote",
-            "category": "Software Development",
-            "skills": ["python", "java", "sql", "git"],
-            "description": "Join our team to build scalable web applications using modern technologies. Work on real-world projects and learn from experienced developers.",
-            "apply_link": "https://example.com/apply/1"
-        },
-        {
-            "id": "2",
-            "title": "Frontend Developer Intern",
-            "company": "WebCraft Studios",
-            "location": "San Francisco, CA",
-            "category": "Web Development",
-            "skills": ["react", "javascript", "html", "css", "typescript"],
-            "description": "Create beautiful, responsive user interfaces for our web applications. Learn modern frontend frameworks and best practices.",
-            "apply_link": "https://example.com/apply/2"
-        },
-        {
-            "id": "3",
-            "title": "Data Science Intern",
-            "company": "DataMinds Analytics",
-            "location": "New York, NY",
-            "category": "Data Science",
-            "skills": ["python", "machine learning", "pandas", "numpy", "sql"],
-            "description": "Analyze large datasets and build predictive models. Gain hands-on experience with ML algorithms and data visualization.",
-            "apply_link": "https://example.com/apply/3"
-        },
-        {
-            "id": "4",
-            "title": "Mobile App Developer Intern",
-            "company": "AppVenture Labs",
-            "location": "Austin, TX",
-            "category": "Mobile Development",
-            "skills": ["react native", "javascript", "android", "ios"],
-            "description": "Develop cross-platform mobile applications for iOS and Android. Work with cutting-edge mobile technologies.",
-            "apply_link": "https://example.com/apply/4"
-        },
-        {
-            "id": "5",
-            "title": "DevOps Engineer Intern",
-            "company": "CloudOps Solutions",
-            "location": "Seattle, WA",
-            "category": "DevOps",
-            "skills": ["docker", "kubernetes", "aws", "linux", "ci/cd"],
-            "description": "Learn cloud infrastructure and automation. Help maintain and improve our deployment pipelines.",
-            "apply_link": "https://example.com/apply/5"
-        },
-        {
-            "id": "6",
-            "title": "Backend Developer Intern",
-            "company": "ServerSide Tech",
-            "location": "Remote",
-            "category": "Backend Development",
-            "skills": ["node.js", "python", "django", "postgresql", "rest api"],
-            "description": "Build robust backend systems and APIs. Work with databases, authentication, and server-side logic.",
-            "apply_link": "https://example.com/apply/6"
-        },
-        {
-            "id": "7",
-            "title": "Machine Learning Intern",
-            "company": "AI Research Labs",
-            "location": "Boston, MA",
-            "category": "Artificial Intelligence",
-            "skills": ["python", "tensorflow", "pytorch", "deep learning", "nlp"],
-            "description": "Research and implement ML models for real-world applications. Work on NLP, computer vision, and more.",
-            "apply_link": "https://example.com/apply/7"
-        },
-        {
-            "id": "8",
-            "title": "Full Stack Developer Intern",
-            "company": "FullStack Ventures",
-            "location": "Chicago, IL",
-            "category": "Full Stack Development",
-            "skills": ["react", "node.js", "mongodb", "express", "javascript"],
-            "description": "Work on both frontend and backend of modern web applications. MERN stack experience preferred.",
-            "apply_link": "https://example.com/apply/8"
-        },
-        {
-            "id": "9",
-            "title": "Cybersecurity Intern",
-            "company": "SecureNet Systems",
-            "location": "Washington, DC",
-            "category": "Cybersecurity",
-            "skills": ["network security", "python", "linux", "penetration testing"],
-            "description": "Learn about security vulnerabilities and how to protect systems. Conduct security audits and assessments.",
-            "apply_link": "https://example.com/apply/9"
-        },
-        {
-            "id": "10",
-            "title": "UI/UX Design Intern",
-            "company": "DesignFirst Agency",
-            "location": "Los Angeles, CA",
-            "category": "Design",
-            "skills": ["figma", "adobe xd", "ui design", "ux research", "prototyping"],
-            "description": "Create user-centered designs for web and mobile applications. Conduct user research and usability testing.",
-            "apply_link": "https://example.com/apply/10"
-        },
-        {
-            "id": "11",
-            "title": "Cloud Engineer Intern",
-            "company": "CloudScale Technologies",
-            "location": "Remote",
-            "category": "Cloud Computing",
-            "skills": ["aws", "azure", "gcp", "terraform", "python"],
-            "description": "Build and manage cloud infrastructure. Learn about scalable architectures and cloud-native applications.",
-            "apply_link": "https://example.com/apply/11"
-        },
-        {
-            "id": "12",
-            "title": "QA Automation Intern",
-            "company": "TestPro Solutions",
-            "location": "Denver, CO",
-            "category": "Quality Assurance",
-            "skills": ["selenium", "python", "testing", "automation", "ci/cd"],
-            "description": "Develop automated test suites and ensure software quality. Learn testing frameworks and best practices.",
-            "apply_link": "https://example.com/apply/12"
-        }
+        # --- TECHNICAL ROLES ---
+        {"id": "1", "title": "Software Developer Intern", "company": "Tech Innovations", "location": "Remote", "category": "Software", "skills": ["python", "java", "sql", "git"], "description": "Build scalable apps using Python and Java.", "apply_link": "#"},
+        {"id": "2", "title": "Frontend Intern", "company": "WebCraft", "location": "SF, CA", "category": "Web", "skills": ["react", "javascript", "html", "css"], "description": "Create amazing user experiences with React.", "apply_link": "#"},
+        {"id": "3", "title": "Data Analyst Intern", "company": "Insight Data", "location": "NYC", "category": "Data", "skills": ["python", "sql", "pandas", "tableau"], "description": "Turn complex data into actionable insights.", "apply_link": "#"},
+        {"id": "4", "title": "Full Stack Intern", "company": "MERN Systems", "location": "Remote", "category": "Web", "skills": ["mongodb", "express", "react", "node.js"], "description": "Develop end-to-end web solutions.", "apply_link": "#"},
+        {"id": "5", "title": "AI/ML Intern", "company": "Neural Hub", "location": "Austin, TX", "category": "AI", "skills": ["python", "tensorflow", "pytorch", "scikit-learn"], "description": "Assist in building next-gen ML models.", "apply_link": "#"},
+        {"id": "6", "title": "DevOps Intern", "company": "CloudScale", "location": "Seattle, WA", "category": "Cloud", "skills": ["docker", "kubernetes", "aws", "linux"], "description": "Automate deployment pipelines and cloud infrastructure.", "apply_link": "#"},
+        {"id": "7", "title": "Cybersecurity Intern", "company": "GuardNet", "location": "Washington DC", "category": "Security", "skills": ["linux", "security", "networking", "python"], "description": "Protect systems from cyber threats.", "apply_link": "#"},
+        {"id": "8", "title": "Mobile Developer Intern", "company": "AppFlow", "location": "San Jose, CA", "category": "Mobile", "skills": ["swift", "kotlin", "flutter", "dart"], "description": "Build native and cross-platform mobile apps.", "apply_link": "#"},
+        
+        # --- FINANCE & ACCOUNTING ---
+        {"id": "9", "title": "Tax Accountant Intern", "company": "Finance Pros", "location": "Chicago, IL", "category": "Finance", "skills": ["accounting", "tax", "excel", "finance"], "description": "Support tax preparation and financial reporting.", "apply_link": "#"},
+        {"id": "10", "title": "Investment Analyst Intern", "company": "Peak Capital", "location": "Boston, MA", "category": "Finance", "skills": ["economics", "finance", "excel", "analytical"], "description": "Analyze market trends and investment opportunities.", "apply_link": "#"},
+        {"id": "11", "title": "Risk Management Intern", "company": "SafeGuard Bank", "location": "London, UK", "category": "Finance", "skills": ["risk", "compliance", "finance", "audit"], "description": "Identify and mitigate financial risks.", "apply_link": "#"},
+
+        # --- HR & MANAGEMENT ---
+        {"id": "12", "title": "HR Specialist Intern", "company": "People Power", "location": "Atlanta, GA", "category": "HR", "skills": ["recruitment", "interviewing", "sourcing", "communication"], "description": "Help find and hire top talent.", "apply_link": "#"},
+        {"id": "13", "title": "Training Coordinator Intern", "company": "SkillUp Corp", "location": "Dallas, TX", "category": "HR", "skills": ["training", "presentation", "leadership", "organization"], "description": "Organize employee development programs.", "apply_link": "#"},
+        {"id": "14", "title": "Business Development Intern", "company": "Growth Engine", "location": "Denver, CO", "category": "Sales", "skills": ["sales", "negotiation", "crm", "marketing"], "description": "Assist in sales outreach and market expansion.", "apply_link": "#"},
+
+        # --- MARKETING & DESIGN ---
+        {"id": "15", "title": "Digital Marketer Intern", "company": "Social Buzz", "location": "Miami, FL", "category": "Marketing", "skills": ["seo", "social media", "content", "analytics"], "description": "Manage online marketing campaigns.", "apply_link": "#"},
+        {"id": "16", "title": "UX/UI Designer Intern", "company": "Pixel Perfect", "location": "Remote", "category": "Design", "skills": ["figma", "sketch", "adobe xd", "prototyping"], "description": "Design user-centric web & mobile interfaces.", "apply_link": "#"},
+        {"id": "17", "title": "Graphic Design Intern", "company": "Creative Hub", "location": "Paris, FR", "category": "Design", "skills": ["photoshop", "illustrator", "branding", "layout"], "description": "Create stunning visual assets for brands.", "apply_link": "#"},
+        {"id": "18", "title": "Public Relations Intern", "company": "Global PR", "location": "New York, NY", "category": "PR", "skills": ["writing", "media", "networking", "press"], "description": "Assist in drafting press releases and media outreach.", "apply_link": "#"},
+
+        # --- HEALTHCARE & SCIENCE ---
+        {"id": "19", "title": "Healthcare Admin Intern", "company": "City Hospital", "location": "Phoenix, AZ", "category": "Healthcare", "skills": ["management", "healthcare", "hipaa", "organization"], "description": "Support day-to-day hospital operations.", "apply_link": "#"},
+        {"id": "20", "title": "Lab Research Intern", "company": "BioScience Lab", "location": "San Diego, CA", "category": "Science", "skills": ["biology", "chemistry", "research", "documentation"], "description": "Conduct laboratory experiments and data tracking.", "apply_link": "#"},
+        {"id": "21", "title": "Public Health Intern", "company": "Health First", "location": "Philadelphia, PA", "category": "Healthcare", "skills": ["epidemiology", "health", "advocacy", "research"], "description": "Work on community health outreach programs.", "apply_link": "#"},
+
+        # --- ENGINEERING ---
+        {"id": "22", "title": "Civil Engineer Intern", "company": "BuildRight", "location": "Chicago, IL", "category": "Engineering", "skills": ["autocad", "math", "construction", "design"], "description": "Assist in structural design and blueprint mapping.", "apply_link": "#"},
+        {"id": "23", "title": "Mechanical Intern", "company": "Apex Motors", "location": "Detroit, MI", "category": "Engineering", "skills": ["solidworks", "cad", "mechanics", "manufacturing"], "description": "Support machine testing and part design.", "apply_link": "#"},
+        {"id": "24", "title": "Electrical Intern", "company": "PowerGrid", "location": "Houston, TX", "category": "Engineering", "skills": ["circuitry", "matlab", "embedded", "testing"], "description": "Help design and test electrical components.", "apply_link": "#"},
+
+        # --- LEGAL & EDUCATION ---
+        {"id": "25", "title": "Legal Assistant Intern", "company": "Lex Chambers", "location": "Toronto, CA", "category": "Legal", "skills": ["research", "writing", "law", "contracts"], "description": "Assist lawyers with case research and paperwork.", "apply_link": "#"},
+        {"id": "26", "title": "Elementary Tutor Intern", "company": "Bright Kids", "location": "Sydney, AU", "category": "Education", "skills": ["teaching", "patience", "writing", "english"], "description": "Support young learners in core subjects.", "apply_link": "#"},
+        {"id": "27", "title": "Content Writer Intern", "company": "Edit Masters", "location": "Remote", "category": "Writing", "skills": ["blogging", "editing", "seo", "storytelling"], "description": "Write engaging articles and website content.", "apply_link": "#"},
+
+        # --- CUSTOMER SERVICE & SALES ---
+        {"id": "28", "title": "Sales Development Intern", "company": "Deal Makers", "location": "Remote", "category": "Sales", "skills": ["crm", "outreach", "sales", "prospecting"], "description": "Drive leads through outbound prospecting.", "apply_link": "#"},
+        {"id": "29", "title": "Client Success Intern", "company": "Satisfy Tech", "location": "Portland, OR", "category": "Support", "skills": ["communication", "support", "empathy", "tickets"], "description": "Help customers solve problems and ensure success.", "apply_link": "#"},
+        
+        # --- NEW VARIED CATEGORIES ---
+        {"id": "30", "title": "Agriculture Tech Intern", "company": "FarmSense", "location": "Iowa", "category": "Agriculture", "skills": ["python", "sensors", "data", "farming"], "description": "Use tech to optimize crop yields.", "apply_link": "#"},
+        {"id": "31", "title": "Hospitality Intern", "company": "Star Resorts", "location": "Hawaii", "category": "Hospitality", "skills": ["management", "service", "tourism", "organization"], "description": "Learn luxury hotel operations.", "apply_link": "#"},
+        {"id": "32", "title": "Supply Chain Intern", "company": "LogiRoute", "location": "Memphis, TN", "category": "Logistics", "skills": ["inventory", "planning", "excel", "purchasing"], "description": "Coordinate shipping and inventory management.", "apply_link": "#"},
+        {"id": "33", "title": "Sustainable Energy Intern", "company": "EcoPower", "location": "Copenhagen", "category": "Energy", "skills": ["energy", "policy", "solar", "wind"], "description": "Research renewable energy solutions.", "apply_link": "#"},
+        {"id": "34", "title": "Fashion Merchandiser Intern", "company": "StyleHouse", "location": "Milan, IT", "category": "Fashion", "skills": ["trends", "marketing", "buying", "research"], "description": "Assist in seasonal trend analysis.", "apply_link": "#"},
+        {"id": "35", "title": "Social Impact Intern", "company": "Green Future", "location": "Remote", "category": "NGO", "skills": ["advocacy", "writing", "non-profit", "fundraising"], "description": "Coordinate donation and impact campaigns.", "apply_link": "#"}
     ]
     
-    # Simple matching: return internships that match any of the user's skills
-    matched_internships = []
-    for internship in all_internships:
-        # Check if any user skill matches any internship skill
-        skill_match = any(
-            user_skill.lower() in [s.lower() for s in internship['skills']]
-            for user_skill in skills
-        )
-        if skill_match:
-            matched_internships.append(internship)
+    # Matching Logic with Scoring
+    results = []
+    import random
     
-    # If no matches, return all internships
-    if not matched_internships:
-        matched_internships = all_internships
+    for job in all_internships:
+        job_skills = [s.lower() for s in job['skills']]
+        # Intersection of user skills and job skills
+        matches = list(set(user_skills) & set(job_skills))
+        score = len(matches)
+        
+        # Add a tiny bit of randomness to equal scores so results look fresh
+        final_score = score + (random.random() * 0.1)
+        
+        if score > 0:
+            results.append({
+                "internship": job,
+                "score": final_score,
+                "match_count": score
+            })
+            
+    # Sort by score descending
+    results.sort(key=lambda x: x['score'], reverse=True)
     
-    # Return top_k internships
+    # Take top K recommendation objects
+    recommended_jobs = [r['internship'] for r in results[:top_k]]
+    
+    # Fallback: If no matches, give some diverse suggestions
+    if not recommended_jobs:
+        recommended_jobs = random.sample(all_internships, k=min(top_k, len(all_internships)))
+    
     return {
-        "recommendations": matched_internships[:top_k]
+        "recommendations": recommended_jobs
     }
 
 
