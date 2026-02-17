@@ -7,8 +7,14 @@ Creates 3 Excel files:
 """
 
 import re
-import pandas as pd
+import sys
+import os
 from pathlib import Path
+
+# Add project root to Python path so we can import backend modules
+sys.path.append(str(Path(__file__).parent.parent))
+
+import pandas as pd
 from backend.extractor import process_resume
 from tqdm import tqdm
 
@@ -121,7 +127,8 @@ def process_all_resumes(data_dir: str, max_resumes: int = None):
                     'category': result['category'],
                     'tokenized_text': tokenized_text,
                     'token_count': len(tokenized_text.split()),
-                    'skills': ', '.join(result['skills'])
+                    'skills': ', '.join(result['skills']),
+                    'skill_count': result['skills_count']
                 })
                 
                 total_processed += 1
@@ -129,9 +136,11 @@ def process_all_resumes(data_dir: str, max_resumes: int = None):
     print(f"\n\nTotal resumes processed: {total_processed}")
     
     # Save to Excel files
+    # Save to Excel files
     print("\nSaving to Excel files...")
     
-    output_dir = Path("DATA/processed")
+    # Save processed data in DATA/processed, relative to the project root
+    output_dir = Path(data_dir).parent / "processed"
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # Save raw data
@@ -161,8 +170,10 @@ if __name__ == "__main__":
     # Change to None to process ALL resumes
     
     # Use Path to handle the directory correctly
-    base_dir = Path(__file__).parent
-    data_directory = base_dir / "DATA" / "data"
+    script_dir = Path(__file__).parent
+    # Project root is one level up from scripts
+    project_root = script_dir.parent
+    data_directory = project_root / "DATA" / "data"
     
     print("=== Resume Processing Pipeline ===\n")
     print(f"Looking for resumes in: {data_directory}\n")

@@ -14,6 +14,7 @@ class ResumeUploadResponse(BaseModel):
     category: str = Field("", description="Predicted category from classifier")
     education: str = Field("", description="Extracted education information")
     experience: str = Field("", description="Extracted experience information")
+    skill_count: int = Field(0, description="Total number of extracted skills")
     message: str = Field("", description="Status message about the processing")
 
 

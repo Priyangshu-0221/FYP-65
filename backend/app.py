@@ -88,6 +88,7 @@ async def upload_resume(file: UploadFile = File(...)):
                     "category": "General",
                     "education": result['education'],
                     "experience": result['experience'],
+                    "skill_count": result['skills_count'],
                     "cgpa": result['cgpa'],
                     "percentage": result['percentage']
                 }
