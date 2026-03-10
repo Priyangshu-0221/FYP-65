@@ -96,6 +96,7 @@ def run_evaluation():
     latencies = []
     precision_k = []
     recall_k = []
+    accuracy_scores = []
     
     # Robustness noise test counter
     noise_drops = []
@@ -144,6 +145,9 @@ def run_evaluation():
         prec = hits / max(1, len(recs)) if recs else 0
         precision_k.append(prec)
         
+        # Accuracy@k = 1 if at least one hit, else 0
+        accuracy_scores.append(1 if hits > 0 else 0)
+        
         # Recall@k = Hits / total_relevant_in_database
         rec = hits / total_relevant
         recall_k.append(rec)
@@ -169,6 +173,7 @@ def run_evaluation():
     avg_precision = np.mean(precision_k) if precision_k else 0
     avg_recall = np.mean(recall_k) if recall_k else 0
     f1_score = 2 * (avg_precision * avg_recall) / (avg_precision + avg_recall) if (avg_precision + avg_recall) > 0 else 0
+    avg_accuracy = np.mean(accuracy_scores) if accuracy_scores else 0
     
     avg_latency = np.mean(latencies) if latencies else 0
     p95_latency = np.percentile(latencies, 95) if latencies else 0
@@ -182,6 +187,7 @@ def run_evaluation():
     print("="*60)
     
     data = [
+        ["Accuracy@5", f"{avg_accuracy:.4f} ({avg_accuracy*100:.1f}%)"],
         ["Precision@5", f"{avg_precision:.4f} ({avg_precision*100:.1f}%)"],
         ["Recall@5", f"{avg_recall:.4f} ({avg_recall*100:.1f}%)"],
         ["F1-Score", f"{f1_score:.4f} ({f1_score*100:.1f}%)"],
@@ -210,7 +216,7 @@ def run_evaluation():
     export_data = {
         "Metric": [row[0] for row in data],
         "Value_String": [row[1] for row in data],
-        "Raw_Score": [avg_precision, avg_recall, f1_score, avg_latency, p95_latency, robustness_score]
+        "Raw_Score": [avg_accuracy, avg_precision, avg_recall, f1_score, avg_latency, p95_latency, robustness_score]
     }
     
     df_metrics = pd.DataFrame(export_data)
