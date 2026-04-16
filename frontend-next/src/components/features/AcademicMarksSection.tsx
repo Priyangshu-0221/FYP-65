@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import type { AcademicMarks } from "@/types/app";
 import { GraduationCap } from "lucide-react";
+import { toast } from "react-toastify";
 
 interface AcademicMarksSectionProps {
   onMarksChange: (marks: AcademicMarks) => void;
@@ -19,29 +20,51 @@ export function AcademicMarksSection({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const parsedCgpa = cgpa ? parseFloat(cgpa) : undefined;
+    const parsedPercentage = percentage ? parseFloat(percentage) : undefined;
+
+    if (
+      parsedCgpa !== undefined &&
+      (!Number.isFinite(parsedCgpa) || parsedCgpa < 0 || parsedCgpa > 10)
+    ) {
+      toast.error("CGPA must be between 0 and 10");
+      return;
+    }
+
+    if (
+      parsedPercentage !== undefined &&
+      (!Number.isFinite(parsedPercentage) ||
+        parsedPercentage < 0 ||
+        parsedPercentage > 100)
+    ) {
+      toast.error("Percentage must be between 0 and 100");
+      return;
+    }
+
     const marks: AcademicMarks = {};
-    if (cgpa) marks.cgpa = parseFloat(cgpa);
-    if (percentage) marks.percentage = parseFloat(percentage);
+    if (parsedCgpa !== undefined) marks.cgpa = parsedCgpa;
+    if (parsedPercentage !== undefined) marks.percentage = parsedPercentage;
     onMarksChange(marks);
   };
 
   return (
-    <Card className="app-surface border-[#d8e0ed] p-6">
-      <div className="space-y-4">
+    <Card className="app-surface border-[#d4d4d4] p-4 sm:p-5 md:p-6">
+      <div className="space-y-3 sm:space-y-4">
         <div>
-          <h2 className="mb-2 flex items-center gap-2 text-xl font-bold text-[#1d3b72]">
+          <h2 className="mb-2 flex items-center gap-2 text-xl font-bold text-[#111111]">
             <GraduationCap className="h-5 w-5" />
             Academic Information
           </h2>
-          <p className="text-sm text-[#5a687d]">
+          <p className="text-sm text-[#4a4a4a]">
             (Optional) Add your academic marks for better recommendations
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
             <div>
-              <label className="mb-2 block text-sm font-medium text-[#33435f]">
+              <label className="mb-2 block text-sm font-medium text-[#1f1f1f]">
                 CGPA
               </label>
               <Input
@@ -56,7 +79,7 @@ export function AcademicMarksSection({
               />
             </div>
             <div>
-              <label className="mb-2 block text-sm font-medium text-[#33435f]">
+              <label className="mb-2 block text-sm font-medium text-[#1f1f1f]">
                 Percentage
               </label>
               <Input

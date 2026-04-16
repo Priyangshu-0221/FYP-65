@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { FileCheck2, FileText, Loader2, UploadCloud } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "react-toastify";
 
 interface UploadSectionProps {
   onUpload: (file: File) => Promise<unknown>;
@@ -71,19 +71,21 @@ export function UploadSection({
       toast.success("Resume uploaded successfully!");
     } catch (error) {
       console.error("Upload error:", error);
-      // Error toast is shown by parent component
+      const message =
+        error instanceof Error ? error.message : "Failed to upload resume";
+      toast.error(message);
     }
   };
 
   return (
-    <Card className="app-surface border-[#d8e0ed] p-8">
+    <Card className="app-surface border-[#d4d4d4] p-4 sm:p-6 md:p-8">
       <div className="space-y-4">
         <div>
-          <h2 className="mb-2 flex items-center gap-2 text-2xl font-bold text-[#1d3b72]">
+          <h2 className="mb-2 flex items-center gap-2 text-2xl font-bold text-[#111111]">
             <FileCheck2 className="h-6 w-6" />
             Upload Your Resume
           </h2>
-          <p className="text-[#5a687d]">
+          <p className="text-[#4a4a4a]">
             Upload a PDF resume to extract skills and get personalized
             recommendations
           </p>
@@ -94,10 +96,10 @@ export function UploadSection({
           onDragLeave={handleDrag}
           onDragOver={handleDrag}
           onDrop={handleDrop}
-          className={`cursor-pointer rounded-xl border-2 border-dashed p-8 text-center transition-colors ${
+          className={`cursor-pointer rounded-xl border-2 border-dashed p-5 text-center transition-colors sm:p-6 md:p-8 ${
             dragActive
-              ? "border-[#27549f] bg-[#eef3fb]"
-              : "border-[#c8d4e9] bg-[#fbfcff] hover:border-[#27549f]"
+              ? "border-black bg-[#f1f1f1]"
+              : "border-[#bcbcbc] bg-[#fafafa] hover:border-black"
           }`}
           onClick={() => fileInputRef.current?.click()}
         >
@@ -111,14 +113,14 @@ export function UploadSection({
           />
 
           <div className="space-y-2">
-            <p className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#c8d4e9] bg-white text-[#1d3b72]">
+            <p className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#bcbcbc] bg-white text-[#111111]">
               <FileText className="h-5 w-5" />
             </p>
-            <p className="font-semibold text-[#22314f]">
+            <p className="font-semibold text-[#111111]">
               {fileName || "Drag and drop your PDF here"}
             </p>
-            <p className="text-sm text-[#5a687d]">or click to browse files</p>
-            <p className="text-xs text-[#7484a0]">PDF up to 10MB</p>
+            <p className="text-sm text-[#4a4a4a]">or click to browse files</p>
+            <p className="text-xs text-[#6a6a6a]">PDF up to 10MB</p>
           </div>
         </div>
 

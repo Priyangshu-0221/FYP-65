@@ -14,9 +14,9 @@ import {
 
 export default function Home() {
   return (
-    <div className="min-h-screen px-4 py-10 md:px-8">
-      <div className="mx-auto max-w-5xl app-surface px-5 py-8 md:px-10 md:py-12">
-        <header className="border-b  pb-8 text-center">
+    <div className="min-h-screen px-3 py-6 sm:px-4 sm:py-8 md:px-6 lg:px-8 lg:py-10">
+      <div className="mx-auto max-w-5xl app-surface px-4 py-6 sm:px-5 sm:py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
+        <header className="border-b pb-6 text-center sm:pb-8">
           <div className="relative mx-auto mb-6 h-30 w-full max-w-xl overflow-hidden rounded-md bg-white">
             <Image
               src="/snu-logo.png"
@@ -26,13 +26,13 @@ export default function Home() {
               priority
             />
           </div>
-          <h1 className="mx-auto max-w-4xl text-2xl font-bold uppercase tracking-wide text-[#1a2333] md:text-4xl">
+          <h1 className="mx-auto max-w-4xl text-xl font-bold uppercase tracking-wide text-[#1a2333] sm:text-2xl md:text-3xl lg:text-4xl">
             AI Powered Career Guidance:
             <br />
             Resume Analyser And Internship Recommendation System
           </h1>
-          <div className="mx-auto my-5 h-[2px] w-20 bg-[#1d3b72]" />
-          <h2 className="text-lg font-semibold text-[#1d3b72] md:text-xl">
+          <div className="mx-auto my-5 h-[2px] w-20 bg-black" />
+          <h2 className="text-base font-semibold text-[#111111] sm:text-lg md:text-xl">
             Bachelor of Technology (CSE)
           </h2>
         </header>
@@ -42,17 +42,17 @@ export default function Home() {
             <UserSquare2 className="h-5 w-5" />
             Submitted By
           </h3>
-          <div className="overflow-x-auto rounded-lg border border-[#d8e0ed]">
-            <div className="grid grid-cols-1 md:table w-full min-w-full lg:min-w-[680px] border-collapse bg-white text-sm md:text-base">
+          <div className="overflow-x-auto rounded-lg border border-[#d4d4d4]">
+            <div className="grid w-full min-w-0 grid-cols-1 border-collapse bg-white text-sm md:table md:min-w-[600px] md:text-base lg:min-w-[680px]">
               <div className="hidden md:table-header-group">
                 <div className="table-row">
-                  <div className="table-cell border-b border-[#bfcce2] bg-[#eef2f8] px-4 py-3 text-left font-bold text-[#1d3b72]">
+                  <div className="table-cell border-b border-[#d4d4d4] bg-[#f1f1f1] px-4 py-3 text-left font-bold text-[#111111]">
                     Student Name
                   </div>
-                  <div className="table-cell border-b border-[#bfcce2] bg-[#eef2f8] px-4 py-3 text-left font-bold text-[#1d3b72]">
+                  <div className="table-cell border-b border-[#d4d4d4] bg-[#f1f1f1] px-4 py-3 text-left font-bold text-[#111111]">
                     Reg Number
                   </div>
-                  <div className="table-cell border-b border-[#bfcce2] bg-[#eef2f8] px-4 py-3 text-left font-bold text-[#1d3b72]">
+                  <div className="table-cell border-b border-[#d4d4d4] bg-[#f1f1f1] px-4 py-3 text-left font-bold text-[#111111]">
                     Email ID
                   </div>
                 </div>
@@ -82,26 +82,26 @@ export default function Home() {
                 ].map((student, i) => (
                   <div
                     key={i}
-                    className="flex flex-col border-b border-[#d8e0ed] p-4 last:border-0 hover:bg-[#f7f9fd] md:table-row md:p-0"
+                    className="flex flex-col border-b border-[#d4d4d4] p-3 last:border-0 hover:bg-[#f7f7f7] sm:p-4 md:table-row md:p-0"
                   >
-                    <div className="mb-1 text-sm font-bold text-[#1d3b72] md:hidden">
+                    <div className="mb-1 text-sm font-bold text-[#111111] md:hidden">
                       Student Name
                     </div>
-                    <div className="table-cell px-0 py-1 md:border-b md:border-[#d8e0ed] md:px-4 md:py-3 font-medium text-[#1a2333] md:font-normal">
+                    <div className="table-cell px-0 py-1 md:border-b md:border-[#d4d4d4] md:px-4 md:py-3 font-medium text-[#1a2333] md:font-normal">
                       {student.name}
                     </div>
-                    <div className="mb-1 mt-3 text-sm font-bold text-[#1d3b72] md:hidden">
+                    <div className="mb-1 mt-3 text-sm font-bold text-[#111111] md:hidden">
                       Reg Number
                     </div>
-                    <div className="table-cell px-0 py-1 md:border-b md:border-[#d8e0ed] md:px-4 md:py-3 text-[#5a687d] md:text-[#1a2333]">
+                    <div className="table-cell px-0 py-1 md:border-b md:border-[#d4d4d4] md:px-4 md:py-3 text-[#4a4a4a] md:text-[#1a2333]">
                       {student.reg}
                     </div>
-                    <div className="mb-1 mt-3 text-sm font-bold text-[#1d3b72] md:hidden">
+                    <div className="mb-1 mt-3 text-sm font-bold text-[#111111] md:hidden">
                       Email ID
                     </div>
-                    <div className="table-cell px-0 py-1 md:border-b md:border-[#d8e0ed] md:px-4 md:py-3">
-                      <span className="inline-flex items-center gap-2 break-all text-[#1d3b72] md:text-[#1a2333]">
-                        <Mail className="h-4 w-4 shrink-0 text-[#1d3b72]" />
+                    <div className="table-cell px-0 py-1 md:border-b md:border-[#d4d4d4] md:px-4 md:py-3">
+                      <span className="inline-flex items-center gap-2 break-all text-[#111111] md:text-[#1a2333]">
+                        <Mail className="h-4 w-4 shrink-0 text-[#111111]" />
                         {student.email}
                       </span>
                     </div>
@@ -112,10 +112,10 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="h-px w-full bg-[#d8e0ed]" />
+        <div className="h-px w-full bg-[#d4d4d4]" />
 
-        <section className="grid gap-8 py-8 md:grid-cols-2">
-          <div className="rounded-xl border border-[#d8e0ed] bg-[#fbfcff] p-5">
+        <section className="grid gap-4 py-6 sm:gap-6 sm:py-8 md:grid-cols-2 md:gap-8">
+          <div className="rounded-xl border border-[#d4d4d4] bg-[#f8f8f8] p-5">
             <h3 className="section-title mb-2 flex items-center gap-2 text-sm font-bold uppercase">
               <ShieldCheck className="h-4 w-4" />
               Under the Supervision of
@@ -123,10 +123,10 @@ export default function Home() {
             <p className="text-xl font-semibold text-[#1a2333]">
               Dr. Sayani Mondal
             </p>
-            <p className="text-sm text-[#5a687d]">Assistant Professor</p>
+            <p className="text-sm text-[#4a4a4a]">Assistant Professor</p>
           </div>
 
-          <div className="rounded-xl border border-[#d8e0ed] bg-[#fbfcff] p-5">
+          <div className="rounded-xl border border-[#d4d4d4] bg-[#f8f8f8] p-5">
             <h3 className="section-title mb-2 flex items-center gap-2 text-sm font-bold uppercase">
               <CalendarDays className="h-4 w-4" />
               Submission Date
@@ -134,12 +134,12 @@ export default function Home() {
             <p className="text-xl font-semibold text-[#1a2333]">
               November 25, 2025
             </p>
-            <p className="text-sm text-[#5a687d]">Academic Session 2025</p>
+            <p className="text-sm text-[#4a4a4a]">Academic Session 2025</p>
           </div>
         </section>
 
-        <footer className="border-t border-[#d8e0ed] pt-5 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#1d3b72]">
+        <footer className="border-t border-[#d4d4d4] pt-5 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#111111]">
             November 2025
           </p>
         </footer>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { getRecommendations, APIError } from "@/services/api";
 import type { AcademicMarks } from "@/types/app";
 import type { Internship } from "@/types/api";
+import { toast } from "react-toastify";
 
 export function useRecommendations() {
   const [recommendations, setRecommendations] = useState<Internship[]>([]);
@@ -15,7 +16,9 @@ export function useRecommendations() {
     marks?: AcademicMarks,
   ) => {
     if (!skills || skills.length === 0) {
-      setError("Please provide at least one skill");
+      const message = "Please provide at least one skill";
+      setError(message);
+      toast.error(message);
       return [];
     }
 
@@ -24,6 +27,7 @@ export function useRecommendations() {
     try {
       const results = await getRecommendations(skills, marks);
       setRecommendations(results);
+      toast.success(`Found ${results.length} internship matches`);
       return results;
     } catch (err) {
       const errorMessage =
@@ -33,6 +37,7 @@ export function useRecommendations() {
             ? err.message
             : "Unknown error occurred";
       setError(errorMessage);
+      toast.error(errorMessage);
       return [];
     } finally {
       setIsLoading(false);
