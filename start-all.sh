@@ -24,11 +24,11 @@ echo ""
 
 # Step 2: Start Backend Server
 echo "[2/3] Starting Backend API Server..."
-echo "Backend will run at: http://localhost:8000"
+echo "Backend will run at: http://localhost:8080"
 echo "Starting in background..."
 echo ""
 
-python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload &
+python -m uvicorn backend.app:app --host 0.0.0.0 --port 8080 --reload &
 BACKEND_PID=$!
 
 # Wait for backend to start

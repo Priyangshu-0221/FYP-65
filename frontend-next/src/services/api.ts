@@ -3,6 +3,7 @@
 import {
   ResumeUploadResponse,
   RecommendationRequest,
+  RecommendationResponse,
   Internship,
   ErrorResponse,
 } from "@/types/api";
@@ -72,7 +73,7 @@ export async function getRecommendations(
   skills: string[],
   marks?: { cgpa?: number; percentage?: number },
   topK: number = 6,
-): Promise<Internship[]> {
+): Promise<RecommendationResponse> {
   try {
     const payload: RecommendationRequest = {
       skills: skills.map((s) => s.toLowerCase()),
@@ -101,7 +102,10 @@ export async function getRecommendations(
     }
 
     const data = await response.json();
-    return data.recommendations || [];
+    return {
+      recommendations: data.recommendations || [],
+      recommended_skills: data.recommended_skills || [],
+    };
   } catch (error) {
     if (error instanceof APIError) {
       throw error;

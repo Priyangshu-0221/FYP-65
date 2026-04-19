@@ -11,6 +11,7 @@ import { useRecommendations } from "@/hooks/useRecommendations";
 import { SearchingBooksLoader } from "@/components/overlays/SearchingBooksLoader";
 import { SuccessOverlay } from "@/components/overlays/SuccessOverlay";
 import type { AcademicMarks } from "@/types/app";
+import { SkillSuggestions } from "@/components/features/SkillSuggestions";
 import { toast } from "react-toastify";
 import { ArrowRight, Eraser, Sparkles, Workflow } from "lucide-react";
 
@@ -28,6 +29,7 @@ function DashboardContent() {
 
   const {
     recommendations,
+    recommendedSkills,
     isLoading: isRecommending,
     requestRecommendations,
     resetRecommendations,
@@ -40,7 +42,7 @@ function DashboardContent() {
     }
 
     const results = await requestRecommendations(skills, academicMarks);
-    if (results.length > 0) {
+    if (results.recommendations.length > 0) {
       if (successTimerRef.current) {
         window.clearTimeout(successTimerRef.current);
       }
@@ -219,11 +221,14 @@ function DashboardContent() {
 
           {/* Recommendations */}
           {(recommendations.length > 0 || isRecommending) && (
-            <div>
-              <RecommendationsGrid
-                recommendations={recommendations}
-                isLoading={isRecommending}
-              />
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 gap-6 lg:grid-cols-1">
+                <SkillSuggestions skills={recommendedSkills} />
+                <RecommendationsGrid
+                  recommendations={recommendations}
+                  isLoading={isRecommending}
+                />
+              </div>
             </div>
           )}
         </div>

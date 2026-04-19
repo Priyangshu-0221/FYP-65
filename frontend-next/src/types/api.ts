@@ -36,6 +36,7 @@ export interface Internship {
 
 export interface RecommendationResponse {
   recommendations: Internship[];
+  recommended_skills: string[];
 }
 
 export interface ErrorResponse {

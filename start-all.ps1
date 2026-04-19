@@ -24,11 +24,11 @@ Write-Host ""
 
 # Step 2: Start Backend Server
 Write-Host "[2/3] Starting Backend API Server..." -ForegroundColor Yellow
-Write-Host "Backend will run at: http://localhost:8000" -ForegroundColor Green
+Write-Host "Backend will run at: http://localhost:8080" -ForegroundColor Green
 Write-Host "Press CTRL+C to stop the server" -ForegroundColor Gray
 Write-Host ""
 
-Start-Process powershell -ArgumentList "-Command", "cd '$PWD' ; python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload" -NoNewWindow
+Start-Process powershell -ArgumentList "-Command", "cd '$PWD' ; python -m uvicorn backend.app:app --host 0.0.0.0 --port 8080 --reload" -NoNewWindow
 
 # Wait for backend to start
 Start-Sleep -Seconds 3
@@ -46,7 +46,7 @@ Write-Host "================================" -ForegroundColor Cyan
 Write-Host "All servers running!" -ForegroundColor Green
 Write-Host "================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "✓ Backend API:  http://localhost:8000" -ForegroundColor Green
+Write-Host "✓ Backend API:  http://localhost:8080" -ForegroundColor Green
 Write-Host "✓ Frontend:     http://localhost:3000" -ForegroundColor Green
 Write-Host ""
 Write-Host "Open the frontend in your browser to start testing!" -ForegroundColor Cyan

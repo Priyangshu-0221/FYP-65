@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 
 export function useRecommendations() {
   const [recommendations, setRecommendations] = useState<Internship[]>([]);
+  const [recommendedSkills, setRecommendedSkills] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -19,15 +20,16 @@ export function useRecommendations() {
       const message = "Please provide at least one skill";
       setError(message);
       toast.error(message);
-      return [];
+      return { recommendations: [], recommended_skills: [] };
     }
 
     setIsLoading(true);
     setError(null);
     try {
       const results = await getRecommendations(skills, marks);
-      setRecommendations(results);
-      toast.success(`Found ${results.length} internship matches`);
+      setRecommendations(results.recommendations);
+      setRecommendedSkills(results.recommended_skills);
+      toast.success(`Found ${results.recommendations.length} internship matches`);
       return results;
     } catch (err) {
       const errorMessage =
@@ -38,7 +40,7 @@ export function useRecommendations() {
             : "Unknown error occurred";
       setError(errorMessage);
       toast.error(errorMessage);
-      return [];
+      return { recommendations: [], recommended_skills: [] };
     } finally {
       setIsLoading(false);
     }
@@ -46,11 +48,13 @@ export function useRecommendations() {
 
   const resetRecommendations = () => {
     setRecommendations([]);
+    setRecommendedSkills([]);
     setError(null);
   };
 
   return {
     recommendations,
+    recommendedSkills,
     isLoading,
     error,
     requestRecommendations,

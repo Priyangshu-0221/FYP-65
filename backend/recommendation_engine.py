@@ -284,5 +284,36 @@ class InternshipRecommendationEngine:
             traceback.print_exc()
             return []
 
+    def get_skill_recommendations(
+        self, 
+        user_skills: List[str], 
+        recommendations: List[Dict[str, Any]], 
+        top_k: int = 15
+    ) -> List[str]:
+        """Identify key skills missing from user profile based on recommended roles."""
+        if not recommendations:
+            return []
+            
+        user_skills_set = set(s.lower() for s in user_skills)
+        missing_skills_counter = Counter()
+        
+        for internship in recommendations:
+            # Handle different internship data formats (skills_required vs skills)
+            int_skills = internship.get('skills_required', [])
+            if not int_skills:
+                int_skills = internship.get('skills', [])
+                
+            for s in int_skills:
+                s_name = s.get('name', '') if isinstance(s, dict) else s
+                s_lower = s_name.lower()
+                
+                if s_lower and s_lower not in user_skills_set:
+                    # Weight by the internship's score if available
+                    weight = internship.get('score', 1.0)
+                    missing_skills_counter[s_lower.capitalize()] += weight
+                    
+        # Return top K unique missing skills
+        return [skill for skill, _ in missing_skills_counter.most_common(top_k)]
+
 def load_recommendation_engine() -> InternshipRecommendationEngine:
     return InternshipRecommendationEngine()
