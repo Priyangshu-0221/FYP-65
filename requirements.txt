@@ -42,9 +42,11 @@ tqdm>=4.65.0
 # ============================================
 # Notes:
 # ============================================
-# - This is a minimal set of dependencies
 # - All packages are required for the web app
 # - tqdm is only needed for batch processing
-# - Development tools are commented out
-# - No ML dependencies (recommendation engine uses simple matching)
-# - No NLP dependencies (skill extraction uses regex)
+
+# ============================================
+# Machine Learning Dependencies (For AI Engine)
+# ============================================
+scikit-learn>=1.2.0
+sentence-transformers>=2.2.0

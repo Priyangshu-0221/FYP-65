@@ -21,31 +21,44 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # Path to the dummy internship data
 INTERNSHIP_DATA_PATH = Path("data/dummy_internship_recommendations.json")
-MODEL_NAME = "all-MiniLM-L6-v2"  # Fast and effective model
+# Define the 3 models for testing (Accuracy, Precision, Recall comparison)
+AVAILABLE_MODELS = {
+    "minilm": "all-MiniLM-L6-v2",           # Model 1: Your original fast baseline
+    "bge-small": "BAAI/bge-small-en-v1.5",  # Model 2: State-of-the-Art research model (High precision)
+    "mpnet": "all-mpnet-base-v2"            # Model 3: Most accurate heavy SBERT model
+}
+
+# Change this key to easily switch active models, or pass it via __init__
+ACTIVE_MODEL_KEY = "minilm" 
+DEFAULT_MODEL_NAME = AVAILABLE_MODELS[ACTIVE_MODEL_KEY]
 
 class InternshipRecommendationEngine:
     """A recommendation engine for matching student skills with internship opportunities using AI embeddings."""
     
-    def __init__(self, data_path: Optional[Path] = None):
+    def __init__(self, data_path: Optional[Path] = None, model_name: Optional[str] = None):
         """Initialize the recommendation engine with internship data.
         
         Args:
             data_path: Path to the JSON file containing internship data.
                        If None, uses the default path.
+            model_name: Optional override for the semantic model. Can be used for testing.
         """
         self.data_path = data_path or INTERNSHIP_DATA_PATH
         self.internships = self._load_internship_data()
         self.skill_index = self._build_skill_index()
         
-        print(f"Loading semantic search model: {MODEL_NAME}...")
+        # Use provided model or default to the active one
+        self.active_model_name = model_name or DEFAULT_MODEL_NAME
+        
+        print(f"Loading semantic search model: {self.active_model_name}...")
         try:
             # Check for GPU
             device = "cuda" if torch.cuda.is_available() else "cpu"
-            self.model = SentenceTransformer(MODEL_NAME, device=device)
+            self.model = SentenceTransformer(self.active_model_name, device=device)
             print(f"Model loaded on {device}")
         except Exception as e:
             print(f"Error loading model: {e}. Falling back to CPU.")
-            self.model = SentenceTransformer(MODEL_NAME, device="cpu")
+            self.model = SentenceTransformer(self.active_model_name, device="cpu")
             
         self.embeddings = self._build_semantic_embeddings()
     

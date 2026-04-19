@@ -9,6 +9,7 @@ from fastapi.responses import JSONResponse
 import tempfile
 from pathlib import Path
 import sys
+from collections import Counter
 
 # Import from same package
 from .extractor import process_resume
@@ -211,8 +212,20 @@ async def recommend_internships(payload: dict):
     if not recommended_jobs:
         recommended_jobs = random.sample(all_internships, k=min(top_k, len(all_internships)))
     
+    # --- NEW FEATURE: Recommend Future Skills ---
+    missing_skills_counter = Counter()
+    for job in recommended_jobs:
+        job_skills = [s.lower() for s in job.get('skills', [])]
+        for skill in job_skills:
+            if skill not in user_skills:
+                missing_skills_counter[skill] += 1
+                
+    # Extract the top 15 most frequent missing skills (increased from 5)
+    recommended_skills = [skill for skill, _ in missing_skills_counter.most_common(15)]
+    
     return {
-        "recommendations": recommended_jobs
+        "recommendations": recommended_jobs,
+        "recommended_skills": recommended_skills
     }
 
 
