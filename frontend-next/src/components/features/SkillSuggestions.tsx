@@ -10,7 +10,10 @@ interface SkillSuggestionsProps {
   isLoading?: boolean;
 }
 
-export function SkillSuggestions({ skills, isLoading = false }: SkillSuggestionsProps) {
+export function SkillSuggestions({
+  skills,
+  isLoading = false,
+}: SkillSuggestionsProps) {
   if (isLoading) return null; // Usually shown after recommendations are loaded
 
   if (!skills || skills.length === 0) {
@@ -18,19 +21,20 @@ export function SkillSuggestions({ skills, isLoading = false }: SkillSuggestions
   }
 
   return (
-    <Card className="app-surface border-[#d4d4d4] p-4 sm:p-5 md:p-6 bg-gradient-to-br from-white to-[#f9f9f9]">
+    <Card className="border-white/10 p-4 sm:p-5 md:p-6">
       <div className="space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h2 className="flex items-center gap-2 text-xl font-bold text-[#111111]">
-              <Sparkles className="h-5 w-5 text-amber-500 fill-amber-500" />
+            <h2 className="flex items-center gap-2 text-xl font-bold text-white">
+              <Sparkles className="h-5 w-5 fill-[#ffd700] text-[#ffd700]" />
               Skill Gap Analysis
             </h2>
-            <p className="text-sm text-[#4a4a4a] mt-1">
-              Top skills missing from your CV that are highly valued in recommended roles
+            <p className="mt-1 text-sm text-white/65">
+              These are the skills that show up in the recommendations but are
+              still missing from the resume.
             </p>
           </div>
-          <div className="flex items-center gap-2 rounded-lg bg-black px-3 py-1.5 text-xs font-medium text-white shadow-sm">
+          <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-[#ffd700] px-3 py-1.5 text-xs font-medium text-black shadow-sm">
             <TrendingUp className="h-3.5 w-3.5" />
             High Demand
           </div>
@@ -41,7 +45,7 @@ export function SkillSuggestions({ skills, isLoading = false }: SkillSuggestions
             <div key={skill} className="group relative">
               <Badge
                 variant="outline"
-                className="cursor-default border-[#d4d4d4] bg-white px-4 py-2 text-sm font-semibold text-[#111111] shadow-sm transition-all hover:border-black hover:bg-[#f1f1f1]"
+                className="cursor-default border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:border-white/20 hover:bg-white/[0.08]"
               >
                 {skill}
               </Badge>
@@ -49,10 +53,12 @@ export function SkillSuggestions({ skills, isLoading = false }: SkillSuggestions
           ))}
         </div>
 
-        <div className="flex items-start gap-3 rounded-xl border border-blue-100 bg-blue-50/50 p-4 text-xs text-blue-700">
-          <Info className="h-4 w-4 mt-0.5 shrink-0" />
+        <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-4 text-xs text-white/70">
+          <Info className="mt-0.5 h-4 w-4 shrink-0 text-[#ffd700]" />
           <p className="leading-relaxed">
-            <strong>Pro Tip:</strong> Learning these skills and adding them to your resume could increase your match rate by up to <strong>45%</strong> for the internships listed below.
+            <strong className="text-white">Tip:</strong> If you add a few of
+            these skills to your resume and can talk about them clearly, you
+            will usually get better internship matches.
           </p>
         </div>
       </div>

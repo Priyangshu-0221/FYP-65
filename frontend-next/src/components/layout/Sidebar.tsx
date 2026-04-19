@@ -46,29 +46,28 @@ export function Sidebar() {
   ];
 
   return (
-    <aside className="hidden w-72 border-r border-[#d4d4d4] bg-[#f7f7f7] p-4 xl:block xl:w-80 xl:p-6">
-      <div className="space-y-8">
-        {/* Features Section */}
-        <div>
-          <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold text-[#111111]">
-            <BriefcaseBusiness className="h-5 w-5" />
+    <aside className="border-b border-white/10 bg-white/[0.03]">
+      <div className="mx-auto grid w-full max-w-[1400px] gap-4 px-3 py-4 sm:px-4 md:px-8 xl:grid-cols-[1.15fr_0.9fr_0.95fr] xl:gap-5 xl:py-5">
+        <Card className="border-white/10 bg-black/55 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+          <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
+            <BriefcaseBusiness className="h-5 w-5 text-[#ffd700]" />
             Features
           </h2>
-          <div className="space-y-3">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
             {features.map((feature) => (
               <Card
                 key={feature.title}
-                className="cursor-pointer border-[#d4d4d4] bg-white p-4 transition-all hover:-translate-y-0.5 hover:shadow-md"
+                className="cursor-pointer border-white/10 bg-white/[0.04] p-4 transition-all hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.07]"
               >
                 <div className="flex gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[#efefef] text-[#111111]">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-black text-[#ffd700]">
                     <feature.icon className="h-4 w-4" />
                   </span>
                   <div>
-                    <h3 className="text-sm font-semibold text-[#111111]">
+                    <h3 className="text-sm font-semibold text-white">
                       {feature.title}
                     </h3>
-                    <p className="text-xs text-[#4a4a4a]">
+                    <p className="text-xs text-white/65">
                       {feature.description}
                     </p>
                   </div>
@@ -76,26 +75,25 @@ export function Sidebar() {
               </Card>
             ))}
           </div>
-        </div>
+        </Card>
 
-        {/* Team Section */}
-        <div>
-          <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold text-[#111111]">
-            <Users className="h-5 w-5" />
+        <Card className="border-white/10 bg-black/55 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+          <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
+            <Users className="h-5 w-5 text-[#ffd700]" />
             Project Team
           </h2>
           <div className="space-y-2">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="rounded-lg border border-[#d4d4d4] bg-white p-3"
+                className="rounded-lg border border-white/10 bg-white/[0.04] p-3"
               >
-                <p className="text-sm font-semibold text-[#111111]">
+                <p className="text-sm font-semibold text-white">
                   {member.name}
                 </p>
                 <Badge
                   variant="outline"
-                  className="mt-1 gap-1 text-xs text-[#2f2f2f]"
+                  className="mt-1 gap-1 border-white/15 bg-white/[0.06] text-xs text-white/80"
                 >
                   <IdCard className="h-3 w-3" />
                   {member.role}
@@ -103,29 +101,28 @@ export function Sidebar() {
               </div>
             ))}
           </div>
-        </div>
+        </Card>
 
-        {/* Project Info */}
-        <div className="border-t border-[#d4d4d4] pt-4">
-          <h3 className="mb-2 text-sm font-semibold text-[#111111]">
+        <Card className="border-white/10 bg-black/55 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+          <h3 className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-white/90">
             AI Powered Career Guidance
           </h3>
-          <p className="mb-1 text-xs font-medium text-[#1f1f1f]">
+          <p className="mb-1 text-xs font-medium text-white/75">
             Bachelor of Technology (CSE)
           </p>
-          <p className="mb-3 mt-2 text-xs text-[#4a4a4a]">
+          <p className="mb-3 mt-2 text-xs text-white/60">
             Resume Analyser And Internship Recommendation System
           </p>
-          <div className="space-y-1 border-t border-[#d4d4d4] pt-3">
-            <p className="flex items-center gap-1 text-xs font-semibold text-[#111111]">
-              <ShieldCheck className="h-3.5 w-3.5" />
+          <div className="space-y-1 border-t border-white/10 pt-3">
+            <p className="flex items-center gap-1 text-xs font-semibold text-white">
+              <ShieldCheck className="h-3.5 w-3.5 text-[#ffd700]" />
               Supervisor:
             </p>
-            <p className="text-xs text-[#4a4a4a]">
+            <p className="text-xs text-white/65">
               Dr. Sayani Mondal (Assistant Professor)
             </p>
           </div>
-        </div>
+        </Card>
       </div>
     </aside>
   );

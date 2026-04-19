@@ -14,9 +14,9 @@ interface SkillsListProps {
 export function SkillsList({ skills, isLoading = false }: SkillsListProps) {
   if (isLoading) {
     return (
-      <Card className="app-surface border-[#d4d4d4] p-4 sm:p-5 md:p-6">
-        <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-[#111111]">
-          <Target className="h-5 w-5" />
+      <Card className="border-white/10 p-4 sm:p-5 md:p-6">
+        <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-white">
+          <Target className="h-5 w-5 text-[#ffd700]" />
           Extracted Skills
         </h2>
         <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -33,14 +33,14 @@ export function SkillsList({ skills, isLoading = false }: SkillsListProps) {
   }
 
   return (
-    <Card className="app-surface border-[#d4d4d4] p-4 sm:p-5 md:p-6">
+    <Card className="border-white/10 p-4 sm:p-5 md:p-6">
       <div className="space-y-3 sm:space-y-4">
         <div>
-          <h2 className="mb-2 flex items-center gap-2 text-xl font-bold text-[#111111]">
-            <Target className="h-5 w-5" />
+          <h2 className="mb-2 flex items-center gap-2 text-xl font-bold text-white">
+            <Target className="h-5 w-5 text-[#ffd700]" />
             Extracted Skills ({skills.length})
           </h2>
-          <p className="text-sm text-[#4a4a4a]">
+          <p className="text-sm text-white/65">
             Skills detected from your resume
           </p>
         </div>
@@ -50,14 +50,14 @@ export function SkillsList({ skills, isLoading = false }: SkillsListProps) {
             <Badge
               key={skill}
               variant="secondary"
-              className="cursor-pointer border border-[#cfcfcf] bg-[#f1f1f1] px-3 py-1 text-sm font-medium text-[#111111] transition-all hover:-translate-y-0.5 hover:bg-[#e5e5e5]"
+              className="cursor-pointer border border-white/10 bg-white/[0.06] px-3 py-1 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-white/[0.1]"
             >
               {skill}
             </Badge>
           ))}
         </div>
 
-        <div className="text-xs text-[#6a6a6a]">
+        <div className="text-xs text-white/45">
           Found {skills.length} skill{skills.length !== 1 ? "s" : ""} in your
           resume
         </div>

@@ -78,14 +78,14 @@ export function UploadSection({
   };
 
   return (
-    <Card className="app-surface border-[#d4d4d4] p-4 sm:p-6 md:p-8">
+    <Card className="border-white/10 p-4 sm:p-6 md:p-8">
       <div className="space-y-4">
         <div>
-          <h2 className="mb-2 flex items-center gap-2 text-2xl font-bold text-[#111111]">
-            <FileCheck2 className="h-6 w-6" />
+          <h2 className="mb-2 flex items-center gap-2 text-2xl font-bold text-white">
+            <FileCheck2 className="h-6 w-6 text-[#ffd700]" />
             Upload Your Resume
           </h2>
-          <p className="text-[#4a4a4a]">
+          <p className="text-white/65">
             Upload a PDF resume to extract skills and get personalized
             recommendations
           </p>
@@ -98,8 +98,8 @@ export function UploadSection({
           onDrop={handleDrop}
           className={`cursor-pointer rounded-xl border-2 border-dashed p-5 text-center transition-colors sm:p-6 md:p-8 ${
             dragActive
-              ? "border-black bg-[#f1f1f1]"
-              : "border-[#bcbcbc] bg-[#fafafa] hover:border-black"
+              ? "border-[#ffd700] bg-white/[0.08]"
+              : "border-white/15 bg-black/40 hover:border-[#ffd700]"
           }`}
           onClick={() => fileInputRef.current?.click()}
         >
@@ -113,14 +113,14 @@ export function UploadSection({
           />
 
           <div className="space-y-2">
-            <p className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#bcbcbc] bg-white text-[#111111]">
+            <p className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-[#ffd700]">
               <FileText className="h-5 w-5" />
             </p>
-            <p className="font-semibold text-[#111111]">
+            <p className="font-semibold text-white">
               {fileName || "Drag and drop your PDF here"}
             </p>
-            <p className="text-sm text-[#4a4a4a]">or click to browse files</p>
-            <p className="text-xs text-[#6a6a6a]">PDF up to 10MB</p>
+            <p className="text-sm text-white/60">or click to browse files</p>
+            <p className="text-xs text-white/45">PDF up to 10MB</p>
           </div>
         </div>
 

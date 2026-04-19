@@ -22,10 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col bg-black text-white">
           <Header />
-          <div className="mx-auto flex w-full max-w-[1400px] flex-1 flex-col lg:flex-row">
-            <Sidebar />
+          {/* <Sidebar /> */}
+          <div className="mx-auto flex w-full max-w-[1400px] flex-1 flex-col px-3 pb-8 pt-5 sm:px-4 md:px-8 lg:pb-12 lg:pt-8">
             <main className="flex-1">{children}</main>
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function RootLayout({
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme="light"
+          theme="dark"
         />
       </body>
     </html>
