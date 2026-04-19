@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/snu-logo.png" alt="Sister Nivedita University Logo" width="300"/>
+  
 
 # AI Powered Career Guidance System
 
