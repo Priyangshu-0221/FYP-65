@@ -19,6 +19,7 @@ SKILLS = {
     'computer vision', 'tensorflow', 'pytorch', 'scikit-learn', 'pandas', 'numpy',
     'matplotlib', 'seaborn', 'statistics', 'r programming', 'matlab', 'selenium', 
     'automation', 'testing', 'devops', 'backend', 'frontend', 'fullstack',
+    'android', 'kotlin', 'ios', 'swift', 'flutter', 'dart', 'react native', 'mobile development',
 
     # --- Finance / Accounting ---
     'accounting', 'finance', 'tally', 'quickbooks', 'sap', 'oracle', 'taxation', 'audit',

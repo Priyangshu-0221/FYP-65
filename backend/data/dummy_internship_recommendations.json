@@ -3711,5 +3711,221 @@
     "apply_link": "https://example.com/apply/int217",
     "duration": "4 months",
     "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT218",
+    "title": "Android Developer Intern",
+    "company": "AppVantage Labs Inc",
+    "location": "Mumbai, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "android",
+      "kotlin",
+      "java",
+      "android studio",
+      "firebase"
+    ],
+    "description": "Join our mobile team to build high-performance Android applications. Work with Kotlin and Jetpack Compose. Based in Mumbai, India.",
+    "apply_link": "https://example.com/apply/int218",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT219",
+    "title": "Android Developer Intern",
+    "company": "AppVantage Labs Group",
+    "location": "Mumbai, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "android",
+      "kotlin",
+      "java",
+      "android studio",
+      "firebase"
+    ],
+    "description": "Join our mobile team to build high-performance Android applications. Work with Kotlin and Jetpack Compose. Based in Mumbai, India.",
+    "apply_link": "https://example.com/apply/int219",
+    "duration": "6 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT220",
+    "title": "iOS Developer Intern",
+    "company": "AppleTree Systems Inc",
+    "location": "Bangalore, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "ios",
+      "swift",
+      "xcode",
+      "uikit",
+      "swiftui"
+    ],
+    "description": "Help develop cutting-edge iOS applications for our global clients using the latest Apple technologies. Based in Bangalore, India.",
+    "apply_link": "https://example.com/apply/int220",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT221",
+    "title": "iOS Developer Intern",
+    "company": "AppleTree Systems Group",
+    "location": "Hyderabad, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "ios",
+      "swift",
+      "xcode",
+      "uikit",
+      "swiftui"
+    ],
+    "description": "Help develop cutting-edge iOS applications for our global clients using the latest Apple technologies. Based in Hyderabad, India.",
+    "apply_link": "https://example.com/apply/int221",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT222",
+    "title": "Flutter Intern",
+    "company": "CrossPlatform Co Inc",
+    "location": "Hyderabad, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "flutter",
+      "dart",
+      "firebase",
+      "api integration",
+      "mobile design"
+    ],
+    "description": "Build beautiful cross-platform apps for Android and iOS using Flutter. Based in Hyderabad, India.",
+    "apply_link": "https://example.com/apply/int222",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT223",
+    "title": "Flutter Intern",
+    "company": "CrossPlatform Co Group",
+    "location": "Bangalore, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "flutter",
+      "dart",
+      "firebase",
+      "api integration",
+      "mobile design"
+    ],
+    "description": "Build beautiful cross-platform apps for Android and iOS using Flutter. Based in Bangalore, India.",
+    "apply_link": "https://example.com/apply/int223",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT224",
+    "title": "React Native Developer Intern",
+    "company": "Hybrid Apps Inc Inc",
+    "location": "Bangalore, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "react native",
+      "javascript",
+      "typescript",
+      "mobile development",
+      "redux"
+    ],
+    "description": "Work on a high-traffic mobile app used by millions. Master React Native and bridge native modules. Based in Bangalore, India.",
+    "apply_link": "https://example.com/apply/int224",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT225",
+    "title": "React Native Developer Intern",
+    "company": "Hybrid Apps Inc Group",
+    "location": "Bangalore, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "react native",
+      "javascript",
+      "typescript",
+      "mobile development",
+      "redux"
+    ],
+    "description": "Work on a high-traffic mobile app used by millions. Master React Native and bridge native modules. Based in Bangalore, India.",
+    "apply_link": "https://example.com/apply/int225",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT226",
+    "title": "Mobile App UI/UX Intern",
+    "company": "DesignFirst Mobile Inc",
+    "location": "Remote",
+    "domain": "Design",
+    "skills_required": [
+      "figma",
+      "mobile design",
+      "prototyping",
+      "user research",
+      "android"
+    ],
+    "description": "Focus on the visual and interactive aspects of mobile applications across platforms. Based in Remote.",
+    "apply_link": "https://example.com/apply/int226",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT227",
+    "title": "Mobile App UI/UX Intern",
+    "company": "DesignFirst Mobile Group",
+    "location": "Hyderabad, India",
+    "domain": "Design",
+    "skills_required": [
+      "figma",
+      "mobile design",
+      "prototyping",
+      "user research",
+      "android"
+    ],
+    "description": "Focus on the visual and interactive aspects of mobile applications across platforms. Based in Hyderabad, India.",
+    "apply_link": "https://example.com/apply/int227",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT228",
+    "title": "Junior Android Developer",
+    "company": "DroidWorld Inc",
+    "location": "Pune, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "android",
+      "java",
+      "sql",
+      "git",
+      "mvvm"
+    ],
+    "description": "Support the maintenance and feature development of our core Android product. Based in Pune, India.",
+    "apply_link": "https://example.com/apply/int228",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT229",
+    "title": "Junior Android Developer",
+    "company": "DroidWorld Group",
+    "location": "Pune, India",
+    "domain": "Mobile Development",
+    "skills_required": [
+      "android",
+      "java",
+      "sql",
+      "git",
+      "mvvm"
+    ],
+    "description": "Support the maintenance and feature development of our core Android product. Based in Pune, India.",
+    "apply_link": "https://example.com/apply/int229",
+    "duration": "6 months",
+    "stipend": "\u20b915,000/month"
   }
 ]
