@@ -49,14 +49,14 @@ export function AcademicMarksSection({
   };
 
   return (
-    <Card className="app-surface border-[#d4d4d4] p-4 sm:p-5 md:p-6">
+    <Card className="border-slate-200 p-4 sm:p-5 md:p-6">
       <div className="space-y-3 sm:space-y-4">
         <div>
-          <h2 className="mb-2 flex items-center gap-2 text-xl font-bold text-[#111111]">
-            <GraduationCap className="h-5 w-5" />
+          <h2 className="mb-2 flex items-center gap-2 text-xl font-bold text-slate-900">
+            <GraduationCap className="h-5 w-5 text-sky-600" />
             Academic Information
           </h2>
-          <p className="text-sm text-[#4a4a4a]">
+          <p className="text-sm text-slate-600">
             (Optional) Add your academic marks for better recommendations
           </p>
         </div>
@@ -64,7 +64,7 @@ export function AcademicMarksSection({
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
             <div>
-              <label className="mb-2 block text-sm font-medium text-[#1f1f1f]">
+              <label className="mb-2 block text-sm font-medium text-slate-700">
                 CGPA
               </label>
               <Input
@@ -75,11 +75,11 @@ export function AcademicMarksSection({
                 placeholder="e.g., 3.5"
                 value={cgpa}
                 onChange={(e) => setCgpa(e.target.value)}
-                className="bg-white"
+                className="bg-slate-50"
               />
             </div>
             <div>
-              <label className="mb-2 block text-sm font-medium text-[#1f1f1f]">
+              <label className="mb-2 block text-sm font-medium text-slate-700">
                 Percentage
               </label>
               <Input
@@ -90,7 +90,7 @@ export function AcademicMarksSection({
                 placeholder="e.g., 85.5"
                 value={percentage}
                 onChange={(e) => setPercentage(e.target.value)}
-                className="bg-white"
+                className="bg-slate-50"
               />
             </div>
           </div>
