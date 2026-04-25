@@ -5,11 +5,16 @@
     "company": "Tech Innovations Inc",
     "location": "Bangalore, India",
     "domain": "Software Engineering",
-    "skills_required": ["python", "java", "git", "sql"],
+    "skills_required": [
+      "python",
+      "java",
+      "git",
+      "sql"
+    ],
     "description": "Work on backend services and APIs using Python and Java. Collaborate with senior developers on real-world projects.",
     "apply_link": "https://example.com/apply/int001",
     "duration": "3 months",
-    "stipend": "₹15,000/month"
+    "stipend": "\u20b915,000/month"
   },
   {
     "id": "INT002",
@@ -17,11 +22,17 @@
     "company": "Analytics Pro",
     "location": "Mumbai, India",
     "domain": "Data Science",
-    "skills_required": ["python", "machine learning", "pandas", "numpy", "data analysis"],
+    "skills_required": [
+      "python",
+      "machine learning",
+      "pandas",
+      "numpy",
+      "data analysis"
+    ],
     "description": "Analyze large datasets, build predictive models, and create data visualizations for business insights.",
     "apply_link": "https://example.com/apply/int002",
     "duration": "6 months",
-    "stipend": "₹20,000/month"
+    "stipend": "\u20b920,000/month"
   },
   {
     "id": "INT003",
@@ -29,11 +40,17 @@
     "company": "WebCraft Studios",
     "location": "Pune, India",
     "domain": "Web Development",
-    "skills_required": ["react", "javascript", "html", "css", "typescript"],
+    "skills_required": [
+      "react",
+      "javascript",
+      "html",
+      "css",
+      "typescript"
+    ],
     "description": "Build responsive web applications using React. Work on UI/UX improvements and component libraries.",
     "apply_link": "https://example.com/apply/int003",
     "duration": "4 months",
-    "stipend": "₹12,000/month"
+    "stipend": "\u20b912,000/month"
   },
   {
     "id": "INT004",
@@ -41,11 +58,17 @@
     "company": "Global Connect",
     "location": "Remote, India",
     "domain": "Software Engineering",
-    "skills_required": ["node.js", "react", "mongodb", "aws", "express"],
+    "skills_required": [
+      "node.js",
+      "react",
+      "mongodb",
+      "aws",
+      "express"
+    ],
     "description": "Work remotely on a global platform. Handle both frontend and backend tasks in a fast-paced environment.",
     "apply_link": "https://example.com/apply/int004",
     "duration": "6 months",
-    "stipend": "₹25,000/month"
+    "stipend": "\u20b925,000/month"
   },
   {
     "id": "INT005",
@@ -53,7 +76,13 @@
     "company": "FutureAI Labs",
     "location": "San Francisco, USA",
     "domain": "Artificial Intelligence",
-    "skills_required": ["pytorch", "tensorflow", "python", "research", "deep learning"],
+    "skills_required": [
+      "pytorch",
+      "tensorflow",
+      "python",
+      "research",
+      "deep learning"
+    ],
     "description": "Remote research position focusing on next-gen transformer models and generative AI applications.",
     "apply_link": "https://example.com/apply/int005",
     "duration": "6 months",
@@ -65,11 +94,17 @@
     "company": "GrowthBox",
     "location": "Remote",
     "domain": "Marketing",
-    "skills_required": ["seo", "content writing", "social media", "google analytics", "ads"],
+    "skills_required": [
+      "seo",
+      "content writing",
+      "social media",
+      "google analytics",
+      "ads"
+    ],
     "description": "Remote marketing role. Create campaigns, manage social media presence, and optimize SEO for global clients.",
     "apply_link": "https://example.com/apply/int006",
     "duration": "3 months",
-    "stipend": "₹10,000/month"
+    "stipend": "\u20b910,000/month"
   },
   {
     "id": "INT007",
@@ -77,11 +112,17 @@
     "company": "Goldman Insights",
     "location": "London, UK",
     "domain": "Finance",
-    "skills_required": ["excel", "accounting", "finance", "valuation", "analytical"],
+    "skills_required": [
+      "excel",
+      "accounting",
+      "finance",
+      "valuation",
+      "analytical"
+    ],
     "description": "Assist in financial modeling and market research. Learn from top analysts in the banking industry.",
     "apply_link": "https://example.com/apply/int007",
     "duration": "4 months",
-    "stipend": "£1,200/month"
+    "stipend": "\u00a31,200/month"
   },
   {
     "id": "INT008",
@@ -89,11 +130,17 @@
     "company": "PeopleWise",
     "location": "Hyderabad, India",
     "domain": "Human Resources",
-    "skills_required": ["recruitment", "interpersonal", "documentation", "sourcing", "screening"],
+    "skills_required": [
+      "recruitment",
+      "interpersonal",
+      "documentation",
+      "sourcing",
+      "screening"
+    ],
     "description": "Handle end-to-end recruitment pipelines. Work on employee engagement and onboarding processes.",
     "apply_link": "https://example.com/apply/int008",
     "duration": "6 months",
-    "stipend": "₹12,000/month"
+    "stipend": "\u20b912,000/month"
   },
   {
     "id": "INT009",
@@ -101,11 +148,17 @@
     "company": "AutoDrive Corp",
     "location": "Chennai, India",
     "domain": "Mechanical Engineering",
-    "skills_required": ["autocad", "solidworks", "mechanical", "manufacturing", "prototyping"],
+    "skills_required": [
+      "autocad",
+      "solidworks",
+      "mechanical",
+      "manufacturing",
+      "prototyping"
+    ],
     "description": "Work on the production line and design team for electric vehicle components.",
     "apply_link": "https://example.com/apply/int009",
     "duration": "6 months",
-    "stipend": "₹15,000/month"
+    "stipend": "\u20b915,000/month"
   },
   {
     "id": "INT010",
@@ -113,7 +166,13 @@
     "company": "Creative Wave",
     "location": "Singapore",
     "domain": "Design",
-    "skills_required": ["figma", "sketch", "adobe xd", "wireframing", "prototyping"],
+    "skills_required": [
+      "figma",
+      "sketch",
+      "adobe xd",
+      "wireframing",
+      "prototyping"
+    ],
     "description": "Remote-friendly design role. Craft beautiful interfaces for web and mobile products.",
     "apply_link": "https://example.com/apply/int010",
     "duration": "3 months",
@@ -125,11 +184,17 @@
     "company": "WordSmiths",
     "location": "Remote",
     "domain": "Media",
-    "skills_required": ["writing", "editing", "storytelling", "research", "blogging"],
+    "skills_required": [
+      "writing",
+      "editing",
+      "storytelling",
+      "research",
+      "blogging"
+    ],
     "description": "Write engaging articles, case studies, and newsletter content for a diverse audience.",
     "apply_link": "https://example.com/apply/int011",
     "duration": "3 months",
-    "stipend": "₹8,000/month"
+    "stipend": "\u20b98,000/month"
   },
   {
     "id": "INT012",
@@ -137,11 +202,17 @@
     "company": "BuildStrong Infra",
     "location": "Ahmedabad, India",
     "domain": "Civil Engineering",
-    "skills_required": ["autocad", "construction", "civil", "mapping", "estimation"],
+    "skills_required": [
+      "autocad",
+      "construction",
+      "civil",
+      "mapping",
+      "estimation"
+    ],
     "description": "Site visits and structural drawing assistance for residential and commercial projects.",
     "apply_link": "https://example.com/apply/int012",
     "duration": "6 months",
-    "stipend": "₹10,000/month"
+    "stipend": "\u20b910,000/month"
   },
   {
     "id": "INT013",
@@ -149,11 +220,17 @@
     "company": "City Health Hospital",
     "location": "Delhi, India",
     "domain": "Healthcare",
-    "skills_required": ["management", "communication", "healthcare", "organization", "hipaa"],
+    "skills_required": [
+      "management",
+      "communication",
+      "healthcare",
+      "organization",
+      "hipaa"
+    ],
     "description": "Support administrative operations in a major hospital. Handle patient documentation and scheduling.",
     "apply_link": "https://example.com/apply/int013",
     "duration": "4 months",
-    "stipend": "₹12,000/month"
+    "stipend": "\u20b912,000/month"
   },
   {
     "id": "INT014",
@@ -161,11 +238,17 @@
     "company": "Lex Partners",
     "location": "Remote, India",
     "domain": "Legal",
-    "skills_required": ["law", "research", "writing", "legal drafting", "analytical"],
+    "skills_required": [
+      "law",
+      "research",
+      "writing",
+      "legal drafting",
+      "analytical"
+    ],
     "description": "Assist senior advocates in case research and preparing legal briefs. Remote support allowed.",
     "apply_link": "https://example.com/apply/int014",
     "duration": "3 months",
-    "stipend": "₹5,000/month"
+    "stipend": "\u20b95,000/month"
   },
   {
     "id": "INT015",
@@ -173,11 +256,17 @@
     "company": "FarmSmart",
     "location": "Jaipur, India",
     "domain": "Agriculture",
-    "skills_required": ["agriculture", "data analysis", "python", "sensors", "farming"],
+    "skills_required": [
+      "agriculture",
+      "data analysis",
+      "python",
+      "sensors",
+      "farming"
+    ],
     "description": "Combine technology with agriculture to optimize crop yields using IoT sensors.",
     "apply_link": "https://example.com/apply/int015",
     "duration": "6 months",
-    "stipend": "₹14,000/month"
+    "stipend": "\u20b914,000/month"
   },
   {
     "id": "INT016",
@@ -185,11 +274,17 @@
     "company": "Growth Partners",
     "location": "Kolkata, India",
     "domain": "Sales",
-    "skills_required": ["sales", "negotiation", "communication", "crm", "outreach"],
+    "skills_required": [
+      "sales",
+      "negotiation",
+      "communication",
+      "crm",
+      "outreach"
+    ],
     "description": "Identify new business opportunities and drive sales outreach through cold calls and emails.",
     "apply_link": "https://example.com/apply/int016",
     "duration": "3 months",
-    "stipend": "₹10,000 + Performance Bonus"
+    "stipend": "\u20b910,000 + Performance Bonus"
   },
   {
     "id": "INT017",
@@ -197,7 +292,13 @@
     "company": "Global Connect PR",
     "location": "New York, USA",
     "domain": "Communications",
-    "skills_required": ["pr", "writing", "media relations", "networking", "content"],
+    "skills_required": [
+      "pr",
+      "writing",
+      "media relations",
+      "networking",
+      "content"
+    ],
     "description": "Remote PR role. Coordinate with media houses and draft press releases for tech startups.",
     "apply_link": "https://example.com/apply/int017",
     "duration": "4 months",
@@ -209,11 +310,17 @@
     "company": "TaxPoint Services",
     "location": "Remote",
     "domain": "Accounting",
-    "skills_required": ["tax", "gst", "accounting", "excel", "tally"],
+    "skills_required": [
+      "tax",
+      "gst",
+      "accounting",
+      "excel",
+      "tally"
+    ],
     "description": "Assist in GST filing and individual tax planning. Work remotely with senior CAs.",
     "apply_link": "https://example.com/apply/int018",
     "duration": "3 months",
-    "stipend": "₹7,000/month"
+    "stipend": "\u20b97,000/month"
   },
   {
     "id": "INT019",
@@ -221,11 +328,17 @@
     "company": "ShieldGuard",
     "location": "Berlin, Germany",
     "domain": "Cybersecurity",
-    "skills_required": ["linux", "security", "networking", "penetration testing", "python"],
+    "skills_required": [
+      "linux",
+      "security",
+      "networking",
+      "penetration testing",
+      "python"
+    ],
     "description": "Onsite or remote options. Monitor network security and assist in vulnerability assessments.",
     "apply_link": "https://example.com/apply/int019",
     "duration": "5 months",
-    "stipend": "€900/month"
+    "stipend": "\u20ac900/month"
   },
   {
     "id": "INT020",
@@ -233,11 +346,17 @@
     "company": "ShopFast",
     "location": "Bangalore, India",
     "domain": "Logistics",
-    "skills_required": ["inventory", "logistics", "management", "excel", "organization"],
+    "skills_required": [
+      "inventory",
+      "logistics",
+      "management",
+      "excel",
+      "organization"
+    ],
     "description": "Support the logistics and supply chain team for a growing D2C brand.",
     "apply_link": "https://example.com/apply/int020",
     "duration": "6 months",
-    "stipend": "₹12,000/month"
+    "stipend": "\u20b912,000/month"
   },
   {
     "id": "INT021",
@@ -245,11 +364,17 @@
     "company": "Royal Suites",
     "location": "Goa, India",
     "domain": "Hospitality",
-    "skills_required": ["service", "communication", "management", "tourism", "organization"],
+    "skills_required": [
+      "service",
+      "communication",
+      "management",
+      "tourism",
+      "organization"
+    ],
     "description": "Learn luxury hotel operations, guest relations, and tourism management.",
     "apply_link": "https://example.com/apply/int021",
     "duration": "3 months",
-    "stipend": "₹10,000/month + Stay"
+    "stipend": "\u20b910,000/month + Stay"
   },
   {
     "id": "INT022",
@@ -257,11 +382,17 @@
     "company": "GenLabs Research",
     "location": "Remote",
     "domain": "Science",
-    "skills_required": ["biology", "data analysis", "documentation", "genetics", "research"],
+    "skills_required": [
+      "biology",
+      "data analysis",
+      "documentation",
+      "genetics",
+      "research"
+    ],
     "description": "Remote research on genetic data trends and laboratory documentation support.",
     "apply_link": "https://example.com/apply/int022",
     "duration": "6 months",
-    "stipend": "₹15,000/month"
+    "stipend": "\u20b915,000/month"
   },
   {
     "id": "INT023",
@@ -269,7 +400,13 @@
     "company": "GreenGrid",
     "location": "Copenhagen, Denmark",
     "domain": "Energy",
-    "skills_required": ["energy", "policy", "solar", "wind", "geographical"],
+    "skills_required": [
+      "energy",
+      "policy",
+      "solar",
+      "wind",
+      "geographical"
+    ],
     "description": "Research renewable energy policies and map solar/wind potential for global sites.",
     "apply_link": "https://example.com/apply/int023",
     "duration": "4 months",
@@ -281,7 +418,13 @@
     "company": "LawHub Legal",
     "location": "Toronto, Canada",
     "domain": "Legal",
-    "skills_required": ["law", "research", "contracts", "writing", "english"],
+    "skills_required": [
+      "law",
+      "research",
+      "contracts",
+      "writing",
+      "english"
+    ],
     "description": "Assist lawyers with case research and paperwork. Help in drafting contracts.",
     "apply_link": "https://example.com/apply/int024",
     "duration": "5 months",
@@ -293,10 +436,3280 @@
     "company": "Bright Kids Tutors",
     "location": "Sydney, Australia",
     "domain": "Education",
-    "skills_required": ["teaching", "patience", "writing", "english", "math"],
+    "skills_required": [
+      "teaching",
+      "patience",
+      "writing",
+      "english",
+      "math"
+    ],
     "description": "Support young learners in core subjects. Remote teaching options available.",
     "apply_link": "https://example.com/apply/int025",
     "duration": "4 months",
     "stipend": "$25/hour"
+  },
+  {
+    "id": "INT026",
+    "title": "Accounting Intern",
+    "company": "Future Systems Corp",
+    "location": "Delhi, India",
+    "domain": "ACCOUNTANT",
+    "skills_required": [
+      "gst",
+      "excel",
+      "taxation",
+      "accounting",
+      "audit"
+    ],
+    "description": "Fantastic opportunity for a Accounting Intern at Future Systems Corp. You will work on accountant projects and gain hands-on experience with gst, excel. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int026",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT027",
+    "title": "Accounting Intern",
+    "company": "Insight Corp Corp",
+    "location": "Delhi, India",
+    "domain": "ACCOUNTANT",
+    "skills_required": [
+      "gst",
+      "accounting",
+      "excel",
+      "tally"
+    ],
+    "description": "Fantastic opportunity for a Accounting Intern at Insight Corp Corp. You will work on accountant projects and gain hands-on experience with gst, accounting. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int027",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT028",
+    "title": "Tax Assistant",
+    "company": "Next Gen IT Corp",
+    "location": "Chennai, India",
+    "domain": "ACCOUNTANT",
+    "skills_required": [
+      "gst",
+      "audit",
+      "tally",
+      "accounting"
+    ],
+    "description": "Fantastic opportunity for a Tax Assistant at Next Gen IT Corp. You will work on accountant projects and gain hands-on experience with gst, audit. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int028",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT029",
+    "title": "Tax Assistant",
+    "company": "Global Solutions Labs",
+    "location": "Singapore",
+    "domain": "ACCOUNTANT",
+    "skills_required": [
+      "accounting",
+      "tally",
+      "excel"
+    ],
+    "description": "Fantastic opportunity for a Tax Assistant at Global Solutions Labs. You will work on accountant projects and gain hands-on experience with accounting, tally. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int029",
+    "duration": "6 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT030",
+    "title": "Audit Intern",
+    "company": "Prime Enterprises Inc",
+    "location": "Sydney, Australia",
+    "domain": "ACCOUNTANT",
+    "skills_required": [
+      "gst",
+      "taxation",
+      "audit",
+      "excel",
+      "tally"
+    ],
+    "description": "Fantastic opportunity for a Audit Intern at Prime Enterprises Inc. You will work on accountant projects and gain hands-on experience with gst, taxation. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int030",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT031",
+    "title": "Audit Intern",
+    "company": "Build Well Group",
+    "location": "Remote",
+    "domain": "ACCOUNTANT",
+    "skills_required": [
+      "gst",
+      "accounting",
+      "tally",
+      "taxation"
+    ],
+    "description": "Fantastic opportunity for a Audit Intern at Build Well Group. You will work on accountant projects and gain hands-on experience with gst, accounting. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int031",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT032",
+    "title": "Bookkeeping Associate",
+    "company": "Star BPO Corp",
+    "location": "Singapore",
+    "domain": "ACCOUNTANT",
+    "skills_required": [
+      "accounting",
+      "taxation",
+      "gst",
+      "audit",
+      "excel"
+    ],
+    "description": "Fantastic opportunity for a Bookkeeping Associate at Star BPO Corp. You will work on accountant projects and gain hands-on experience with accounting, taxation. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int032",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT033",
+    "title": "Bookkeeping Associate",
+    "company": "Auto Dynamic Corp",
+    "location": "Singapore",
+    "domain": "ACCOUNTANT",
+    "skills_required": [
+      "accounting",
+      "tally",
+      "audit",
+      "taxation",
+      "gst"
+    ],
+    "description": "Fantastic opportunity for a Bookkeeping Associate at Auto Dynamic Corp. You will work on accountant projects and gain hands-on experience with accounting, tally. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int033",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT034",
+    "title": "Legal Research Intern",
+    "company": "Care First Labs",
+    "location": "Toronto, Canada",
+    "domain": "ADVOCATE",
+    "skills_required": [
+      "analytical",
+      "drafting",
+      "law",
+      "legal research"
+    ],
+    "description": "Fantastic opportunity for a Legal Research Intern at Care First Labs. You will work on advocate projects and gain hands-on experience with analytical, drafting. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int034",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT035",
+    "title": "Legal Research Intern",
+    "company": "Fin Edge Labs",
+    "location": "Hyderabad, India",
+    "domain": "ADVOCATE",
+    "skills_required": [
+      "analytical",
+      "law",
+      "drafting",
+      "communication",
+      "legal research"
+    ],
+    "description": "Fantastic opportunity for a Legal Research Intern at Fin Edge Labs. You will work on advocate projects and gain hands-on experience with analytical, law. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int035",
+    "duration": "4 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT036",
+    "title": "Junior Associate",
+    "company": "Star BPO Group",
+    "location": "Sydney, Australia",
+    "domain": "ADVOCATE",
+    "skills_required": [
+      "analytical",
+      "law",
+      "drafting"
+    ],
+    "description": "Fantastic opportunity for a Junior Associate at Star BPO Group. You will work on advocate projects and gain hands-on experience with analytical, law. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int036",
+    "duration": "4 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT037",
+    "title": "Junior Associate",
+    "company": "Future Systems Inc",
+    "location": "Delhi, India",
+    "domain": "ADVOCATE",
+    "skills_required": [
+      "communication",
+      "analytical",
+      "drafting"
+    ],
+    "description": "Fantastic opportunity for a Junior Associate at Future Systems Inc. You will work on advocate projects and gain hands-on experience with communication, analytical. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int037",
+    "duration": "4 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT038",
+    "title": "Litigation Intern",
+    "company": "Future Systems Pvt Ltd",
+    "location": "Pune, India",
+    "domain": "ADVOCATE",
+    "skills_required": [
+      "communication",
+      "drafting",
+      "legal research"
+    ],
+    "description": "Fantastic opportunity for a Litigation Intern at Future Systems Pvt Ltd. You will work on advocate projects and gain hands-on experience with communication, drafting. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int038",
+    "duration": "3 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT039",
+    "title": "Litigation Intern",
+    "company": "Sky High Corp",
+    "location": "Bangalore, India",
+    "domain": "ADVOCATE",
+    "skills_required": [
+      "law",
+      "analytical",
+      "drafting",
+      "legal research",
+      "communication"
+    ],
+    "description": "Fantastic opportunity for a Litigation Intern at Sky High Corp. You will work on advocate projects and gain hands-on experience with law, analytical. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int039",
+    "duration": "4 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT040",
+    "title": "Corporate Law Trainee",
+    "company": "Smart Agri Group",
+    "location": "Bangalore, India",
+    "domain": "ADVOCATE",
+    "skills_required": [
+      "legal research",
+      "law",
+      "analytical",
+      "communication"
+    ],
+    "description": "Fantastic opportunity for a Corporate Law Trainee at Smart Agri Group. You will work on advocate projects and gain hands-on experience with legal research, law. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int040",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT041",
+    "title": "Corporate Law Trainee",
+    "company": "Star BPO Labs",
+    "location": "Singapore",
+    "domain": "ADVOCATE",
+    "skills_required": [
+      "communication",
+      "law",
+      "analytical",
+      "legal research"
+    ],
+    "description": "Fantastic opportunity for a Corporate Law Trainee at Star BPO Labs. You will work on advocate projects and gain hands-on experience with communication, law. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int041",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT042",
+    "title": "Agri-Tech Intern",
+    "company": "Auto Dynamic Group",
+    "location": "Remote",
+    "domain": "AGRICULTURE",
+    "skills_required": [
+      "biology",
+      "data analysis",
+      "irrigation",
+      "soil science"
+    ],
+    "description": "Fantastic opportunity for a Agri-Tech Intern at Auto Dynamic Group. You will work on agriculture projects and gain hands-on experience with biology, data analysis. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int042",
+    "duration": "4 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT043",
+    "title": "Agri-Tech Intern",
+    "company": "Insight Corp Inc",
+    "location": "Berlin, Germany",
+    "domain": "AGRICULTURE",
+    "skills_required": [
+      "farming",
+      "soil science",
+      "data analysis",
+      "irrigation",
+      "biology"
+    ],
+    "description": "Fantastic opportunity for a Agri-Tech Intern at Insight Corp Inc. You will work on agriculture projects and gain hands-on experience with farming, soil science. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int043",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT044",
+    "title": "Farm Management Trainee",
+    "company": "Build Well Inc",
+    "location": "Pune, India",
+    "domain": "AGRICULTURE",
+    "skills_required": [
+      "irrigation",
+      "data analysis",
+      "biology",
+      "soil science",
+      "farming"
+    ],
+    "description": "Fantastic opportunity for a Farm Management Trainee at Build Well Inc. You will work on agriculture projects and gain hands-on experience with irrigation, data analysis. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int044",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT045",
+    "title": "Farm Management Trainee",
+    "company": "Sky High Inc",
+    "location": "Berlin, Germany",
+    "domain": "AGRICULTURE",
+    "skills_required": [
+      "data analysis",
+      "biology",
+      "farming",
+      "soil science",
+      "irrigation"
+    ],
+    "description": "Fantastic opportunity for a Farm Management Trainee at Sky High Inc. You will work on agriculture projects and gain hands-on experience with data analysis, biology. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int045",
+    "duration": "6 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT046",
+    "title": "Soil Science Researcher",
+    "company": "Auto Dynamic Pvt Ltd",
+    "location": "Delhi, India",
+    "domain": "AGRICULTURE",
+    "skills_required": [
+      "farming",
+      "irrigation",
+      "data analysis"
+    ],
+    "description": "Fantastic opportunity for a Soil Science Researcher at Auto Dynamic Pvt Ltd. You will work on agriculture projects and gain hands-on experience with farming, irrigation. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int046",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT047",
+    "title": "Soil Science Researcher",
+    "company": "Global Solutions Pvt Ltd",
+    "location": "New York, USA",
+    "domain": "AGRICULTURE",
+    "skills_required": [
+      "farming",
+      "data analysis",
+      "irrigation"
+    ],
+    "description": "Fantastic opportunity for a Soil Science Researcher at Global Solutions Pvt Ltd. You will work on agriculture projects and gain hands-on experience with farming, data analysis. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int047",
+    "duration": "3 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT048",
+    "title": "Agronomist Intern",
+    "company": "Creative Minds Labs",
+    "location": "Sydney, Australia",
+    "domain": "AGRICULTURE",
+    "skills_required": [
+      "farming",
+      "biology",
+      "irrigation"
+    ],
+    "description": "Fantastic opportunity for a Agronomist Intern at Creative Minds Labs. You will work on agriculture projects and gain hands-on experience with farming, biology. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int048",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT049",
+    "title": "Agronomist Intern",
+    "company": "Star BPO Pvt Ltd",
+    "location": "Toronto, Canada",
+    "domain": "AGRICULTURE",
+    "skills_required": [
+      "irrigation",
+      "data analysis",
+      "soil science"
+    ],
+    "description": "Fantastic opportunity for a Agronomist Intern at Star BPO Pvt Ltd. You will work on agriculture projects and gain hands-on experience with irrigation, data analysis. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int049",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT050",
+    "title": "Fashion Design Intern",
+    "company": "Future Systems Corp",
+    "location": "Toronto, Canada",
+    "domain": "APPAREL",
+    "skills_required": [
+      "fashion design",
+      "creative",
+      "photoshop",
+      "textiles"
+    ],
+    "description": "Fantastic opportunity for a Fashion Design Intern at Future Systems Corp. You will work on apparel projects and gain hands-on experience with fashion design, creative. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int050",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT051",
+    "title": "Fashion Design Intern",
+    "company": "Next Gen IT Labs",
+    "location": "Toronto, Canada",
+    "domain": "APPAREL",
+    "skills_required": [
+      "fashion design",
+      "photoshop",
+      "creative"
+    ],
+    "description": "Fantastic opportunity for a Fashion Design Intern at Next Gen IT Labs. You will work on apparel projects and gain hands-on experience with fashion design, photoshop. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int051",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT052",
+    "title": "Textile Merchandising Trainee",
+    "company": "Creative Minds Group",
+    "location": "Chennai, India",
+    "domain": "APPAREL",
+    "skills_required": [
+      "creative",
+      "fashion design",
+      "merchandising",
+      "photoshop"
+    ],
+    "description": "Fantastic opportunity for a Textile Merchandising Trainee at Creative Minds Group. You will work on apparel projects and gain hands-on experience with creative, fashion design. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int052",
+    "duration": "3 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT053",
+    "title": "Textile Merchandising Trainee",
+    "company": "Star BPO Group",
+    "location": "Berlin, Germany",
+    "domain": "APPAREL",
+    "skills_required": [
+      "photoshop",
+      "merchandising",
+      "textiles"
+    ],
+    "description": "Fantastic opportunity for a Textile Merchandising Trainee at Star BPO Group. You will work on apparel projects and gain hands-on experience with photoshop, merchandising. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int053",
+    "duration": "4 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT054",
+    "title": "Garment Production Intern",
+    "company": "Next Gen IT Labs",
+    "location": "Pune, India",
+    "domain": "APPAREL",
+    "skills_required": [
+      "photoshop",
+      "fashion design",
+      "textiles",
+      "creative",
+      "merchandising"
+    ],
+    "description": "Fantastic opportunity for a Garment Production Intern at Next Gen IT Labs. You will work on apparel projects and gain hands-on experience with photoshop, fashion design. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int054",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT055",
+    "title": "Garment Production Intern",
+    "company": "Future Systems Group",
+    "location": "New York, USA",
+    "domain": "APPAREL",
+    "skills_required": [
+      "textiles",
+      "photoshop",
+      "creative"
+    ],
+    "description": "Fantastic opportunity for a Garment Production Intern at Future Systems Group. You will work on apparel projects and gain hands-on experience with textiles, photoshop. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int055",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT056",
+    "title": "Apparel Marketing Intern",
+    "company": "Sky High Corp",
+    "location": "Mumbai, India",
+    "domain": "APPAREL",
+    "skills_required": [
+      "photoshop",
+      "fashion design",
+      "textiles"
+    ],
+    "description": "Fantastic opportunity for a Apparel Marketing Intern at Sky High Corp. You will work on apparel projects and gain hands-on experience with photoshop, fashion design. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int056",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT057",
+    "title": "Apparel Marketing Intern",
+    "company": "Market Lead Group",
+    "location": "Singapore",
+    "domain": "APPAREL",
+    "skills_required": [
+      "photoshop",
+      "textiles",
+      "creative",
+      "fashion design"
+    ],
+    "description": "Fantastic opportunity for a Apparel Marketing Intern at Market Lead Group. You will work on apparel projects and gain hands-on experience with photoshop, textiles. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int057",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT058",
+    "title": "Studio Assistant",
+    "company": "Fin Edge Group",
+    "location": "Bangalore, India",
+    "domain": "ARTS",
+    "skills_required": [
+      "illustrator",
+      "fine arts",
+      "photoshop"
+    ],
+    "description": "Fantastic opportunity for a Studio Assistant at Fin Edge Group. You will work on arts projects and gain hands-on experience with illustrator, fine arts. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int058",
+    "duration": "3 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT059",
+    "title": "Studio Assistant",
+    "company": "Pro Design Corp",
+    "location": "Hyderabad, India",
+    "domain": "ARTS",
+    "skills_required": [
+      "photoshop",
+      "painting",
+      "creativity",
+      "illustrator"
+    ],
+    "description": "Fantastic opportunity for a Studio Assistant at Pro Design Corp. You will work on arts projects and gain hands-on experience with photoshop, painting. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int059",
+    "duration": "3 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT060",
+    "title": "Art Gallery Intern",
+    "company": "Auto Dynamic Labs",
+    "location": "London, UK",
+    "domain": "ARTS",
+    "skills_required": [
+      "illustrator",
+      "fine arts",
+      "painting",
+      "photoshop",
+      "creativity"
+    ],
+    "description": "Fantastic opportunity for a Art Gallery Intern at Auto Dynamic Labs. You will work on arts projects and gain hands-on experience with illustrator, fine arts. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int060",
+    "duration": "6 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT061",
+    "title": "Art Gallery Intern",
+    "company": "Creative Minds Group",
+    "location": "Chennai, India",
+    "domain": "ARTS",
+    "skills_required": [
+      "illustrator",
+      "creativity",
+      "photoshop"
+    ],
+    "description": "Fantastic opportunity for a Art Gallery Intern at Creative Minds Group. You will work on arts projects and gain hands-on experience with illustrator, creativity. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int061",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT062",
+    "title": "Graphic Design Intern",
+    "company": "Star BPO Corp",
+    "location": "Bangalore, India",
+    "domain": "ARTS",
+    "skills_required": [
+      "painting",
+      "photoshop",
+      "fine arts",
+      "illustrator",
+      "creativity"
+    ],
+    "description": "Fantastic opportunity for a Graphic Design Intern at Star BPO Corp. You will work on arts projects and gain hands-on experience with painting, photoshop. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int062",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT063",
+    "title": "Graphic Design Intern",
+    "company": "Global Solutions Corp",
+    "location": "Hyderabad, India",
+    "domain": "ARTS",
+    "skills_required": [
+      "painting",
+      "photoshop",
+      "creativity"
+    ],
+    "description": "Fantastic opportunity for a Graphic Design Intern at Global Solutions Corp. You will work on arts projects and gain hands-on experience with painting, photoshop. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int063",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT064",
+    "title": "Creative Arts Trainee",
+    "company": "Next Gen IT Labs",
+    "location": "Berlin, Germany",
+    "domain": "ARTS",
+    "skills_required": [
+      "illustrator",
+      "painting",
+      "fine arts"
+    ],
+    "description": "Fantastic opportunity for a Creative Arts Trainee at Next Gen IT Labs. You will work on arts projects and gain hands-on experience with illustrator, painting. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int064",
+    "duration": "4 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT065",
+    "title": "Creative Arts Trainee",
+    "company": "Smart Agri Group",
+    "location": "Hyderabad, India",
+    "domain": "ARTS",
+    "skills_required": [
+      "painting",
+      "photoshop",
+      "creativity"
+    ],
+    "description": "Fantastic opportunity for a Creative Arts Trainee at Smart Agri Group. You will work on arts projects and gain hands-on experience with painting, photoshop. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int065",
+    "duration": "3 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT066",
+    "title": "Automotive Engineering Intern",
+    "company": "Creative Minds Labs",
+    "location": "Remote",
+    "domain": "AUTOMOBILE",
+    "skills_required": [
+      "electrical",
+      "catia",
+      "mechanical",
+      "problem solving",
+      "autocad"
+    ],
+    "description": "Fantastic opportunity for a Automotive Engineering Intern at Creative Minds Labs. You will work on automobile projects and gain hands-on experience with electrical, catia. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int066",
+    "duration": "3 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT067",
+    "title": "Automotive Engineering Intern",
+    "company": "Care First Corp",
+    "location": "New York, USA",
+    "domain": "AUTOMOBILE",
+    "skills_required": [
+      "mechanical",
+      "autocad",
+      "electrical",
+      "problem solving",
+      "catia"
+    ],
+    "description": "Fantastic opportunity for a Automotive Engineering Intern at Care First Corp. You will work on automobile projects and gain hands-on experience with mechanical, autocad. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int067",
+    "duration": "4 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT068",
+    "title": "Vehicle Design Trainee",
+    "company": "Tech Innovators Inc",
+    "location": "Remote",
+    "domain": "AUTOMOBILE",
+    "skills_required": [
+      "problem solving",
+      "electrical",
+      "catia",
+      "autocad"
+    ],
+    "description": "Fantastic opportunity for a Vehicle Design Trainee at Tech Innovators Inc. You will work on automobile projects and gain hands-on experience with problem solving, electrical. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int068",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT069",
+    "title": "Vehicle Design Trainee",
+    "company": "Sky High Labs",
+    "location": "Chennai, India",
+    "domain": "AUTOMOBILE",
+    "skills_required": [
+      "catia",
+      "autocad",
+      "mechanical"
+    ],
+    "description": "Fantastic opportunity for a Vehicle Design Trainee at Sky High Labs. You will work on automobile projects and gain hands-on experience with catia, autocad. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int069",
+    "duration": "4 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT070",
+    "title": "Auto Mechanic Intern",
+    "company": "Insight Corp Inc",
+    "location": "Remote",
+    "domain": "AUTOMOBILE",
+    "skills_required": [
+      "problem solving",
+      "electrical",
+      "catia"
+    ],
+    "description": "Fantastic opportunity for a Auto Mechanic Intern at Insight Corp Inc. You will work on automobile projects and gain hands-on experience with problem solving, electrical. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int070",
+    "duration": "3 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT071",
+    "title": "Auto Mechanic Intern",
+    "company": "Star BPO Pvt Ltd",
+    "location": "Remote",
+    "domain": "AUTOMOBILE",
+    "skills_required": [
+      "electrical",
+      "mechanical",
+      "autocad",
+      "problem solving",
+      "catia"
+    ],
+    "description": "Fantastic opportunity for a Auto Mechanic Intern at Star BPO Pvt Ltd. You will work on automobile projects and gain hands-on experience with electrical, mechanical. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int071",
+    "duration": "4 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT072",
+    "title": "EV Tech Research Intern",
+    "company": "Global Solutions Inc",
+    "location": "Berlin, Germany",
+    "domain": "AUTOMOBILE",
+    "skills_required": [
+      "catia",
+      "autocad",
+      "mechanical",
+      "electrical"
+    ],
+    "description": "Fantastic opportunity for a EV Tech Research Intern at Global Solutions Inc. You will work on automobile projects and gain hands-on experience with catia, autocad. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int072",
+    "duration": "4 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT073",
+    "title": "EV Tech Research Intern",
+    "company": "Global Solutions Corp",
+    "location": "Chennai, India",
+    "domain": "AUTOMOBILE",
+    "skills_required": [
+      "problem solving",
+      "catia",
+      "electrical",
+      "mechanical"
+    ],
+    "description": "Fantastic opportunity for a EV Tech Research Intern at Global Solutions Corp. You will work on automobile projects and gain hands-on experience with problem solving, catia. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int073",
+    "duration": "4 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT074",
+    "title": "Aviation Operations Intern",
+    "company": "Sky High Corp",
+    "location": "Mumbai, India",
+    "domain": "AVIATION",
+    "skills_required": [
+      "technical",
+      "management",
+      "communication"
+    ],
+    "description": "Fantastic opportunity for a Aviation Operations Intern at Sky High Corp. You will work on aviation projects and gain hands-on experience with technical, management. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int074",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT075",
+    "title": "Aviation Operations Intern",
+    "company": "Pro Design Inc",
+    "location": "Toronto, Canada",
+    "domain": "AVIATION",
+    "skills_required": [
+      "safety",
+      "management",
+      "communication",
+      "operations",
+      "technical"
+    ],
+    "description": "Fantastic opportunity for a Aviation Operations Intern at Pro Design Inc. You will work on aviation projects and gain hands-on experience with safety, management. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int075",
+    "duration": "3 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT076",
+    "title": "Aircraft Maintenance Trainee",
+    "company": "Creative Minds Pvt Ltd",
+    "location": "Toronto, Canada",
+    "domain": "AVIATION",
+    "skills_required": [
+      "communication",
+      "technical",
+      "operations",
+      "safety",
+      "management"
+    ],
+    "description": "Fantastic opportunity for a Aircraft Maintenance Trainee at Creative Minds Pvt Ltd. You will work on aviation projects and gain hands-on experience with communication, technical. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int076",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT077",
+    "title": "Aircraft Maintenance Trainee",
+    "company": "Tech Innovators Inc",
+    "location": "London, UK",
+    "domain": "AVIATION",
+    "skills_required": [
+      "technical",
+      "safety",
+      "communication",
+      "management"
+    ],
+    "description": "Fantastic opportunity for a Aircraft Maintenance Trainee at Tech Innovators Inc. You will work on aviation projects and gain hands-on experience with technical, safety. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int077",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT078",
+    "title": "Flight Operations Assistant",
+    "company": "Care First Pvt Ltd",
+    "location": "Remote",
+    "domain": "AVIATION",
+    "skills_required": [
+      "operations",
+      "communication",
+      "technical"
+    ],
+    "description": "Fantastic opportunity for a Flight Operations Assistant at Care First Pvt Ltd. You will work on aviation projects and gain hands-on experience with operations, communication. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int078",
+    "duration": "3 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT079",
+    "title": "Flight Operations Assistant",
+    "company": "Prime Enterprises Pvt Ltd",
+    "location": "Chennai, India",
+    "domain": "AVIATION",
+    "skills_required": [
+      "safety",
+      "communication",
+      "management"
+    ],
+    "description": "Fantastic opportunity for a Flight Operations Assistant at Prime Enterprises Pvt Ltd. You will work on aviation projects and gain hands-on experience with safety, communication. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int079",
+    "duration": "3 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT080",
+    "title": "Aerospace Engineering Intern",
+    "company": "Future Systems Pvt Ltd",
+    "location": "London, UK",
+    "domain": "AVIATION",
+    "skills_required": [
+      "safety",
+      "management",
+      "operations",
+      "communication",
+      "technical"
+    ],
+    "description": "Fantastic opportunity for a Aerospace Engineering Intern at Future Systems Pvt Ltd. You will work on aviation projects and gain hands-on experience with safety, management. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int080",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT081",
+    "title": "Aerospace Engineering Intern",
+    "company": "Tech Innovators Corp",
+    "location": "Berlin, Germany",
+    "domain": "AVIATION",
+    "skills_required": [
+      "safety",
+      "operations",
+      "communication",
+      "management",
+      "technical"
+    ],
+    "description": "Fantastic opportunity for a Aerospace Engineering Intern at Tech Innovators Corp. You will work on aviation projects and gain hands-on experience with safety, operations. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int081",
+    "duration": "4 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT082",
+    "title": "Investment Banking Intern",
+    "company": "Global Solutions Inc",
+    "location": "Hyderabad, India",
+    "domain": "BANKING",
+    "skills_required": [
+      "banking",
+      "analytical",
+      "customer service"
+    ],
+    "description": "Fantastic opportunity for a Investment Banking Intern at Global Solutions Inc. You will work on banking projects and gain hands-on experience with banking, analytical. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int082",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT083",
+    "title": "Investment Banking Intern",
+    "company": "Creative Minds Group",
+    "location": "Chennai, India",
+    "domain": "BANKING",
+    "skills_required": [
+      "banking",
+      "risk management",
+      "analytical",
+      "finance"
+    ],
+    "description": "Fantastic opportunity for a Investment Banking Intern at Creative Minds Group. You will work on banking projects and gain hands-on experience with banking, risk management. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int083",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT084",
+    "title": "Retail Banking Trainee",
+    "company": "Fin Edge Corp",
+    "location": "Pune, India",
+    "domain": "BANKING",
+    "skills_required": [
+      "banking",
+      "finance",
+      "risk management",
+      "customer service"
+    ],
+    "description": "Fantastic opportunity for a Retail Banking Trainee at Fin Edge Corp. You will work on banking projects and gain hands-on experience with banking, finance. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int084",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT085",
+    "title": "Retail Banking Trainee",
+    "company": "Tech Innovators Pvt Ltd",
+    "location": "Delhi, India",
+    "domain": "BANKING",
+    "skills_required": [
+      "customer service",
+      "banking",
+      "risk management",
+      "analytical"
+    ],
+    "description": "Fantastic opportunity for a Retail Banking Trainee at Tech Innovators Pvt Ltd. You will work on banking projects and gain hands-on experience with customer service, banking. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int085",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT086",
+    "title": "Credit Analyst Intern",
+    "company": "Global Solutions Corp",
+    "location": "Hyderabad, India",
+    "domain": "BANKING",
+    "skills_required": [
+      "banking",
+      "risk management",
+      "customer service",
+      "finance"
+    ],
+    "description": "Fantastic opportunity for a Credit Analyst Intern at Global Solutions Corp. You will work on banking projects and gain hands-on experience with banking, risk management. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int086",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT087",
+    "title": "Credit Analyst Intern",
+    "company": "Smart Agri Corp",
+    "location": "Berlin, Germany",
+    "domain": "BANKING",
+    "skills_required": [
+      "risk management",
+      "banking",
+      "analytical",
+      "customer service"
+    ],
+    "description": "Fantastic opportunity for a Credit Analyst Intern at Smart Agri Corp. You will work on banking projects and gain hands-on experience with risk management, banking. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int087",
+    "duration": "4 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT088",
+    "title": "Risk Management Associate",
+    "company": "Global Solutions Corp",
+    "location": "Bangalore, India",
+    "domain": "BANKING",
+    "skills_required": [
+      "finance",
+      "analytical",
+      "banking",
+      "customer service",
+      "risk management"
+    ],
+    "description": "Fantastic opportunity for a Risk Management Associate at Global Solutions Corp. You will work on banking projects and gain hands-on experience with finance, analytical. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int088",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT089",
+    "title": "Risk Management Associate",
+    "company": "Auto Dynamic Corp",
+    "location": "New York, USA",
+    "domain": "BANKING",
+    "skills_required": [
+      "banking",
+      "customer service",
+      "risk management",
+      "analytical"
+    ],
+    "description": "Fantastic opportunity for a Risk Management Associate at Auto Dynamic Corp. You will work on banking projects and gain hands-on experience with banking, customer service. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int089",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT090",
+    "title": "Customer Support Intern",
+    "company": "Smart Agri Inc",
+    "location": "Sydney, Australia",
+    "domain": "BPO",
+    "skills_required": [
+      "problem solving",
+      "english",
+      "typing",
+      "communication",
+      "customer service"
+    ],
+    "description": "Fantastic opportunity for a Customer Support Intern at Smart Agri Inc. You will work on bpo projects and gain hands-on experience with problem solving, english. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int090",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT091",
+    "title": "Customer Support Intern",
+    "company": "Insight Corp Corp",
+    "location": "Mumbai, India",
+    "domain": "BPO",
+    "skills_required": [
+      "customer service",
+      "english",
+      "communication"
+    ],
+    "description": "Fantastic opportunity for a Customer Support Intern at Insight Corp Corp. You will work on bpo projects and gain hands-on experience with customer service, english. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int091",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT092",
+    "title": "Process Associate Trainee",
+    "company": "Care First Group",
+    "location": "Toronto, Canada",
+    "domain": "BPO",
+    "skills_required": [
+      "customer service",
+      "communication",
+      "english",
+      "problem solving"
+    ],
+    "description": "Fantastic opportunity for a Process Associate Trainee at Care First Group. You will work on bpo projects and gain hands-on experience with customer service, communication. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int092",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT093",
+    "title": "Process Associate Trainee",
+    "company": "Care First Group",
+    "location": "Berlin, Germany",
+    "domain": "BPO",
+    "skills_required": [
+      "english",
+      "communication",
+      "typing",
+      "customer service",
+      "problem solving"
+    ],
+    "description": "Fantastic opportunity for a Process Associate Trainee at Care First Group. You will work on bpo projects and gain hands-on experience with english, communication. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int093",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT094",
+    "title": "Data Entry Specialist",
+    "company": "Future Systems Labs",
+    "location": "Bangalore, India",
+    "domain": "BPO",
+    "skills_required": [
+      "english",
+      "communication",
+      "customer service"
+    ],
+    "description": "Fantastic opportunity for a Data Entry Specialist at Future Systems Labs. You will work on bpo projects and gain hands-on experience with english, communication. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int094",
+    "duration": "4 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT095",
+    "title": "Data Entry Specialist",
+    "company": "Global Solutions Corp",
+    "location": "Mumbai, India",
+    "domain": "BPO",
+    "skills_required": [
+      "typing",
+      "english",
+      "problem solving",
+      "customer service"
+    ],
+    "description": "Fantastic opportunity for a Data Entry Specialist at Global Solutions Corp. You will work on bpo projects and gain hands-on experience with typing, english. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int095",
+    "duration": "6 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT096",
+    "title": "BPO Operations Intern",
+    "company": "Global Solutions Corp",
+    "location": "Berlin, Germany",
+    "domain": "BPO",
+    "skills_required": [
+      "english",
+      "communication",
+      "customer service"
+    ],
+    "description": "Fantastic opportunity for a BPO Operations Intern at Global Solutions Corp. You will work on bpo projects and gain hands-on experience with english, communication. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int096",
+    "duration": "6 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT097",
+    "title": "BPO Operations Intern",
+    "company": "Care First Pvt Ltd",
+    "location": "Pune, India",
+    "domain": "BPO",
+    "skills_required": [
+      "customer service",
+      "problem solving",
+      "typing"
+    ],
+    "description": "Fantastic opportunity for a BPO Operations Intern at Care First Pvt Ltd. You will work on bpo projects and gain hands-on experience with customer service, problem solving. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int097",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT098",
+    "title": "Business Development Associate",
+    "company": "Auto Dynamic Labs",
+    "location": "Bangalore, India",
+    "domain": "BUSINESS-DEVELOPMENT",
+    "skills_required": [
+      "pitching",
+      "crm",
+      "sales",
+      "negotiation",
+      "market research"
+    ],
+    "description": "Fantastic opportunity for a Business Development Associate at Auto Dynamic Labs. You will work on business-development projects and gain hands-on experience with pitching, crm. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int098",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT099",
+    "title": "Business Development Associate",
+    "company": "Auto Dynamic Group",
+    "location": "Delhi, India",
+    "domain": "BUSINESS-DEVELOPMENT",
+    "skills_required": [
+      "negotiation",
+      "crm",
+      "pitching",
+      "market research",
+      "sales"
+    ],
+    "description": "Fantastic opportunity for a Business Development Associate at Auto Dynamic Group. You will work on business-development projects and gain hands-on experience with negotiation, crm. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int099",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT100",
+    "title": "Market Research Intern",
+    "company": "Global Solutions Corp",
+    "location": "Hyderabad, India",
+    "domain": "BUSINESS-DEVELOPMENT",
+    "skills_required": [
+      "pitching",
+      "crm",
+      "sales",
+      "negotiation"
+    ],
+    "description": "Fantastic opportunity for a Market Research Intern at Global Solutions Corp. You will work on business-development projects and gain hands-on experience with pitching, crm. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int100",
+    "duration": "4 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT101",
+    "title": "Market Research Intern",
+    "company": "Tech Innovators Group",
+    "location": "Toronto, Canada",
+    "domain": "BUSINESS-DEVELOPMENT",
+    "skills_required": [
+      "market research",
+      "sales",
+      "pitching"
+    ],
+    "description": "Fantastic opportunity for a Market Research Intern at Tech Innovators Group. You will work on business-development projects and gain hands-on experience with market research, sales. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int101",
+    "duration": "6 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT102",
+    "title": "Strategic Partnership Trainee",
+    "company": "Market Lead Inc",
+    "location": "Pune, India",
+    "domain": "BUSINESS-DEVELOPMENT",
+    "skills_required": [
+      "crm",
+      "pitching",
+      "market research"
+    ],
+    "description": "Fantastic opportunity for a Strategic Partnership Trainee at Market Lead Inc. You will work on business-development projects and gain hands-on experience with crm, pitching. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int102",
+    "duration": "4 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT103",
+    "title": "Strategic Partnership Trainee",
+    "company": "Future Systems Pvt Ltd",
+    "location": "Chennai, India",
+    "domain": "BUSINESS-DEVELOPMENT",
+    "skills_required": [
+      "negotiation",
+      "market research",
+      "sales"
+    ],
+    "description": "Fantastic opportunity for a Strategic Partnership Trainee at Future Systems Pvt Ltd. You will work on business-development projects and gain hands-on experience with negotiation, market research. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int103",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT104",
+    "title": "Lead Generation Intern",
+    "company": "Global Solutions Group",
+    "location": "Berlin, Germany",
+    "domain": "BUSINESS-DEVELOPMENT",
+    "skills_required": [
+      "sales",
+      "crm",
+      "pitching",
+      "market research",
+      "negotiation"
+    ],
+    "description": "Fantastic opportunity for a Lead Generation Intern at Global Solutions Group. You will work on business-development projects and gain hands-on experience with sales, crm. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int104",
+    "duration": "6 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT105",
+    "title": "Lead Generation Intern",
+    "company": "Auto Dynamic Group",
+    "location": "Chennai, India",
+    "domain": "BUSINESS-DEVELOPMENT",
+    "skills_required": [
+      "negotiation",
+      "market research",
+      "sales",
+      "crm",
+      "pitching"
+    ],
+    "description": "Fantastic opportunity for a Lead Generation Intern at Auto Dynamic Group. You will work on business-development projects and gain hands-on experience with negotiation, market research. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int105",
+    "duration": "6 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT106",
+    "title": "Culinary Intern",
+    "company": "Global Solutions Pvt Ltd",
+    "location": "Chennai, India",
+    "domain": "CHEF",
+    "skills_required": [
+      "culinary",
+      "food safety",
+      "cooking"
+    ],
+    "description": "Fantastic opportunity for a Culinary Intern at Global Solutions Pvt Ltd. You will work on chef projects and gain hands-on experience with culinary, food safety. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int106",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT107",
+    "title": "Culinary Intern",
+    "company": "Creative Minds Corp",
+    "location": "London, UK",
+    "domain": "CHEF",
+    "skills_required": [
+      "culinary",
+      "cooking",
+      "time management",
+      "creativity",
+      "food safety"
+    ],
+    "description": "Fantastic opportunity for a Culinary Intern at Creative Minds Corp. You will work on chef projects and gain hands-on experience with culinary, cooking. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int107",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT108",
+    "title": "Pastry Chef Trainee",
+    "company": "Care First Pvt Ltd",
+    "location": "Toronto, Canada",
+    "domain": "CHEF",
+    "skills_required": [
+      "time management",
+      "cooking",
+      "creativity"
+    ],
+    "description": "Fantastic opportunity for a Pastry Chef Trainee at Care First Pvt Ltd. You will work on chef projects and gain hands-on experience with time management, cooking. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int108",
+    "duration": "6 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT109",
+    "title": "Pastry Chef Trainee",
+    "company": "Market Lead Group",
+    "location": "Mumbai, India",
+    "domain": "CHEF",
+    "skills_required": [
+      "culinary",
+      "food safety",
+      "time management"
+    ],
+    "description": "Fantastic opportunity for a Pastry Chef Trainee at Market Lead Group. You will work on chef projects and gain hands-on experience with culinary, food safety. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int109",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT110",
+    "title": "Kitchen Operations Assistant",
+    "company": "Fin Edge Corp",
+    "location": "London, UK",
+    "domain": "CHEF",
+    "skills_required": [
+      "culinary",
+      "cooking",
+      "time management",
+      "creativity"
+    ],
+    "description": "Fantastic opportunity for a Kitchen Operations Assistant at Fin Edge Corp. You will work on chef projects and gain hands-on experience with culinary, cooking. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int110",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT111",
+    "title": "Kitchen Operations Assistant",
+    "company": "Tech Innovators Labs",
+    "location": "Sydney, Australia",
+    "domain": "CHEF",
+    "skills_required": [
+      "creativity",
+      "time management",
+      "food safety",
+      "culinary",
+      "cooking"
+    ],
+    "description": "Fantastic opportunity for a Kitchen Operations Assistant at Tech Innovators Labs. You will work on chef projects and gain hands-on experience with creativity, time management. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int111",
+    "duration": "4 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT112",
+    "title": "Sous Chef Intern",
+    "company": "Pro Design Group",
+    "location": "Chennai, India",
+    "domain": "CHEF",
+    "skills_required": [
+      "food safety",
+      "culinary",
+      "time management"
+    ],
+    "description": "Fantastic opportunity for a Sous Chef Intern at Pro Design Group. You will work on chef projects and gain hands-on experience with food safety, culinary. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int112",
+    "duration": "4 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT113",
+    "title": "Sous Chef Intern",
+    "company": "Fin Edge Pvt Ltd",
+    "location": "Berlin, Germany",
+    "domain": "CHEF",
+    "skills_required": [
+      "creativity",
+      "culinary",
+      "time management"
+    ],
+    "description": "Fantastic opportunity for a Sous Chef Intern at Fin Edge Pvt Ltd. You will work on chef projects and gain hands-on experience with creativity, culinary. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int113",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT114",
+    "title": "Site Engineer Intern",
+    "company": "Care First Group",
+    "location": "New York, USA",
+    "domain": "CONSTRUCTION",
+    "skills_required": [
+      "civil engineering",
+      "autocad",
+      "site supervision"
+    ],
+    "description": "Fantastic opportunity for a Site Engineer Intern at Care First Group. You will work on construction projects and gain hands-on experience with civil engineering, autocad. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int114",
+    "duration": "3 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT115",
+    "title": "Site Engineer Intern",
+    "company": "Next Gen IT Corp",
+    "location": "Mumbai, India",
+    "domain": "CONSTRUCTION",
+    "skills_required": [
+      "civil engineering",
+      "estimation",
+      "site supervision",
+      "safety"
+    ],
+    "description": "Fantastic opportunity for a Site Engineer Intern at Next Gen IT Corp. You will work on construction projects and gain hands-on experience with civil engineering, estimation. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int115",
+    "duration": "4 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT116",
+    "title": "Quantity Surveyor Trainee",
+    "company": "Pro Design Group",
+    "location": "Bangalore, India",
+    "domain": "CONSTRUCTION",
+    "skills_required": [
+      "safety",
+      "civil engineering",
+      "autocad",
+      "site supervision"
+    ],
+    "description": "Fantastic opportunity for a Quantity Surveyor Trainee at Pro Design Group. You will work on construction projects and gain hands-on experience with safety, civil engineering. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int116",
+    "duration": "6 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT117",
+    "title": "Quantity Surveyor Trainee",
+    "company": "Auto Dynamic Corp",
+    "location": "Chennai, India",
+    "domain": "CONSTRUCTION",
+    "skills_required": [
+      "civil engineering",
+      "autocad",
+      "estimation",
+      "site supervision"
+    ],
+    "description": "Fantastic opportunity for a Quantity Surveyor Trainee at Auto Dynamic Corp. You will work on construction projects and gain hands-on experience with civil engineering, autocad. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int117",
+    "duration": "3 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT118",
+    "title": "Project Management Intern",
+    "company": "Prime Enterprises Group",
+    "location": "Toronto, Canada",
+    "domain": "CONSTRUCTION",
+    "skills_required": [
+      "autocad",
+      "safety",
+      "site supervision",
+      "estimation"
+    ],
+    "description": "Fantastic opportunity for a Project Management Intern at Prime Enterprises Group. You will work on construction projects and gain hands-on experience with autocad, safety. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int118",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT119",
+    "title": "Project Management Intern",
+    "company": "Build Well Group",
+    "location": "London, UK",
+    "domain": "CONSTRUCTION",
+    "skills_required": [
+      "autocad",
+      "estimation",
+      "site supervision",
+      "civil engineering"
+    ],
+    "description": "Fantastic opportunity for a Project Management Intern at Build Well Group. You will work on construction projects and gain hands-on experience with autocad, estimation. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int119",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT120",
+    "title": "Construction Supervision Assistant",
+    "company": "Tech Innovators Labs",
+    "location": "Bangalore, India",
+    "domain": "CONSTRUCTION",
+    "skills_required": [
+      "autocad",
+      "safety",
+      "site supervision",
+      "civil engineering",
+      "estimation"
+    ],
+    "description": "Fantastic opportunity for a Construction Supervision Assistant at Tech Innovators Labs. You will work on construction projects and gain hands-on experience with autocad, safety. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int120",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT121",
+    "title": "Construction Supervision Assistant",
+    "company": "Global Solutions Group",
+    "location": "Sydney, Australia",
+    "domain": "CONSTRUCTION",
+    "skills_required": [
+      "site supervision",
+      "safety",
+      "autocad",
+      "civil engineering",
+      "estimation"
+    ],
+    "description": "Fantastic opportunity for a Construction Supervision Assistant at Global Solutions Group. You will work on construction projects and gain hands-on experience with site supervision, safety. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int121",
+    "duration": "4 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT122",
+    "title": "Management Consulting Intern",
+    "company": "Global Solutions Pvt Ltd",
+    "location": "Mumbai, India",
+    "domain": "CONSULTANT",
+    "skills_required": [
+      "powerpoint",
+      "communication",
+      "analytical",
+      "strategy",
+      "problem solving"
+    ],
+    "description": "Fantastic opportunity for a Management Consulting Intern at Global Solutions Pvt Ltd. You will work on consultant projects and gain hands-on experience with powerpoint, communication. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int122",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT123",
+    "title": "Management Consulting Intern",
+    "company": "Future Systems Pvt Ltd",
+    "location": "London, UK",
+    "domain": "CONSULTANT",
+    "skills_required": [
+      "strategy",
+      "powerpoint",
+      "problem solving",
+      "analytical"
+    ],
+    "description": "Fantastic opportunity for a Management Consulting Intern at Future Systems Pvt Ltd. You will work on consultant projects and gain hands-on experience with strategy, powerpoint. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int123",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT124",
+    "title": "Strategy Research Trainee",
+    "company": "Auto Dynamic Group",
+    "location": "Chennai, India",
+    "domain": "CONSULTANT",
+    "skills_required": [
+      "problem solving",
+      "powerpoint",
+      "analytical",
+      "communication",
+      "strategy"
+    ],
+    "description": "Fantastic opportunity for a Strategy Research Trainee at Auto Dynamic Group. You will work on consultant projects and gain hands-on experience with problem solving, powerpoint. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int124",
+    "duration": "3 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT125",
+    "title": "Strategy Research Trainee",
+    "company": "Star BPO Corp",
+    "location": "Pune, India",
+    "domain": "CONSULTANT",
+    "skills_required": [
+      "communication",
+      "problem solving",
+      "powerpoint",
+      "strategy",
+      "analytical"
+    ],
+    "description": "Fantastic opportunity for a Strategy Research Trainee at Star BPO Corp. You will work on consultant projects and gain hands-on experience with communication, problem solving. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int125",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT126",
+    "title": "Operational Consultant Intern",
+    "company": "Global Solutions Inc",
+    "location": "New York, USA",
+    "domain": "CONSULTANT",
+    "skills_required": [
+      "communication",
+      "analytical",
+      "strategy"
+    ],
+    "description": "Fantastic opportunity for a Operational Consultant Intern at Global Solutions Inc. You will work on consultant projects and gain hands-on experience with communication, analytical. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int126",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT127",
+    "title": "Operational Consultant Intern",
+    "company": "Creative Minds Pvt Ltd",
+    "location": "Remote",
+    "domain": "CONSULTANT",
+    "skills_required": [
+      "problem solving",
+      "analytical",
+      "strategy",
+      "communication",
+      "powerpoint"
+    ],
+    "description": "Fantastic opportunity for a Operational Consultant Intern at Creative Minds Pvt Ltd. You will work on consultant projects and gain hands-on experience with problem solving, analytical. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int127",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT128",
+    "title": "IT Consulting Associate",
+    "company": "Tech Innovators Pvt Ltd",
+    "location": "Pune, India",
+    "domain": "CONSULTANT",
+    "skills_required": [
+      "strategy",
+      "powerpoint",
+      "communication",
+      "problem solving",
+      "analytical"
+    ],
+    "description": "Fantastic opportunity for a IT Consulting Associate at Tech Innovators Pvt Ltd. You will work on consultant projects and gain hands-on experience with strategy, powerpoint. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int128",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT129",
+    "title": "IT Consulting Associate",
+    "company": "Build Well Group",
+    "location": "Pune, India",
+    "domain": "CONSULTANT",
+    "skills_required": [
+      "powerpoint",
+      "communication",
+      "problem solving",
+      "analytical",
+      "strategy"
+    ],
+    "description": "Fantastic opportunity for a IT Consulting Associate at Build Well Group. You will work on consultant projects and gain hands-on experience with powerpoint, communication. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int129",
+    "duration": "4 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT130",
+    "title": "UX/UI Design Intern",
+    "company": "Auto Dynamic Labs",
+    "location": "Pune, India",
+    "domain": "DESIGNER",
+    "skills_required": [
+      "figma",
+      "adobe xd",
+      "wireframing"
+    ],
+    "description": "Fantastic opportunity for a UX/UI Design Intern at Auto Dynamic Labs. You will work on designer projects and gain hands-on experience with figma, adobe xd. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int130",
+    "duration": "4 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT131",
+    "title": "UX/UI Design Intern",
+    "company": "Auto Dynamic Corp",
+    "location": "Toronto, Canada",
+    "domain": "DESIGNER",
+    "skills_required": [
+      "figma",
+      "wireframing",
+      "adobe xd",
+      "sketch",
+      "ui/ux"
+    ],
+    "description": "Fantastic opportunity for a UX/UI Design Intern at Auto Dynamic Corp. You will work on designer projects and gain hands-on experience with figma, wireframing. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int131",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT132",
+    "title": "Product Designer Trainee",
+    "company": "Auto Dynamic Group",
+    "location": "Pune, India",
+    "domain": "DESIGNER",
+    "skills_required": [
+      "figma",
+      "sketch",
+      "wireframing",
+      "ui/ux"
+    ],
+    "description": "Fantastic opportunity for a Product Designer Trainee at Auto Dynamic Group. You will work on designer projects and gain hands-on experience with figma, sketch. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int132",
+    "duration": "3 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT133",
+    "title": "Product Designer Trainee",
+    "company": "Future Systems Labs",
+    "location": "London, UK",
+    "domain": "DESIGNER",
+    "skills_required": [
+      "wireframing",
+      "figma",
+      "sketch",
+      "ui/ux"
+    ],
+    "description": "Fantastic opportunity for a Product Designer Trainee at Future Systems Labs. You will work on designer projects and gain hands-on experience with wireframing, figma. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int133",
+    "duration": "3 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT134",
+    "title": "Industrial Design Intern",
+    "company": "Pro Design Corp",
+    "location": "Delhi, India",
+    "domain": "DESIGNER",
+    "skills_required": [
+      "sketch",
+      "adobe xd",
+      "wireframing"
+    ],
+    "description": "Fantastic opportunity for a Industrial Design Intern at Pro Design Corp. You will work on designer projects and gain hands-on experience with sketch, adobe xd. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int134",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT135",
+    "title": "Industrial Design Intern",
+    "company": "Market Lead Group",
+    "location": "Chennai, India",
+    "domain": "DESIGNER",
+    "skills_required": [
+      "adobe xd",
+      "sketch",
+      "wireframing",
+      "figma"
+    ],
+    "description": "Fantastic opportunity for a Industrial Design Intern at Market Lead Group. You will work on designer projects and gain hands-on experience with adobe xd, sketch. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int135",
+    "duration": "3 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT136",
+    "title": "Visual Design Associate",
+    "company": "Auto Dynamic Labs",
+    "location": "Singapore",
+    "domain": "DESIGNER",
+    "skills_required": [
+      "sketch",
+      "figma",
+      "wireframing"
+    ],
+    "description": "Fantastic opportunity for a Visual Design Associate at Auto Dynamic Labs. You will work on designer projects and gain hands-on experience with sketch, figma. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int136",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT137",
+    "title": "Visual Design Associate",
+    "company": "Pro Design Inc",
+    "location": "Singapore",
+    "domain": "DESIGNER",
+    "skills_required": [
+      "figma",
+      "ui/ux",
+      "sketch",
+      "wireframing"
+    ],
+    "description": "Fantastic opportunity for a Visual Design Associate at Pro Design Inc. You will work on designer projects and gain hands-on experience with figma, ui/ux. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int137",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT138",
+    "title": "Social Media Marketing Intern",
+    "company": "Pro Design Group",
+    "location": "New York, USA",
+    "domain": "DIGITAL-MEDIA",
+    "skills_required": [
+      "analytics",
+      "canva",
+      "content writing",
+      "social media",
+      "seo"
+    ],
+    "description": "Fantastic opportunity for a Social Media Marketing Intern at Pro Design Group. You will work on digital-media projects and gain hands-on experience with analytics, canva. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int138",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT139",
+    "title": "Social Media Marketing Intern",
+    "company": "Creative Minds Corp",
+    "location": "Sydney, Australia",
+    "domain": "DIGITAL-MEDIA",
+    "skills_required": [
+      "analytics",
+      "content writing",
+      "social media"
+    ],
+    "description": "Fantastic opportunity for a Social Media Marketing Intern at Creative Minds Corp. You will work on digital-media projects and gain hands-on experience with analytics, content writing. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int139",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT140",
+    "title": "Content Creation Trainee",
+    "company": "Sky High Corp",
+    "location": "Mumbai, India",
+    "domain": "DIGITAL-MEDIA",
+    "skills_required": [
+      "canva",
+      "social media",
+      "seo",
+      "content writing",
+      "analytics"
+    ],
+    "description": "Fantastic opportunity for a Content Creation Trainee at Sky High Corp. You will work on digital-media projects and gain hands-on experience with canva, social media. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int140",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT141",
+    "title": "Content Creation Trainee",
+    "company": "Smart Agri Inc",
+    "location": "Remote",
+    "domain": "DIGITAL-MEDIA",
+    "skills_required": [
+      "seo",
+      "analytics",
+      "social media",
+      "content writing"
+    ],
+    "description": "Fantastic opportunity for a Content Creation Trainee at Smart Agri Inc. You will work on digital-media projects and gain hands-on experience with seo, analytics. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int141",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT142",
+    "title": "Digital Strategy Intern",
+    "company": "Care First Labs",
+    "location": "Sydney, Australia",
+    "domain": "DIGITAL-MEDIA",
+    "skills_required": [
+      "social media",
+      "analytics",
+      "canva"
+    ],
+    "description": "Fantastic opportunity for a Digital Strategy Intern at Care First Labs. You will work on digital-media projects and gain hands-on experience with social media, analytics. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int142",
+    "duration": "6 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT143",
+    "title": "Digital Strategy Intern",
+    "company": "Future Systems Inc",
+    "location": "Singapore",
+    "domain": "DIGITAL-MEDIA",
+    "skills_required": [
+      "seo",
+      "analytics",
+      "content writing",
+      "canva",
+      "social media"
+    ],
+    "description": "Fantastic opportunity for a Digital Strategy Intern at Future Systems Inc. You will work on digital-media projects and gain hands-on experience with seo, analytics. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int143",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT144",
+    "title": "Video Editing Associate",
+    "company": "Care First Inc",
+    "location": "Mumbai, India",
+    "domain": "DIGITAL-MEDIA",
+    "skills_required": [
+      "analytics",
+      "seo",
+      "social media",
+      "content writing"
+    ],
+    "description": "Fantastic opportunity for a Video Editing Associate at Care First Inc. You will work on digital-media projects and gain hands-on experience with analytics, seo. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int144",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT145",
+    "title": "Video Editing Associate",
+    "company": "Star BPO Pvt Ltd",
+    "location": "London, UK",
+    "domain": "DIGITAL-MEDIA",
+    "skills_required": [
+      "content writing",
+      "canva",
+      "seo",
+      "social media"
+    ],
+    "description": "Fantastic opportunity for a Video Editing Associate at Star BPO Pvt Ltd. You will work on digital-media projects and gain hands-on experience with content writing, canva. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int145",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT146",
+    "title": "Electrical Engineering Intern",
+    "company": "Tech Innovators Labs",
+    "location": "London, UK",
+    "domain": "ENGINEERING",
+    "skills_required": [
+      "python",
+      "matlab",
+      "problem solving",
+      "solidworks",
+      "circuits"
+    ],
+    "description": "Fantastic opportunity for a Electrical Engineering Intern at Tech Innovators Labs. You will work on engineering projects and gain hands-on experience with python, matlab. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int146",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT147",
+    "title": "Electrical Engineering Intern",
+    "company": "Star BPO Inc",
+    "location": "Remote",
+    "domain": "ENGINEERING",
+    "skills_required": [
+      "problem solving",
+      "circuits",
+      "python",
+      "solidworks"
+    ],
+    "description": "Fantastic opportunity for a Electrical Engineering Intern at Star BPO Inc. You will work on engineering projects and gain hands-on experience with problem solving, circuits. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int147",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT148",
+    "title": "Chemical Engineering Trainee",
+    "company": "Next Gen IT Pvt Ltd",
+    "location": "Toronto, Canada",
+    "domain": "ENGINEERING",
+    "skills_required": [
+      "python",
+      "matlab",
+      "problem solving",
+      "solidworks",
+      "circuits"
+    ],
+    "description": "Fantastic opportunity for a Chemical Engineering Trainee at Next Gen IT Pvt Ltd. You will work on engineering projects and gain hands-on experience with python, matlab. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int148",
+    "duration": "3 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT149",
+    "title": "Chemical Engineering Trainee",
+    "company": "Next Gen IT Labs",
+    "location": "Pune, India",
+    "domain": "ENGINEERING",
+    "skills_required": [
+      "solidworks",
+      "problem solving",
+      "python"
+    ],
+    "description": "Fantastic opportunity for a Chemical Engineering Trainee at Next Gen IT Labs. You will work on engineering projects and gain hands-on experience with solidworks, problem solving. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int149",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT150",
+    "title": "Robotics Intern",
+    "company": "Sky High Corp",
+    "location": "Chennai, India",
+    "domain": "ENGINEERING",
+    "skills_required": [
+      "problem solving",
+      "circuits",
+      "matlab",
+      "python",
+      "solidworks"
+    ],
+    "description": "Fantastic opportunity for a Robotics Intern at Sky High Corp. You will work on engineering projects and gain hands-on experience with problem solving, circuits. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int150",
+    "duration": "3 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT151",
+    "title": "Robotics Intern",
+    "company": "Future Systems Corp",
+    "location": "Pune, India",
+    "domain": "ENGINEERING",
+    "skills_required": [
+      "matlab",
+      "solidworks",
+      "problem solving"
+    ],
+    "description": "Fantastic opportunity for a Robotics Intern at Future Systems Corp. You will work on engineering projects and gain hands-on experience with matlab, solidworks. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int151",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT152",
+    "title": "Systems Engineering Associate",
+    "company": "Future Systems Pvt Ltd",
+    "location": "Pune, India",
+    "domain": "ENGINEERING",
+    "skills_required": [
+      "python",
+      "matlab",
+      "solidworks",
+      "circuits"
+    ],
+    "description": "Fantastic opportunity for a Systems Engineering Associate at Future Systems Pvt Ltd. You will work on engineering projects and gain hands-on experience with python, matlab. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int152",
+    "duration": "4 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT153",
+    "title": "Systems Engineering Associate",
+    "company": "Smart Agri Pvt Ltd",
+    "location": "Berlin, Germany",
+    "domain": "ENGINEERING",
+    "skills_required": [
+      "solidworks",
+      "matlab",
+      "problem solving"
+    ],
+    "description": "Fantastic opportunity for a Systems Engineering Associate at Smart Agri Pvt Ltd. You will work on engineering projects and gain hands-on experience with solidworks, matlab. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int153",
+    "duration": "4 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT154",
+    "title": "Financial Planning Intern",
+    "company": "Pro Design Corp",
+    "location": "Chennai, India",
+    "domain": "FINANCE",
+    "skills_required": [
+      "accounting",
+      "investment",
+      "valuation"
+    ],
+    "description": "Fantastic opportunity for a Financial Planning Intern at Pro Design Corp. You will work on finance projects and gain hands-on experience with accounting, investment. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int154",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT155",
+    "title": "Financial Planning Intern",
+    "company": "Pro Design Labs",
+    "location": "Singapore",
+    "domain": "FINANCE",
+    "skills_required": [
+      "valuation",
+      "accounting",
+      "investment",
+      "excel"
+    ],
+    "description": "Fantastic opportunity for a Financial Planning Intern at Pro Design Labs. You will work on finance projects and gain hands-on experience with valuation, accounting. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int155",
+    "duration": "4 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT156",
+    "title": "Wealth Management Trainee",
+    "company": "Fin Edge Group",
+    "location": "New York, USA",
+    "domain": "FINANCE",
+    "skills_required": [
+      "valuation",
+      "fintech",
+      "investment",
+      "excel"
+    ],
+    "description": "Fantastic opportunity for a Wealth Management Trainee at Fin Edge Group. You will work on finance projects and gain hands-on experience with valuation, fintech. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int156",
+    "duration": "3 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT157",
+    "title": "Wealth Management Trainee",
+    "company": "Smart Agri Group",
+    "location": "Mumbai, India",
+    "domain": "FINANCE",
+    "skills_required": [
+      "investment",
+      "valuation",
+      "fintech",
+      "excel"
+    ],
+    "description": "Fantastic opportunity for a Wealth Management Trainee at Smart Agri Group. You will work on finance projects and gain hands-on experience with investment, valuation. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int157",
+    "duration": "4 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT158",
+    "title": "Stock Market Analyst",
+    "company": "Care First Labs",
+    "location": "Berlin, Germany",
+    "domain": "FINANCE",
+    "skills_required": [
+      "accounting",
+      "fintech",
+      "excel",
+      "investment"
+    ],
+    "description": "Fantastic opportunity for a Stock Market Analyst at Care First Labs. You will work on finance projects and gain hands-on experience with accounting, fintech. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int158",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT159",
+    "title": "Stock Market Analyst",
+    "company": "Care First Group",
+    "location": "Hyderabad, India",
+    "domain": "FINANCE",
+    "skills_required": [
+      "accounting",
+      "fintech",
+      "investment"
+    ],
+    "description": "Fantastic opportunity for a Stock Market Analyst at Care First Group. You will work on finance projects and gain hands-on experience with accounting, fintech. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int159",
+    "duration": "4 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT160",
+    "title": "Corporate Finance Intern",
+    "company": "Tech Innovators Pvt Ltd",
+    "location": "Mumbai, India",
+    "domain": "FINANCE",
+    "skills_required": [
+      "investment",
+      "fintech",
+      "excel",
+      "valuation",
+      "accounting"
+    ],
+    "description": "Fantastic opportunity for a Corporate Finance Intern at Tech Innovators Pvt Ltd. You will work on finance projects and gain hands-on experience with investment, fintech. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int160",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT161",
+    "title": "Corporate Finance Intern",
+    "company": "Sky High Group",
+    "location": "London, UK",
+    "domain": "FINANCE",
+    "skills_required": [
+      "fintech",
+      "investment",
+      "valuation",
+      "excel"
+    ],
+    "description": "Fantastic opportunity for a Corporate Finance Intern at Sky High Group. You will work on finance projects and gain hands-on experience with fintech, investment. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int161",
+    "duration": "4 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT162",
+    "title": "Personal Trainer Intern",
+    "company": "Market Lead Labs",
+    "location": "London, UK",
+    "domain": "FITNESS",
+    "skills_required": [
+      "fitness",
+      "anatomy",
+      "nutrition",
+      "training",
+      "communication"
+    ],
+    "description": "Fantastic opportunity for a Personal Trainer Intern at Market Lead Labs. You will work on fitness projects and gain hands-on experience with fitness, anatomy. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int162",
+    "duration": "4 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT163",
+    "title": "Personal Trainer Intern",
+    "company": "Market Lead Corp",
+    "location": "Pune, India",
+    "domain": "FITNESS",
+    "skills_required": [
+      "anatomy",
+      "fitness",
+      "communication",
+      "nutrition"
+    ],
+    "description": "Fantastic opportunity for a Personal Trainer Intern at Market Lead Corp. You will work on fitness projects and gain hands-on experience with anatomy, fitness. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int163",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT164",
+    "title": "Fitness Center Manager Trainee",
+    "company": "Next Gen IT Corp",
+    "location": "Delhi, India",
+    "domain": "FITNESS",
+    "skills_required": [
+      "communication",
+      "anatomy",
+      "training",
+      "nutrition",
+      "fitness"
+    ],
+    "description": "Fantastic opportunity for a Fitness Center Manager Trainee at Next Gen IT Corp. You will work on fitness projects and gain hands-on experience with communication, anatomy. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int164",
+    "duration": "6 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT165",
+    "title": "Fitness Center Manager Trainee",
+    "company": "Build Well Labs",
+    "location": "Mumbai, India",
+    "domain": "FITNESS",
+    "skills_required": [
+      "fitness",
+      "training",
+      "anatomy",
+      "communication",
+      "nutrition"
+    ],
+    "description": "Fantastic opportunity for a Fitness Center Manager Trainee at Build Well Labs. You will work on fitness projects and gain hands-on experience with fitness, training. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int165",
+    "duration": "4 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT166",
+    "title": "Nutritionist Intern",
+    "company": "Tech Innovators Labs",
+    "location": "Chennai, India",
+    "domain": "FITNESS",
+    "skills_required": [
+      "fitness",
+      "anatomy",
+      "training",
+      "communication"
+    ],
+    "description": "Fantastic opportunity for a Nutritionist Intern at Tech Innovators Labs. You will work on fitness projects and gain hands-on experience with fitness, anatomy. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int166",
+    "duration": "6 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT167",
+    "title": "Nutritionist Intern",
+    "company": "Prime Enterprises Pvt Ltd",
+    "location": "Hyderabad, India",
+    "domain": "FITNESS",
+    "skills_required": [
+      "nutrition",
+      "fitness",
+      "communication"
+    ],
+    "description": "Fantastic opportunity for a Nutritionist Intern at Prime Enterprises Pvt Ltd. You will work on fitness projects and gain hands-on experience with nutrition, fitness. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int167",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT168",
+    "title": "Sports Management Associate",
+    "company": "Sky High Inc",
+    "location": "Bangalore, India",
+    "domain": "FITNESS",
+    "skills_required": [
+      "anatomy",
+      "fitness",
+      "communication",
+      "nutrition"
+    ],
+    "description": "Fantastic opportunity for a Sports Management Associate at Sky High Inc. You will work on fitness projects and gain hands-on experience with anatomy, fitness. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int168",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT169",
+    "title": "Sports Management Associate",
+    "company": "Smart Agri Labs",
+    "location": "Hyderabad, India",
+    "domain": "FITNESS",
+    "skills_required": [
+      "fitness",
+      "anatomy",
+      "nutrition",
+      "communication",
+      "training"
+    ],
+    "description": "Fantastic opportunity for a Sports Management Associate at Smart Agri Labs. You will work on fitness projects and gain hands-on experience with fitness, anatomy. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int169",
+    "duration": "6 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT170",
+    "title": "Medical Lab Intern",
+    "company": "Smart Agri Pvt Ltd",
+    "location": "Sydney, Australia",
+    "domain": "HEALTHCARE",
+    "skills_required": [
+      "patient care",
+      "first aid",
+      "medical knowledge",
+      "administration",
+      "emr"
+    ],
+    "description": "Fantastic opportunity for a Medical Lab Intern at Smart Agri Pvt Ltd. You will work on healthcare projects and gain hands-on experience with patient care, first aid. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int170",
+    "duration": "6 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT171",
+    "title": "Medical Lab Intern",
+    "company": "Creative Minds Pvt Ltd",
+    "location": "New York, USA",
+    "domain": "HEALTHCARE",
+    "skills_required": [
+      "first aid",
+      "medical knowledge",
+      "emr",
+      "administration"
+    ],
+    "description": "Fantastic opportunity for a Medical Lab Intern at Creative Minds Pvt Ltd. You will work on healthcare projects and gain hands-on experience with first aid, medical knowledge. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int171",
+    "duration": "4 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT172",
+    "title": "Nursing Assistant Trainee",
+    "company": "Next Gen IT Inc",
+    "location": "Sydney, Australia",
+    "domain": "HEALTHCARE",
+    "skills_required": [
+      "patient care",
+      "medical knowledge",
+      "emr"
+    ],
+    "description": "Fantastic opportunity for a Nursing Assistant Trainee at Next Gen IT Inc. You will work on healthcare projects and gain hands-on experience with patient care, medical knowledge. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int172",
+    "duration": "6 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT173",
+    "title": "Nursing Assistant Trainee",
+    "company": "Creative Minds Corp",
+    "location": "Sydney, Australia",
+    "domain": "HEALTHCARE",
+    "skills_required": [
+      "administration",
+      "medical knowledge",
+      "first aid",
+      "patient care",
+      "emr"
+    ],
+    "description": "Fantastic opportunity for a Nursing Assistant Trainee at Creative Minds Corp. You will work on healthcare projects and gain hands-on experience with administration, medical knowledge. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int173",
+    "duration": "6 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT174",
+    "title": "Healthcare Admin Intern",
+    "company": "Care First Inc",
+    "location": "Remote",
+    "domain": "HEALTHCARE",
+    "skills_required": [
+      "patient care",
+      "emr",
+      "medical knowledge",
+      "first aid",
+      "administration"
+    ],
+    "description": "Fantastic opportunity for a Healthcare Admin Intern at Care First Inc. You will work on healthcare projects and gain hands-on experience with patient care, emr. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int174",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT175",
+    "title": "Healthcare Admin Intern",
+    "company": "Future Systems Corp",
+    "location": "Delhi, India",
+    "domain": "HEALTHCARE",
+    "skills_required": [
+      "administration",
+      "medical knowledge",
+      "emr",
+      "first aid",
+      "patient care"
+    ],
+    "description": "Fantastic opportunity for a Healthcare Admin Intern at Future Systems Corp. You will work on healthcare projects and gain hands-on experience with administration, medical knowledge. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int175",
+    "duration": "4 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT176",
+    "title": "Clinical Research Associate",
+    "company": "Sky High Labs",
+    "location": "Sydney, Australia",
+    "domain": "HEALTHCARE",
+    "skills_required": [
+      "patient care",
+      "first aid",
+      "emr",
+      "medical knowledge",
+      "administration"
+    ],
+    "description": "Fantastic opportunity for a Clinical Research Associate at Sky High Labs. You will work on healthcare projects and gain hands-on experience with patient care, first aid. Join our Sydney, Australia team.",
+    "apply_link": "https://example.com/apply/int176",
+    "duration": "4 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT177",
+    "title": "Clinical Research Associate",
+    "company": "Market Lead Inc",
+    "location": "Bangalore, India",
+    "domain": "HEALTHCARE",
+    "skills_required": [
+      "patient care",
+      "emr",
+      "medical knowledge",
+      "first aid",
+      "administration"
+    ],
+    "description": "Fantastic opportunity for a Clinical Research Associate at Market Lead Inc. You will work on healthcare projects and gain hands-on experience with patient care, emr. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int177",
+    "duration": "3 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT178",
+    "title": "Recruitment Intern",
+    "company": "Tech Innovators Pvt Ltd",
+    "location": "Toronto, Canada",
+    "domain": "HR",
+    "skills_required": [
+      "hris",
+      "documentation",
+      "recruitment"
+    ],
+    "description": "Fantastic opportunity for a Recruitment Intern at Tech Innovators Pvt Ltd. You will work on hr projects and gain hands-on experience with hris, documentation. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int178",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT179",
+    "title": "Recruitment Intern",
+    "company": "Next Gen IT Pvt Ltd",
+    "location": "Chennai, India",
+    "domain": "HR",
+    "skills_required": [
+      "hris",
+      "interpersonal",
+      "hiring"
+    ],
+    "description": "Fantastic opportunity for a Recruitment Intern at Next Gen IT Pvt Ltd. You will work on hr projects and gain hands-on experience with hris, interpersonal. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int179",
+    "duration": "3 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT180",
+    "title": "HR Operations Trainee",
+    "company": "Prime Enterprises Group",
+    "location": "Delhi, India",
+    "domain": "HR",
+    "skills_required": [
+      "hiring",
+      "recruitment",
+      "hris",
+      "documentation",
+      "interpersonal"
+    ],
+    "description": "Fantastic opportunity for a HR Operations Trainee at Prime Enterprises Group. You will work on hr projects and gain hands-on experience with hiring, recruitment. Join our Delhi, India team.",
+    "apply_link": "https://example.com/apply/int180",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT181",
+    "title": "HR Operations Trainee",
+    "company": "Creative Minds Labs",
+    "location": "Chennai, India",
+    "domain": "HR",
+    "skills_required": [
+      "hris",
+      "hiring",
+      "interpersonal",
+      "recruitment",
+      "documentation"
+    ],
+    "description": "Fantastic opportunity for a HR Operations Trainee at Creative Minds Labs. You will work on hr projects and gain hands-on experience with hris, hiring. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int181",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT182",
+    "title": "Employee Engagement Intern",
+    "company": "Care First Pvt Ltd",
+    "location": "Bangalore, India",
+    "domain": "HR",
+    "skills_required": [
+      "interpersonal",
+      "recruitment",
+      "documentation"
+    ],
+    "description": "Fantastic opportunity for a Employee Engagement Intern at Care First Pvt Ltd. You will work on hr projects and gain hands-on experience with interpersonal, recruitment. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int182",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT183",
+    "title": "Employee Engagement Intern",
+    "company": "Fin Edge Corp",
+    "location": "Chennai, India",
+    "domain": "HR",
+    "skills_required": [
+      "recruitment",
+      "documentation",
+      "hris",
+      "hiring"
+    ],
+    "description": "Fantastic opportunity for a Employee Engagement Intern at Fin Edge Corp. You will work on hr projects and gain hands-on experience with recruitment, documentation. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int183",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT184",
+    "title": "Payroll Assistant",
+    "company": "Market Lead Inc",
+    "location": "New York, USA",
+    "domain": "HR",
+    "skills_required": [
+      "hiring",
+      "interpersonal",
+      "hris",
+      "documentation",
+      "recruitment"
+    ],
+    "description": "Fantastic opportunity for a Payroll Assistant at Market Lead Inc. You will work on hr projects and gain hands-on experience with hiring, interpersonal. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int184",
+    "duration": "3 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT185",
+    "title": "Payroll Assistant",
+    "company": "Next Gen IT Corp",
+    "location": "London, UK",
+    "domain": "HR",
+    "skills_required": [
+      "documentation",
+      "hiring",
+      "hris",
+      "interpersonal",
+      "recruitment"
+    ],
+    "description": "Fantastic opportunity for a Payroll Assistant at Next Gen IT Corp. You will work on hr projects and gain hands-on experience with documentation, hiring. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int185",
+    "duration": "3 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT186",
+    "title": "Software Engineer Intern",
+    "company": "Fin Edge Labs",
+    "location": "Pune, India",
+    "domain": "INFORMATION-TECHNOLOGY",
+    "skills_required": [
+      "javascript",
+      "java",
+      "python",
+      "cloud",
+      "database"
+    ],
+    "description": "Fantastic opportunity for a Software Engineer Intern at Fin Edge Labs. You will work on information-technology projects and gain hands-on experience with javascript, java. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int186",
+    "duration": "3 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT187",
+    "title": "Software Engineer Intern",
+    "company": "Creative Minds Corp",
+    "location": "New York, USA",
+    "domain": "INFORMATION-TECHNOLOGY",
+    "skills_required": [
+      "database",
+      "java",
+      "javascript"
+    ],
+    "description": "Fantastic opportunity for a Software Engineer Intern at Creative Minds Corp. You will work on information-technology projects and gain hands-on experience with database, java. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int187",
+    "duration": "3 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT188",
+    "title": "Full Stack Trainee",
+    "company": "Next Gen IT Pvt Ltd",
+    "location": "Hyderabad, India",
+    "domain": "INFORMATION-TECHNOLOGY",
+    "skills_required": [
+      "cloud",
+      "database",
+      "python"
+    ],
+    "description": "Fantastic opportunity for a Full Stack Trainee at Next Gen IT Pvt Ltd. You will work on information-technology projects and gain hands-on experience with cloud, database. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int188",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT189",
+    "title": "Full Stack Trainee",
+    "company": "Build Well Inc",
+    "location": "Pune, India",
+    "domain": "INFORMATION-TECHNOLOGY",
+    "skills_required": [
+      "python",
+      "database",
+      "cloud"
+    ],
+    "description": "Fantastic opportunity for a Full Stack Trainee at Build Well Inc. You will work on information-technology projects and gain hands-on experience with python, database. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int189",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT190",
+    "title": "DevOps Intern",
+    "company": "Smart Agri Labs",
+    "location": "Pune, India",
+    "domain": "INFORMATION-TECHNOLOGY",
+    "skills_required": [
+      "cloud",
+      "javascript",
+      "database"
+    ],
+    "description": "Fantastic opportunity for a DevOps Intern at Smart Agri Labs. You will work on information-technology projects and gain hands-on experience with cloud, javascript. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int190",
+    "duration": "4 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT191",
+    "title": "DevOps Intern",
+    "company": "Sky High Labs",
+    "location": "Hyderabad, India",
+    "domain": "INFORMATION-TECHNOLOGY",
+    "skills_required": [
+      "python",
+      "cloud",
+      "java",
+      "javascript",
+      "database"
+    ],
+    "description": "Fantastic opportunity for a DevOps Intern at Sky High Labs. You will work on information-technology projects and gain hands-on experience with python, cloud. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int191",
+    "duration": "3 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT192",
+    "title": "Cloud Architecture Associate",
+    "company": "Market Lead Pvt Ltd",
+    "location": "Mumbai, India",
+    "domain": "INFORMATION-TECHNOLOGY",
+    "skills_required": [
+      "java",
+      "database",
+      "javascript",
+      "cloud"
+    ],
+    "description": "Fantastic opportunity for a Cloud Architecture Associate at Market Lead Pvt Ltd. You will work on information-technology projects and gain hands-on experience with java, database. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int192",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT193",
+    "title": "Cloud Architecture Associate",
+    "company": "Global Solutions Corp",
+    "location": "Bangalore, India",
+    "domain": "INFORMATION-TECHNOLOGY",
+    "skills_required": [
+      "python",
+      "java",
+      "cloud",
+      "javascript"
+    ],
+    "description": "Fantastic opportunity for a Cloud Architecture Associate at Global Solutions Corp. You will work on information-technology projects and gain hands-on experience with python, java. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int193",
+    "duration": "6 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT194",
+    "title": "PR Assistant",
+    "company": "Sky High Corp",
+    "location": "London, UK",
+    "domain": "PUBLIC-RELATIONS",
+    "skills_required": [
+      "writing",
+      "branding",
+      "pr"
+    ],
+    "description": "Fantastic opportunity for a PR Assistant at Sky High Corp. You will work on public-relations projects and gain hands-on experience with writing, branding. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int194",
+    "duration": "3 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT195",
+    "title": "PR Assistant",
+    "company": "Prime Enterprises Corp",
+    "location": "Singapore",
+    "domain": "PUBLIC-RELATIONS",
+    "skills_required": [
+      "branding",
+      "networking",
+      "media relations",
+      "pr",
+      "writing"
+    ],
+    "description": "Fantastic opportunity for a PR Assistant at Prime Enterprises Corp. You will work on public-relations projects and gain hands-on experience with branding, networking. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int195",
+    "duration": "3 months",
+    "stipend": "\u20b925,000/month"
+  },
+  {
+    "id": "INT196",
+    "title": "Media Relations Intern",
+    "company": "Fin Edge Inc",
+    "location": "Bangalore, India",
+    "domain": "PUBLIC-RELATIONS",
+    "skills_required": [
+      "media relations",
+      "pr",
+      "branding",
+      "writing"
+    ],
+    "description": "Fantastic opportunity for a Media Relations Intern at Fin Edge Inc. You will work on public-relations projects and gain hands-on experience with media relations, pr. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int196",
+    "duration": "6 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT197",
+    "title": "Media Relations Intern",
+    "company": "Care First Corp",
+    "location": "New York, USA",
+    "domain": "PUBLIC-RELATIONS",
+    "skills_required": [
+      "networking",
+      "writing",
+      "branding"
+    ],
+    "description": "Fantastic opportunity for a Media Relations Intern at Care First Corp. You will work on public-relations projects and gain hands-on experience with networking, writing. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int197",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT198",
+    "title": "Communication Strategist",
+    "company": "Sky High Inc",
+    "location": "Singapore",
+    "domain": "PUBLIC-RELATIONS",
+    "skills_required": [
+      "branding",
+      "writing",
+      "pr"
+    ],
+    "description": "Fantastic opportunity for a Communication Strategist at Sky High Inc. You will work on public-relations projects and gain hands-on experience with branding, writing. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int198",
+    "duration": "4 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT199",
+    "title": "Communication Strategist",
+    "company": "Sky High Pvt Ltd",
+    "location": "Remote",
+    "domain": "PUBLIC-RELATIONS",
+    "skills_required": [
+      "media relations",
+      "networking",
+      "pr"
+    ],
+    "description": "Fantastic opportunity for a Communication Strategist at Sky High Pvt Ltd. You will work on public-relations projects and gain hands-on experience with media relations, networking. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int199",
+    "duration": "3 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT200",
+    "title": "Brand Ambassador Trainee",
+    "company": "Smart Agri Labs",
+    "location": "New York, USA",
+    "domain": "PUBLIC-RELATIONS",
+    "skills_required": [
+      "branding",
+      "writing",
+      "media relations",
+      "pr"
+    ],
+    "description": "Fantastic opportunity for a Brand Ambassador Trainee at Smart Agri Labs. You will work on public-relations projects and gain hands-on experience with branding, writing. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int200",
+    "duration": "4 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT201",
+    "title": "Brand Ambassador Trainee",
+    "company": "Tech Innovators Pvt Ltd",
+    "location": "Remote",
+    "domain": "PUBLIC-RELATIONS",
+    "skills_required": [
+      "branding",
+      "writing",
+      "pr"
+    ],
+    "description": "Fantastic opportunity for a Brand Ambassador Trainee at Tech Innovators Pvt Ltd. You will work on public-relations projects and gain hands-on experience with branding, writing. Join our Remote team.",
+    "apply_link": "https://example.com/apply/int201",
+    "duration": "4 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT202",
+    "title": "Sales Executive Intern",
+    "company": "Prime Enterprises Pvt Ltd",
+    "location": "Berlin, Germany",
+    "domain": "SALES",
+    "skills_required": [
+      "negotiation",
+      "direct sales",
+      "cold calling"
+    ],
+    "description": "Fantastic opportunity for a Sales Executive Intern at Prime Enterprises Pvt Ltd. You will work on sales projects and gain hands-on experience with negotiation, direct sales. Join our Berlin, Germany team.",
+    "apply_link": "https://example.com/apply/int202",
+    "duration": "6 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT203",
+    "title": "Sales Executive Intern",
+    "company": "Future Systems Pvt Ltd",
+    "location": "Hyderabad, India",
+    "domain": "SALES",
+    "skills_required": [
+      "negotiation",
+      "direct sales",
+      "salesforce",
+      "cold calling"
+    ],
+    "description": "Fantastic opportunity for a Sales Executive Intern at Future Systems Pvt Ltd. You will work on sales projects and gain hands-on experience with negotiation, direct sales. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int203",
+    "duration": "6 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT204",
+    "title": "Direct Sales Trainee",
+    "company": "Creative Minds Inc",
+    "location": "Bangalore, India",
+    "domain": "SALES",
+    "skills_required": [
+      "salesforce",
+      "direct sales",
+      "persuasion",
+      "negotiation"
+    ],
+    "description": "Fantastic opportunity for a Direct Sales Trainee at Creative Minds Inc. You will work on sales projects and gain hands-on experience with salesforce, direct sales. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int204",
+    "duration": "4 months",
+    "stipend": "$1,000/month"
+  },
+  {
+    "id": "INT205",
+    "title": "Direct Sales Trainee",
+    "company": "Sky High Inc",
+    "location": "Mumbai, India",
+    "domain": "SALES",
+    "skills_required": [
+      "persuasion",
+      "direct sales",
+      "negotiation",
+      "cold calling",
+      "salesforce"
+    ],
+    "description": "Fantastic opportunity for a Direct Sales Trainee at Sky High Inc. You will work on sales projects and gain hands-on experience with persuasion, direct sales. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int205",
+    "duration": "6 months",
+    "stipend": "$1,500/month"
+  },
+  {
+    "id": "INT206",
+    "title": "E-commerce Sales Intern",
+    "company": "Prime Enterprises Inc",
+    "location": "Mumbai, India",
+    "domain": "SALES",
+    "skills_required": [
+      "persuasion",
+      "cold calling",
+      "salesforce"
+    ],
+    "description": "Fantastic opportunity for a E-commerce Sales Intern at Prime Enterprises Inc. You will work on sales projects and gain hands-on experience with persuasion, cold calling. Join our Mumbai, India team.",
+    "apply_link": "https://example.com/apply/int206",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT207",
+    "title": "E-commerce Sales Intern",
+    "company": "Pro Design Group",
+    "location": "Bangalore, India",
+    "domain": "SALES",
+    "skills_required": [
+      "cold calling",
+      "salesforce",
+      "persuasion"
+    ],
+    "description": "Fantastic opportunity for a E-commerce Sales Intern at Pro Design Group. You will work on sales projects and gain hands-on experience with cold calling, salesforce. Join our Bangalore, India team.",
+    "apply_link": "https://example.com/apply/int207",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT208",
+    "title": "Account Management Associate",
+    "company": "Auto Dynamic Labs",
+    "location": "Toronto, Canada",
+    "domain": "SALES",
+    "skills_required": [
+      "negotiation",
+      "cold calling",
+      "direct sales"
+    ],
+    "description": "Fantastic opportunity for a Account Management Associate at Auto Dynamic Labs. You will work on sales projects and gain hands-on experience with negotiation, cold calling. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int208",
+    "duration": "6 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT209",
+    "title": "Account Management Associate",
+    "company": "Pro Design Pvt Ltd",
+    "location": "Chennai, India",
+    "domain": "SALES",
+    "skills_required": [
+      "salesforce",
+      "direct sales",
+      "persuasion",
+      "negotiation",
+      "cold calling"
+    ],
+    "description": "Fantastic opportunity for a Account Management Associate at Pro Design Pvt Ltd. You will work on sales projects and gain hands-on experience with salesforce, direct sales. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int209",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT210",
+    "title": "Teaching Assistant",
+    "company": "Next Gen IT Group",
+    "location": "Chennai, India",
+    "domain": "TEACHER",
+    "skills_required": [
+      "patience",
+      "teaching",
+      "education"
+    ],
+    "description": "Fantastic opportunity for a Teaching Assistant at Next Gen IT Group. You will work on teacher projects and gain hands-on experience with patience, teaching. Join our Chennai, India team.",
+    "apply_link": "https://example.com/apply/int210",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT211",
+    "title": "Teaching Assistant",
+    "company": "Next Gen IT Group",
+    "location": "London, UK",
+    "domain": "TEACHER",
+    "skills_required": [
+      "patience",
+      "education",
+      "child psychology",
+      "lesson planning"
+    ],
+    "description": "Fantastic opportunity for a Teaching Assistant at Next Gen IT Group. You will work on teacher projects and gain hands-on experience with patience, education. Join our London, UK team.",
+    "apply_link": "https://example.com/apply/int211",
+    "duration": "4 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT212",
+    "title": "Elementary Tutor",
+    "company": "Next Gen IT Group",
+    "location": "Hyderabad, India",
+    "domain": "TEACHER",
+    "skills_required": [
+      "patience",
+      "education",
+      "lesson planning",
+      "child psychology",
+      "teaching"
+    ],
+    "description": "Fantastic opportunity for a Elementary Tutor at Next Gen IT Group. You will work on teacher projects and gain hands-on experience with patience, education. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int212",
+    "duration": "6 months",
+    "stipend": "\u20b915,000/month"
+  },
+  {
+    "id": "INT213",
+    "title": "Elementary Tutor",
+    "company": "Auto Dynamic Inc",
+    "location": "Hyderabad, India",
+    "domain": "TEACHER",
+    "skills_required": [
+      "lesson planning",
+      "teaching",
+      "child psychology",
+      "patience"
+    ],
+    "description": "Fantastic opportunity for a Elementary Tutor at Auto Dynamic Inc. You will work on teacher projects and gain hands-on experience with lesson planning, teaching. Join our Hyderabad, India team.",
+    "apply_link": "https://example.com/apply/int213",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT214",
+    "title": "Subject Matter Expert",
+    "company": "Auto Dynamic Group",
+    "location": "New York, USA",
+    "domain": "TEACHER",
+    "skills_required": [
+      "lesson planning",
+      "child psychology",
+      "patience",
+      "teaching",
+      "education"
+    ],
+    "description": "Fantastic opportunity for a Subject Matter Expert at Auto Dynamic Group. You will work on teacher projects and gain hands-on experience with lesson planning, child psychology. Join our New York, USA team.",
+    "apply_link": "https://example.com/apply/int214",
+    "duration": "3 months",
+    "stipend": "\u20b910,000/month"
+  },
+  {
+    "id": "INT215",
+    "title": "Subject Matter Expert",
+    "company": "Build Well Corp",
+    "location": "Toronto, Canada",
+    "domain": "TEACHER",
+    "skills_required": [
+      "lesson planning",
+      "education",
+      "teaching",
+      "child psychology"
+    ],
+    "description": "Fantastic opportunity for a Subject Matter Expert at Build Well Corp. You will work on teacher projects and gain hands-on experience with lesson planning, education. Join our Toronto, Canada team.",
+    "apply_link": "https://example.com/apply/int215",
+    "duration": "6 months",
+    "stipend": "\u20b920,000/month"
+  },
+  {
+    "id": "INT216",
+    "title": "Educational Content Developer",
+    "company": "Auto Dynamic Inc",
+    "location": "Singapore",
+    "domain": "TEACHER",
+    "skills_required": [
+      "patience",
+      "education",
+      "lesson planning",
+      "child psychology",
+      "teaching"
+    ],
+    "description": "Fantastic opportunity for a Educational Content Developer at Auto Dynamic Inc. You will work on teacher projects and gain hands-on experience with patience, education. Join our Singapore team.",
+    "apply_link": "https://example.com/apply/int216",
+    "duration": "6 months",
+    "stipend": "Unpaid (Academic Credit)"
+  },
+  {
+    "id": "INT217",
+    "title": "Educational Content Developer",
+    "company": "Tech Innovators Group",
+    "location": "Pune, India",
+    "domain": "TEACHER",
+    "skills_required": [
+      "teaching",
+      "patience",
+      "lesson planning",
+      "child psychology"
+    ],
+    "description": "Fantastic opportunity for a Educational Content Developer at Tech Innovators Group. You will work on teacher projects and gain hands-on experience with teaching, patience. Join our Pune, India team.",
+    "apply_link": "https://example.com/apply/int217",
+    "duration": "4 months",
+    "stipend": "\u20b925,000/month"
   }
 ]

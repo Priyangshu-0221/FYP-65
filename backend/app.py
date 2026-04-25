@@ -18,9 +18,9 @@ from .recommendation_engine import InternshipRecommendationEngine, AVAILABLE_MOD
 app = FastAPI(title="AI Career Guidance System")
 
 # Initialize recommendation engine
-# Default to bge-small for better research-backed accuracy
+# Default to minilm for faster performance and lower memory usage
 try:
-    engine = InternshipRecommendationEngine(model_name=AVAILABLE_MODELS["bge-small"])
+    engine = InternshipRecommendationEngine(model_name=AVAILABLE_MODELS["minilm"])
 except Exception as e:
     print(f"Warning: Could not load advanced engine: {e}. Falling back to basic matching.")
     engine = None
