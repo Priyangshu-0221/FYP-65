@@ -14,12 +14,14 @@ import { SuccessOverlay } from "@/components/overlays/SuccessOverlay";
 import type { AcademicMarks } from "@/types/app";
 import { ArrowRight, Eraser, Sparkles, Workflow } from "lucide-react";
 import { toast } from "react-toastify";
+import { checkHealth } from "@/services/api";
 
 export function DashboardWorkspace() {
   const [academicMarks, setAcademicMarks] = useState<AcademicMarks>({});
   const [showUploadLoader, setShowUploadLoader] = useState(false);
   const [showRecommendationSuccess, setShowRecommendationSuccess] =
     useState(false);
+  const [isBackendConnected, setIsBackendConnected] = useState(true);
   const uploadTimerRef = useRef<number | null>(null);
   const uploadStartedAtRef = useRef<number | null>(null);
   const successTimerRef = useRef<number | null>(null);
@@ -38,6 +40,11 @@ export function DashboardWorkspace() {
   const handleGetRecommendations = async () => {
     if (!skills || skills.length === 0) {
       toast.error("Please upload a resume first");
+      return;
+    }
+
+    if (!isBackendConnected) {
+      toast.error("Backend is not connected. Please start the backend server.");
       return;
     }
 
@@ -61,6 +68,11 @@ export function DashboardWorkspace() {
   };
 
   const handleResumeUpload = async (file: File) => {
+    if (!isBackendConnected) {
+      toast.error("Backend is not connected. Failed uploading of the PDF.");
+      throw new Error("Backend is not connected. Failed uploading of the PDF.");
+    }
+
     if (uploadTimerRef.current) {
       window.clearTimeout(uploadTimerRef.current);
       uploadTimerRef.current = null;
@@ -122,6 +134,26 @@ export function DashboardWorkspace() {
     },
     [],
   );
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const refreshBackendStatus = async () => {
+      const healthy = await checkHealth();
+      if (!isMounted) {
+        return;
+      }
+      setIsBackendConnected(healthy);
+    };
+
+    refreshBackendStatus();
+    const intervalId = window.setInterval(refreshBackendStatus, 5000);
+
+    return () => {
+      isMounted = false;
+      window.clearInterval(intervalId);
+    };
+  }, []);
 
   const showBookLoader = showUploadLoader || isRecommending;
   const loaderMode: "upload" | "recommendation" = showUploadLoader
@@ -188,12 +220,11 @@ export function DashboardWorkspace() {
         </div>
       </div>
 
-      {/* Main Content Grid */}
-      <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
-        {/* Left Column - Steps */}
-        <div className="space-y-6">
-          {/* Step 1: Upload */}
-          <div className="group rounded-2xl border border-slate-200 bg-white/85 p-6 transition-all hover:border-sky-200 sm:p-8">
+      {/* Main Content */}
+      <div className="space-y-8">
+        {/* Step 1 + Current Status (Horizontal) */}
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+          <div className="group h-full rounded-2xl border border-slate-200 bg-white/85 p-6 transition-all hover:border-sky-200 sm:p-8">
             <div className="mb-6 flex items-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-sky-600 to-emerald-500 text-white">
                 <Sparkles className="h-5 w-5" />
@@ -210,10 +241,70 @@ export function DashboardWorkspace() {
             <UploadSection
               onUpload={handleResumeUpload}
               isUploading={isUploading}
+              isBackendConnected={isBackendConnected}
               fileName={file?.name}
             />
           </div>
 
+          {isBackendConnected && (
+            <div className="h-full rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:p-8">
+              <div className="mb-6 space-y-1">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">
+                  Current Status
+                </p>
+                <h3 className="text-2xl font-bold text-slate-900">
+                  Processing Overview
+                </h3>
+              </div>
+              <p className="mb-6 text-sm leading-6 text-slate-600">
+                Real-time tracking of your resume analysis and profile
+                completion.
+              </p>
+
+              <div className="space-y-4">
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Resume File
+                  </p>
+                  <p className="truncate text-sm font-medium text-slate-900">
+                    {file?.name || (
+                      <span className="text-slate-400">No file uploaded</span>
+                    )}
+                  </p>
+                </div>
+
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Skills Extracted
+                  </p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-bold text-sky-600">
+                      {skills.length}
+                    </span>
+                    <span className="text-xs text-slate-500">competencies</span>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Matches Found
+                  </p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-bold text-emerald-600">
+                      {recommendations.length}
+                    </span>
+                    <span className="text-xs text-slate-500">
+                      opportunities
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Remaining Steps (Vertical) */}
+        <div className="space-y-6">
           {/* Step 2: Skills */}
           {skills.length > 0 && (
             <div className="group rounded-2xl border border-slate-200 bg-white/85 p-6 transition-all hover:border-sky-200 sm:p-8">
@@ -299,71 +390,15 @@ export function DashboardWorkspace() {
           )}
         </div>
 
-        {/* Right Column - Status & Results */}
-        <div className="space-y-6">
-          {/* Status Card */}
-          <div className="sticky top-8 rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:p-8">
-            <div className="mb-6 space-y-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">
-                Current Status
-              </p>
-              <h3 className="text-2xl font-bold text-slate-900">
-                Processing Overview
-              </h3>
-            </div>
-            <p className="mb-6 text-sm leading-6 text-slate-600">
-              Real-time tracking of your resume analysis and profile completion.
-            </p>
+        {/* Results (Vertical) */}
+        {(recommendations.length > 0 || isRecommending) && (
+          <RecommendationsGrid
+            recommendations={recommendations}
+            isLoading={isRecommending}
+          />
+        )}
 
-            <div className="space-y-4">
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  Resume File
-                </p>
-                <p className="truncate text-sm font-medium text-slate-900">
-                  {file?.name || (
-                    <span className="text-slate-400">No file uploaded</span>
-                  )}
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  Skills Extracted
-                </p>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-sky-600">
-                    {skills.length}
-                  </span>
-                  <span className="text-xs text-slate-500">competencies</span>
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  Matches Found
-                </p>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-emerald-600">
-                    {recommendations.length}
-                  </span>
-                  <span className="text-xs text-slate-500">opportunities</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Recommendations */}
-          {(recommendations.length > 0 || isRecommending) && (
-            <RecommendationsGrid
-              recommendations={recommendations}
-              isLoading={isRecommending}
-            />
-          )}
-
-          {/* Skill Suggestions */}
-          <SkillSuggestions skills={recommendedSkills} />
-        </div>
+        <SkillSuggestions skills={recommendedSkills} />
       </div>
     </section>
   );

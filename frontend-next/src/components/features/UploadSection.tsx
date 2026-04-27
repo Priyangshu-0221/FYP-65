@@ -9,12 +9,14 @@ import { toast } from "react-toastify";
 interface UploadSectionProps {
   onUpload: (file: File) => Promise<unknown>;
   isUploading: boolean;
+  isBackendConnected: boolean;
   fileName?: string;
 }
 
 export function UploadSection({
   onUpload,
   isUploading,
+  isBackendConnected,
   fileName,
 }: UploadSectionProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -47,6 +49,11 @@ export function UploadSection({
     e.stopPropagation();
     setDragActive(false);
 
+    if (!isBackendConnected) {
+      toast.error("Backend is not connected. Failed uploading of the PDF.");
+      return;
+    }
+
     const files = e.dataTransfer.files;
     if (files && files[0]) {
       const file = files[0];
@@ -57,6 +64,11 @@ export function UploadSection({
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!isBackendConnected) {
+      toast.error("Server Error !!!! Failed uploading of the PDF. Please try again after sometime..!!.");
+      return;
+    }
+
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       if (validateFile(file)) {
@@ -101,14 +113,22 @@ export function UploadSection({
               ? "border-sky-500 bg-sky-50"
               : "border-slate-200 bg-slate-50 hover:border-emerald-400"
           }`}
-          onClick={() => fileInputRef.current?.click()}
+          onClick={() => {
+            if (!isBackendConnected) {
+              toast.error(
+                "Backend is not connected. Failed uploading of the PDF.",
+              );
+              return;
+            }
+            fileInputRef.current?.click();
+          }}
         >
           <input
             ref={fileInputRef}
             type="file"
             accept=".pdf"
             onChange={handleFileChange}
-            disabled={isUploading}
+            disabled={isUploading || !isBackendConnected}
             className="hidden"
           />
 
@@ -125,15 +145,29 @@ export function UploadSection({
         </div>
 
         <Button
-          onClick={() => fileInputRef.current?.click()}
-          disabled={isUploading}
-          className="w-full gap-2"
+          onClick={() => {
+            if (!isBackendConnected) {
+              toast.error(
+                "Backend is not connected. Failed uploading of the PDF.",
+              );
+              return;
+            }
+            fileInputRef.current?.click();
+          }}
+          disabled={isUploading || !isBackendConnected}
+          className={`w-full gap-2 ${
+            !isBackendConnected
+              ? "bg-red-600 text-white hover:bg-red-600 disabled:opacity-100"
+              : ""
+          }`}
         >
           {isUploading ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               Uploading...
             </>
+          ) : !isBackendConnected ? (
+            <>Server Disconnected</>
           ) : (
             <>
               <UploadCloud className="h-4 w-4" />

@@ -15,6 +15,8 @@ const ENDPOINTS = {
   RECOMMEND: `${API_BASE}/recommend`,
 };
 
+const BACKEND_CHECK_TIMEOUT_MS = 3500;
+
 class APIError extends Error {
   constructor(
     public status: number,
@@ -26,11 +28,27 @@ class APIError extends Error {
   }
 }
 
+async function assertBackendConnected(action: "upload" | "recommend") {
+  const isHealthy = await checkHealth();
+  if (isHealthy) {
+    return;
+  }
+
+  const message =
+    action === "upload"
+      ? "Backend is not connected. Failed uploading of the PDF."
+      : "Backend is not connected. Please start the backend server and try again.";
+
+  throw new APIError(503, message, { backendConnected: false, action });
+}
+
 /**
  * Upload a resume file and extract skills
  */
 export async function uploadResume(file: File): Promise<ResumeUploadResponse> {
   try {
+    await assertBackendConnected("upload");
+
     const formData = new FormData();
     formData.append("file", file);
 
@@ -75,6 +93,8 @@ export async function getRecommendations(
   topK: number = 6,
 ): Promise<RecommendationResponse> {
   try {
+    await assertBackendConnected("recommend");
+
     const payload: RecommendationRequest = {
       skills: skills.map((s) => s.toLowerCase()),
       top_k: topK,
@@ -121,13 +141,23 @@ export async function getRecommendations(
  * Check API health
  */
 export async function checkHealth(): Promise<boolean> {
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(
+    () => controller.abort(),
+    BACKEND_CHECK_TIMEOUT_MS,
+  );
+
   try {
     const response = await fetch(ENDPOINTS.HEALTH, {
       method: "GET",
+      cache: "no-store",
+      signal: controller.signal,
     });
     return response.ok;
   } catch {
     return false;
+  } finally {
+    window.clearTimeout(timeoutId);
   }
 }
 

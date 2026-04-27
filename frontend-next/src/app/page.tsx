@@ -16,8 +16,9 @@ export default function Home() {
               AI Powered Career Guidance
             </div>
             <div className="space-y-3">
-              <h1 className="max-w-4xl text-3xl font-black uppercase tracking-[0.08em] text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl">
-                Resume Analyser and Internship Recommendation System
+              <h1 className="max-w-4xl text-xl font-black uppercase tracking-[0.08em] text-slate-900 sm:text-4xl md:text-5xl lg:text-4xl">
+                AI Powered Career Guidance : Resume Analyser And Internship
+                Recommendation System
               </h1>
               <p className="max-w-3xl text-sm leading-7 text-slate-600 sm:text-base md:text-lg">
                 This project reads a resume, pulls out the important details,
