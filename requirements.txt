@@ -48,5 +48,6 @@ tqdm>=4.65.0
 # ============================================
 # Machine Learning Dependencies (For AI Engine)
 # ============================================
+torch>=2.0.0
 scikit-learn>=1.2.0
 sentence-transformers>=2.2.0
